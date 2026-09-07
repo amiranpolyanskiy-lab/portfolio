@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- seo:start -->
+<title>Амиран Полянский — Product / UI дизайнер</title>
+<meta name="description" content="Портфолио продуктового дизайнера: финтех и B2B SaaS. Кейсы ЮKassa, Hostme, Wazzup — от исследования до релиза.">
+<link rel="canonical" href="https://amiranpolyanskiu-ux-ui.ru/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Амиран Полянский">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Амиран Полянский — Product / UI дизайнер">
+<meta property="og:description" content="Портфолио продуктового дизайнера: финтех и B2B SaaS. Кейсы ЮKassa, Hostme, Wazzup — от исследования до релиза.">
+<meta property="og:url" content="https://amiranpolyanskiu-ux-ui.ru/">
+<meta property="og:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Амиран Полянский — Product / UI дизайнер">
+<meta name="twitter:description" content="Портфолио продуктового дизайнера: финтех и B2B SaaS. Кейсы ЮKassa, Hostme, Wazzup — от исследования до релиза.">
+<meta name="twitter:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<!-- seo:end -->
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Semibold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Extrabold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Heavy.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+  * { box-sizing: border-box; text-wrap: pretty; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAFAF8; color: #111214; font-family: 'Gilroy', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  #contacts a:hover, .tsw:hover, .alt a:hover { text-decoration: none; }
+  nav a { transition: color 0.15s ease; }
+  nav a:hover { color: #111214 !important; }
+  .case { background: rgba(var(--glass-rgb, 245,248,250), var(--glass-a, 1)); backdrop-filter: blur(var(--glass-blur, 0px)) saturate(var(--glass-sat, 100%)); -webkit-backdrop-filter: blur(var(--glass-blur, 0px)) saturate(var(--glass-sat, 100%)); border: 1px solid rgba(16,16,16, var(--glass-border, 0)); box-shadow: var(--glass-shadow, none); }
+  .alt { color: #111214; transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1); }
+  .alt:hover { transform: translateY(-4px); }
+  .alt:hover .altarw { background: #111214 !important; }
+  .altarw svg path { stroke: #111214; }
+  .alt:hover .altarw svg path { stroke: #ffffff !important; }
+  .altarw { transition: background-color 0.22s ease; }
+  .altarw svg path { transition: stroke 0.22s ease; }
+  .case .tags span { background: #E8EDF2 !important; transition: background-color 0.25s ease, color 0.25s ease; }
+  .case:hover .tags span { background: #E6EBFF !important; color: #2c5cf0 !important; }
+  .lnk .arw { display: inline-flex; align-items: center; transition: transform 0.18s ease; }
+  .arw svg { display: block; overflow: visible; }
+  .arw svg path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .lnk:hover .arw { transform: translate(2px, -2px); }
+  .rv { opacity: 0; transform: translateY(26px); will-change: opacity, transform; transition: opacity 1.4s cubic-bezier(0.16,0.68,0.24,1), transform 1.4s cubic-bezier(0.16,0.68,0.24,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1 !important; transform: none !important; transition: none !important; } }
+  body[data-theme="dark"] { background: #0d0e10; color: #f2f3f5; }
+  [data-theme="dark"] header::before { background: rgba(13,14,16,0.55) !important; }
+  [data-theme="dark"] [style*="rgb(110, 110, 115)"] { color: #9ba0a8 !important; }
+  [data-theme="dark"] [style*="color: rgb(17, 18, 20)"] { color: #f2f3f5 !important; }
+  [data-theme="dark"] [style*="rgb(138, 141, 147)"] { color: #8b9099 !important; }
+  [data-theme="dark"] [style*="rgb(245, 248, 250)"] { background: #17181b !important; }
+  [data-theme="dark"] .case { background: #17181b !important; border-color: rgba(255,255,255,0.06) !important; }
+  [data-theme="dark"] [style*="rgb(232, 237, 242)"] { background: #26282d !important; }
+  [data-theme="dark"] .case .tags span { background: #26282d !important; }
+  [data-theme="dark"] .case:hover .tags span { background: #1e2742 !important; color: #7d9bff !important; }
+  [data-theme="dark"] #contacts a[href^="https"], [data-theme="dark"] #contacts a[href^="mailto"], [data-theme="dark"] #about a[href^="https"], [data-theme="dark"] #about a[href^="mailto"] { background: #26282d !important; color: #f2f3f5 !important; }
+  [data-theme="dark"] #contacts a[href^="https"]:hover, [data-theme="dark"] #contacts a[href^="mailto"]:hover, [data-theme="dark"] #about a[href^="https"]:hover, [data-theme="dark"] #about a[href^="mailto"]:hover { background: #f2f3f5 !important; color: #111214 !important; }
+  [data-theme="dark"] .alt { color: #f2f3f5; }
+  [data-theme="dark"] .altarw { background: #26282d !important; }
+  [data-theme="dark"] [style*="rgb(255, 255, 255)"] { background-color: #26282d !important; }
+  [data-theme="dark"] .altarw svg path { stroke: #f2f3f5; }
+  [data-theme="dark"] .alt:hover .altarw { background: #f2f3f5 !important; }
+  [data-theme="dark"] .alt:hover .altarw svg path { stroke: #111214 !important; }
+  [data-theme="dark"] nav a:hover { color: #f2f3f5 !important; }
+  .tsw { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 100px; border: 1px solid rgba(17,18,20,0.1); background: transparent; color: inherit; font: inherit; font-size: 13px; cursor: pointer; transition: background-color 0.2s ease, border-color 0.2s ease; }
+  .tsw:hover { background: rgba(17,18,20,0.05); }
+  [data-theme="dark"] .tsw { border-color: rgba(255,255,255,0.16); }
+  [data-theme="dark"] .tsw:hover { background: rgba(255,255,255,0.08); }
+  [data-theme="dark"] #top [style*="border-radius: 100px"] { background: #26282d !important; }
+  .navbtn { transition: background-color 0.2s ease, color 0.2s ease; }
+  .navbtn:hover { background: #111214 !important; color: #ffffff !important; }
+  [data-theme="dark"] .navbtn { background: rgba(255,255,255,0.1) !important; color: #f2f3f5 !important; }
+  [data-theme="dark"] .navbtn:hover { background: #f2f3f5 !important; color: #111214 !important; }
+</style>
+<script src="antigravity.js"></script>
+</helmet>
+
+<div id="antigravity" aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; pointer-events: none;"></div>
+
+
+
+<div style="max-width: 1400px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); position: relative; z-index: 1;">
+
+  <header style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 0;" style-before="content: ''; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 100vw; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); z-index: 0;">
+    <a href="#top" style="position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 10px; font-family: 'Gilroy', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;"><img src="photo/amiran.png" alt="" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; object-position: 50% 22%; display: block; flex: none;">ПОЛЯНСКИЙ.А</a>
+    <nav style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(16px, 2.4vw, 26px); font-size: 15px;">
+      <a href="#cases" data-nav="cases" style="color: #8A8D93;">Кейсы</a>
+      <a href="#experience" data-nav="experience" style="color: #8A8D93;">Опыт</a>
+      <a href="#skills" data-nav="skills" style="color: #8A8D93;">Навыки</a>
+      <a href="#contacts" data-nav="contacts" class="navbtn" style="display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 100px; background: #efefef; color: #111214;">Контакты</a>
+    </nav>
+  </header>
+
+  
+
+  <section id="top" style="padding: clamp(40px, 6vw, 72px) 0 clamp(16px, 2.5vw, 28px); position: relative; min-height: calc(100vh - 62px); display: flex; flex-direction: column; justify-content: center;">
+    <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: normal; justify-content: flex-start; align-items: normal; margin-top: clamp(56px, 9vw, 140px)"><h1 style="position: relative; z-index: 1; margin: 0; align-self: start; font-family: 'Gilroy', sans-serif; font-weight: 800; font-size: clamp(34px, 5.4vw, 62px); line-height: 1.02; letter-spacing: -0.035em; width: min(1120px, 100%); height: auto">Привет! Я&nbsp;Амиран&nbsp;— <span style="display: inline; margin: 0px; font-weight: 400; letter-spacing: -0.01em; color: rgb(138, 141, 147);">Product Designer</span><br>Превращаю сложные рабочие <br>процессы в интерфейсы, которые <br>не нужно объяснять</h1></div>
+
+    
+      
+      
+    
+
+    <div style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: clamp(20px, 2.6vw, 30px);">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'Gilroy', sans-serif; font-size: 14px; font-weight: 600;">
+      
+      <span style="padding: 9px 16px; border-radius: 100px; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%);">B2B · B2C</span>
+      <span style="padding: 9px 16px; border-radius: 100px; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%);">Финтех и SaaS</span>
+      <span style="padding: 9px 16px; border-radius: 100px; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%);">UX Research</span>
+      <span style="padding: 9px 16px; border-radius: 100px; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%);">Дизайн-системы</span>
+      <span style="padding: 9px 16px; border-radius: 100px; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%);">Продукты с нуля</span><span style="padding: 9px 16px; border-radius: 100px; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%);">Санкт - Петербург</span>
+      </div>
+      
+    </div>
+
+    
+
+    
+      </section>
+<section id="cases-a" style="display: none; padding: clamp(32px, 5vw, 48px) 0 clamp(48px, 7vw, 80px);">
+    <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(28px, 4.6vw, 52px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em;">Кейсы</h2>
+
+    <div style="display: flex; flex-direction: column; gap: clamp(16px, 2.5vw, 24px); margin-top: clamp(16px, 2.5vw, 24px);">
+
+      <a href="case-hostme.dc.html" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(20px, 3vw, 32px); border-radius: 26px; padding: 20px;" class="case">
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;"><div style="height: 28px; display: flex; align-items: center; flex: none;"><img src="logos/hostme.svg" alt="Hostme" style="height: 22px; display: block"></div><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73; padding-top: 10px">2022–2025</span></div>
+          <div class="tags" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-family: 'Gilroy', sans-serif; font-size: 12px;">
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">B2B</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">Redesign</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">Research</span>
+          </div>
+          <h3 style="margin: 0 0 10px; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 3vw, 32px); line-height: 1.08; font-weight: 700; letter-spacing: -0.025em;">Редизайн системы управления рестораном</h3>
+          <p style="margin: 0 0 20px; font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73;">5000+ ресторанов · 27 стран · 1M+ резерваций в месяц</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(130px, 100%), 1fr)); gap: 14px; padding: 4px 0 0;">
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 3vw, 32px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1;">86%</div><div style="font-size: 14px; color: #6e6e73; margin-top: 6px;">ресторанов перешли на новый интерфейс без принудительного переключения</div></div>
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 3vw, 32px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1;">−30%</div><div style="font-size: 14px; color: #6e6e73; margin-top: 6px;">обращений в поддержку за 3 месяца после релиза</div></div>
+          </div>
+          <span class="go" style="display: inline-block; margin-top: 20px; padding: 11px 22px; background: #2c5cf0; color: #fff; border-radius: 12px; font-size: 14px;">Смотреть кейс</span>
+        </div>
+        <div class="shot" style="background: repeating-linear-gradient(135deg, #eaeaea 0 8px, #e0e0e0 8px 16px); border-radius: 12px; min-height: 280px; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center;">
+          <span style="font-family: 'Gilroy', sans-serif; font-size: 12px; color: #6e6e73; background: #FAFAF8; padding: 6px 12px;">[СКРИН: hero-визуал — общий до/после]</span>
+        </div>
+      </a>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: clamp(16px, 2.5vw, 24px);">
+
+        
+
+        <a href="case-design-system.dc.html" style="display: flex; flex-direction: column; border-radius: 26px; padding: 20px; position: relative" class="case">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;"><div style="height: 28px; display: flex; align-items: center; flex: none;"><img src="logos/hostme.svg" alt="Hostme" style="height: 22px; width: auto; display: block;"></div><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73; padding-top: 4px">2022–2025</span></div>
+          <div class="tags" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-family: 'Gilroy', sans-serif; font-size: 12px;">
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">B2B</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">Design System</span>
+            
+          </div>
+          <div style="min-height: 104px; margin-bottom: 18px;">
+            <h3 style="margin: 0 0 10px; font-family: 'Gilroy', sans-serif; font-size: clamp(22px, 2.4vw, 27px); line-height: 1.1; font-weight: 700; letter-spacing: -0.02em;">Дизайн-система с нуля</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">Библиотека компонентов для системы управления рестораном</p>
+          </div>
+          <div class="shot" style="background: repeating-linear-gradient(135deg, #eaeaea 0 8px, #e0e0e0 8px 16px); border-radius: 12px; height: 170px; display: flex; align-items: center; justify-content: center; padding: 12px; text-align: center;">
+            <span style="font-family: 'Gilroy', sans-serif; font-size: 11px; color: #8A8D93; background: #FAFAF8; padding: 6px 10px;">[СКРИН: обзор системы — токены, компоненты, тёмная тема]</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 22px; margin-top: 20px;">
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.035em; line-height: 1;">50+</div><div style="font-size: 14px; color: #6e6e73; margin-top: 4px;">компонентов покрыли 70% интерфейсов продукта</div></div>
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.035em; line-height: 1;">−25%</div><div style="font-size: 14px; color: #6e6e73; margin-top: 4px;">времени на разработку новых фич</div></div>
+          </div>
+        </a><a href="case-receipts.dc.html" style="display: flex; flex-direction: column; border-radius: 26px; padding: 20px; position: relative" class="case">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;"><div style="height: 28px; display: flex; align-items: center; flex: none;"><img src="logos/yookassa.svg" alt="ЮKassa" style="height: 22px; width: auto; display: block;"></div><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #8A8D93; text-align: left; padding-top: 4px; padding-bottom: 0px">2025–2026</span></div>
+          <div class="tags" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-family: 'Gilroy', sans-serif; font-size: 12px;">
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">B2B</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">Fintech</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">New product</span>
+          </div>
+          <div style="min-height: 104px; margin-bottom: 18px;">
+            <h3 style="margin: 0 0 10px; font-family: 'Gilroy', sans-serif; font-size: clamp(22px, 2.4vw, 27px); line-height: 1.1; font-weight: 700; letter-spacing: -0.02em;">Автоотправка чеков для самозанятых</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">Услуга для тех, кому не нужна полноценная онлайн-касса</p>
+          </div>
+          <div class="shot" style="background: repeating-linear-gradient(135deg, #eaeaea 0 8px, #e0e0e0 8px 16px); border-radius: 12px; height: 170px; display: flex; align-items: center; justify-content: center; padding: 12px; text-align: center;">
+            <span style="font-family: 'Gilroy', sans-serif; font-size: 11px; color: #8A8D93; background: #FAFAF8; padding: 6px 10px;">[СКРИН: подключение в онбординге / в ЛК]</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 22px; margin-top: 20px;">
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.035em; line-height: 1;">20 000</div><div style="font-size: 14px; color: #6e6e73; margin-top: 4px;">самозанятых мерчантов подключили сервис — половина пользовательской базы</div></div>
+          </div>
+        </a>
+
+        <a href="case-refunds.dc.html" style="display: flex; flex-direction: column; border-radius: 26px; padding: 20px;" class="case">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;"><div style="height: 28px; display: flex; align-items: center; flex: none;"><img src="logos/yookassa.svg" alt="ЮKassa" style="height: 22px; width: auto; display: block;"></div><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73; padding-top: 4px">2025–2026</span></div>
+          <div class="tags" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-family: 'Gilroy', sans-serif; font-size: 12px;">
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">B2B</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">Fintech</span>
+          </div>
+          <div style="min-height: 104px; margin-bottom: 18px;">
+            <h3 style="margin: 0 0 10px; font-family: 'Gilroy', sans-serif; font-size: clamp(22px, 2.4vw, 27px); line-height: 1.1; font-weight: 700; letter-spacing: -0.02em;">Отложенные возвраты платежей</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">Вернуть деньги покупателю, не замораживая свои</p>
+          </div>
+          <div class="shot" style="background: repeating-linear-gradient(135deg, #eaeaea 0 8px, #e0e0e0 8px 16px); border-radius: 12px; height: 170px; display: flex; align-items: center; justify-content: center; padding: 12px; text-align: center;">
+            <span style="font-family: 'Gilroy', sans-serif; font-size: 11px; color: #8A8D93; background: #FAFAF8; padding: 6px 10px;">[СКРИН: очередь возвратов]</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 22px; margin-top: 20px;">
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.035em; line-height: 1;">Каждый 2-й</div><div style="font-size: 14px; color: #6e6e73; margin-top: 4px;">мерчант использует очередь при недостатке средств</div></div>
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.035em; line-height: 1;">−45%</div><div style="font-size: 14px; color: #6e6e73; margin-top: 4px;">тематических обращений в поддержку и негативного NPS</div></div>
+          </div>
+        </a>
+
+        <a href="case-subscriptions.dc.html" style="display: flex; flex-direction: column; border-radius: 26px; padding: 20px;" class="case">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;"><div style="height: 28px; display: flex; align-items: center; flex: none;"><img src="logos/yookassa.svg" alt="ЮKassa" style="height: 22px; width: auto; display: block;"></div><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73; padding-top: 4px">2025–2026</span></div>
+          <div class="tags" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-family: 'Gilroy', sans-serif; font-size: 12px;">
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">B2B</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">Fintech</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">New product</span>
+          </div>
+          <div style="min-height: 104px; margin-bottom: 18px;">
+            <h3 style="margin: 0 0 10px; font-family: 'Gilroy', sans-serif; font-size: clamp(22px, 2.4vw, 27px); line-height: 1.1; font-weight: 700; letter-spacing: -0.02em;">Продукт «Подписки»</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">Рекуррентные платежи с триальным периодом</p>
+          </div>
+          <div class="shot" style="background: repeating-linear-gradient(135deg, #eaeaea 0 8px, #e0e0e0 8px 16px); border-radius: 12px; height: 170px; display: flex; align-items: center; justify-content: center; padding: 12px; text-align: center;">
+            <span style="font-family: 'Gilroy', sans-serif; font-size: 11px; color: #8A8D93; background: #FAFAF8; padding: 6px 10px;">[СКРИН: сценарий оформления / управления подпиской]</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 22px; margin-top: 20px;">
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.035em; line-height: 1;">17%</div><div style="font-size: 14px; color: #6e6e73; margin-top: 4px;">клиентов с API использовали подписочную модель в первый месяц</div></div>
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.035em; line-height: 1;">60%</div><div style="font-size: 14px; color: #6e6e73; margin-top: 4px;">из них повторили операцию</div></div>
+          </div>
+        </a>
+
+        <a href="case-help.dc.html" style="display: flex; flex-direction: column; border-radius: 26px; padding: 20px;" class="case">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;"><div style="height: 28px; display: flex; align-items: center; flex: none;"><img src="logos/yookassa.svg" alt="ЮKassa" style="height: 22px; width: auto; display: block;"></div><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73; padding-top: 4px">2025–2026</span></div>
+          <div class="tags" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-family: 'Gilroy', sans-serif; font-size: 12px;">
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">B2B</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">Redesign</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">Content</span>
+          </div>
+          <div style="min-height: 104px; margin-bottom: 18px;">
+            <h3 style="margin: 0 0 10px; font-family: 'Gilroy', sans-serif; font-size: clamp(22px, 2.4vw, 27px); line-height: 1.1; font-weight: 700; letter-spacing: -0.02em;">Редизайн главной страницы помощи</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">3-я по посещаемости страница сервиса</p>
+          </div>
+          <div class="shot" style="background: repeating-linear-gradient(135deg, #eaeaea 0 8px, #e0e0e0 8px 16px); border-radius: 12px; height: 170px; display: flex; align-items: center; justify-content: center; padding: 12px; text-align: center;">
+            <span style="font-family: 'Gilroy', sans-serif; font-size: 11px; color: #8A8D93; background: #FAFAF8; padding: 6px 10px;">[СКРИН: до/после]</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 22px; margin-top: 20px;">
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.035em; line-height: 1;">3–4%</div><div style="font-size: 14px; color: #6e6e73; margin-top: 4px;">CTR по продуктовым карточкам</div></div>
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.035em; line-height: 1;">+1–2 п.п.</div><div style="font-size: 14px; color: #6e6e73; margin-top: 4px;">конверсия среди новых пользователей</div></div>
+          </div>
+        </a>
+
+        <a href="case-contactme.dc.html" style="display: flex; flex-direction: column; border-radius: 26px; padding: 20px;" class="case">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;"><div style="height: 28px; display: flex; align-items: center; flex: none;"><img src="logos/wazzup.svg" alt="Wazzup" style="height: 16px; width: auto; display: block;"></div><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73; padding-top: 4px">2021–2022</span></div>
+          <div class="tags" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-family: 'Gilroy', sans-serif; font-size: 12px;">
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">B2C</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">Growth</span>
+            <span style="padding: 5px 11px; background: #efefef; border-radius: 100px;">New product</span>
+          </div>
+          <div style="min-height: 104px; margin-bottom: 18px;">
+            <h3 style="margin: 0 0 10px; font-family: 'Gilroy', sans-serif; font-size: clamp(22px, 2.4vw, 27px); line-height: 1.1; font-weight: 700; letter-spacing: -0.02em;">Конструктор мини-сайтов</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">Внутренний стартап</p>
+          </div>
+          <div class="shot" style="background: repeating-linear-gradient(135deg, #eaeaea 0 8px, #e0e0e0 8px 16px); border-radius: 12px; height: 170px; display: flex; align-items: center; justify-content: center; padding: 12px; text-align: center;">
+            <span style="font-family: 'Gilroy', sans-serif; font-size: 11px; color: #8A8D93; background: #FAFAF8; padding: 6px 10px;">[СКРИН: экраны конструктора — кастомизация, витрина, корзина]</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 22px; margin-top: 20px;">
+            <div><div style="font-family: 'Gilroy', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.035em; line-height: 1;">Топ-3</div><div style="font-size: 14px; color: #6e6e73; margin-top: 4px;">сервис вошёл в тройку сегмента за 5 месяцев</div></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" style="padding: clamp(16px, 2.5vw, 24px) 0 clamp(48px, 7vw, 80px);">
+    <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(28px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93">Кейсы</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: clamp(16px, 2.2vw, 24px); margin-top: clamp(16px, 2.5vw, 24px);">
+
+      <div class="alt" style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(20px, 3vw, 44px); background: #F5F8FA; border-radius: 32px; padding: 28px; position: relative;"><a href="case-hostme.dc.html" aria-label="Открыть кейс" style="position: absolute; inset: 0; z-index: 2; border-radius: inherit;"></a>
+        <span class="altarw" style="position: absolute; top: 24px; right: 24px; width: 38px; height: 38px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" style="display: block;"><path d="M4.4 11.6 11.6 4.4" fill="none" stroke-width="1.6" stroke-linecap="round"></path><path d="M6.4 4.4H11.6V9.6" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <div style="display: flex; flex-direction: column;">
+          <span style="display: flex; align-items: center; gap: 10px;"><img src="logos/hostme.svg" alt="Hostme" style="height: 18px; width: auto; display: block;"><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73;">2022–2025</span></span>
+          <div class="alttags" style="display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 2px; font-family: 'Gilroy', sans-serif; font-size: 12px;"><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">B2B</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">Redesign</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">Research</span></div>
+          <h3 style="margin: 20px 0 0; font-family: 'Gilroy', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em;">Редизайн системы управления рестораном</h3>
+          <p style="margin: 12px 0 0; font-family: 'Gilroy', sans-serif; font-size: 15px; line-height: 1.5; color: #6e6e73;">5000+ ресторанов · 27 стран · 1M+ резерваций в&nbsp;месяц</p>
+          <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #6e6e73;">Полная пересборка рабочего интерфейса хостес</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 18px; justify-content: center;"><div><div style="font-family: 'Gilroy', sans-serif; font-size: 43px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1;">86%</div><div style="font-size: 14px; color: #6e6e73; margin-top: 6px;">ресторанов перешли на&nbsp;новый интерфейс без принудительного переключения</div></div><div><div style="font-family: 'Gilroy', sans-serif; font-size: 43px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1;">−30%</div><div style="font-size: 14px; color: #6e6e73; margin-top: 6px;">обращений в&nbsp;поддержку за&nbsp;3 месяца после релиза</div></div>
+        </div>
+      </div>
+
+      <div class="alt" style="display: flex; flex-direction: column; background: #F5F8FA; border-radius: 28px; padding: 22px 22px 20px; position: relative;"><a href="case-design-system.dc.html" aria-label="Открыть кейс" style="position: absolute; inset: 0; z-index: 2; border-radius: inherit;"></a>
+        <span style="display: flex; align-items: center; gap: 10px;"><img src="logos/hostme.svg" alt="Hostme" style="height: 16px; width: auto; display: block;"><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73;">2022–2025</span></span>
+        <span class="altarw" style="position: absolute; top: 22px; right: 22px; width: 34px; height: 34px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" style="display: block;"><path d="M4.4 11.6 11.6 4.4" fill="none" stroke-width="1.6" stroke-linecap="round"></path><path d="M6.4 4.4H11.6V9.6" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <div class="alttags" style="display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 2px; font-family: 'Gilroy', sans-serif; font-size: 12px;"><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">B2B</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">Design System</span></div>
+        <h3 style="margin: 20px 0 0; font-family: 'Gilroy', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em;">Дизайн-система с&nbsp;нуля</h3>
+        <p style="margin: 12px 0 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">Библиотека компонентов и&nbsp;токенов для системы управления рестораном, включая тёмную тему</p><div style="margin-top: 40px; display: flex; flex-direction: column; gap: 12px;"><p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: 15px; line-height: 1.45; font-weight: 700; letter-spacing: -0.01em;">50+ компонентов покрыли 70% интерфейсов продукта</p><p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: 15px; line-height: 1.45; font-weight: 700; letter-spacing: -0.01em;">−25% времени на&nbsp;разработку новых фич</p></div>
+      </div>
+
+      <div class="alt" style="display: flex; flex-direction: column; background: #F5F8FA; border-radius: 28px; padding: 22px 22px 20px; position: relative;"><a href="case-receipts.dc.html" aria-label="Открыть кейс" style="position: absolute; inset: 0; z-index: 2; border-radius: inherit;"></a>
+        <span style="display: flex; align-items: center; gap: 10px;"><img src="logos/yookassa.svg" alt="ЮKassa" style="height: 16px; width: auto; display: block;"><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73;">2025–2026</span></span>
+        <span class="altarw" style="position: absolute; top: 22px; right: 22px; width: 34px; height: 34px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" style="display: block;"><path d="M4.4 11.6 11.6 4.4" fill="none" stroke-width="1.6" stroke-linecap="round"></path><path d="M6.4 4.4H11.6V9.6" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <div class="alttags" style="display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 2px; font-family: 'Gilroy', sans-serif; font-size: 12px;"><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">B2B</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">Fintech</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">New product</span></div>
+        <h3 style="margin: 20px 0 0; font-family: 'Gilroy', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em;">Автоотправка чеков для&nbsp;самозанятых</h3>
+        <p style="margin: 12px 0 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">Услуга для тех, кому не&nbsp;нужна полноценная онлайн-касса. Подключение в&nbsp;онбординге и&nbsp;в&nbsp;личном кабинете</p><div style="margin-top: 40px; display: flex; flex-direction: column; gap: 12px;"><p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: 15px; line-height: 1.45; font-weight: 700; letter-spacing: -0.01em;">20 000 самозанятых мерчантов подключили сервис — половина пользовательской базы</p></div>
+      </div>
+
+      <div class="alt" style="display: flex; flex-direction: column; background: #F5F8FA; border-radius: 28px; padding: 22px 22px 20px; position: relative;"><a href="case-refunds.dc.html" aria-label="Открыть кейс" style="position: absolute; inset: 0; z-index: 2; border-radius: inherit;"></a>
+        <span style="display: flex; align-items: center; gap: 10px;"><img src="logos/yookassa.svg" alt="ЮKassa" style="height: 16px; width: auto; display: block;"><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73;">2025–2026</span></span>
+        <span class="altarw" style="position: absolute; top: 22px; right: 22px; width: 34px; height: 34px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" style="display: block;"><path d="M4.4 11.6 11.6 4.4" fill="none" stroke-width="1.6" stroke-linecap="round"></path><path d="M6.4 4.4H11.6V9.6" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <div class="alttags" style="display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 2px; font-family: 'Gilroy', sans-serif; font-size: 12px;"><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">B2B</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">Fintech</span></div>
+        <h3 style="margin: 20px 0 0; font-family: 'Gilroy', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em;">Отложенные возвраты платежей</h3>
+        <p style="margin: 12px 0 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">Вернуть деньги покупателю, не&nbsp;замораживая свои. Очередь возвратов при недостатке средств на&nbsp;балансе</p><div style="margin-top: 40px; display: flex; flex-direction: column; gap: 12px;"><p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: 15px; line-height: 1.45; font-weight: 700; letter-spacing: -0.01em;">Каждый 2-й мерчант использует очередь при недостатке средств</p><p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: 15px; line-height: 1.45; font-weight: 700; letter-spacing: -0.01em;">−45% тематических обращений в&nbsp;поддержку и&nbsp;негативного NPS</p></div>
+      </div>
+
+      <div class="alt" style="display: flex; flex-direction: column; background: #F5F8FA; border-radius: 28px; padding: 22px 22px 20px; position: relative;"><a href="case-subscriptions.dc.html" aria-label="Открыть кейс" style="position: absolute; inset: 0; z-index: 2; border-radius: inherit;"></a>
+        <span style="display: flex; align-items: center; gap: 10px;"><img src="logos/yookassa.svg" alt="ЮKassa" style="height: 16px; width: auto; display: block;"><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73;">2025–2026</span></span>
+        <span class="altarw" style="position: absolute; top: 22px; right: 22px; width: 34px; height: 34px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" style="display: block;"><path d="M4.4 11.6 11.6 4.4" fill="none" stroke-width="1.6" stroke-linecap="round"></path><path d="M6.4 4.4H11.6V9.6" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <div class="alttags" style="display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 2px; font-family: 'Gilroy', sans-serif; font-size: 12px;"><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">B2B</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">Fintech</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">New product</span></div>
+        <h3 style="margin: 20px 0 0; font-family: 'Gilroy', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em;">Продукт «Подписки»</h3>
+        <p style="margin: 12px 0 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">Рекуррентные платежи с&nbsp;триальным периодом: оформление, управление и&nbsp;отмена подписки</p><div style="margin-top: 40px; display: flex; flex-direction: column; gap: 12px;"><p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: 15px; line-height: 1.45; font-weight: 700; letter-spacing: -0.01em;">17% клиентов с&nbsp;API использовали подписочную модель в&nbsp;первый месяц</p><p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: 15px; line-height: 1.45; font-weight: 700; letter-spacing: -0.01em;">60% из&nbsp;них повторили операцию</p></div>
+      </div>
+
+      <div class="alt" style="display: flex; flex-direction: column; background: #F5F8FA; border-radius: 28px; padding: 22px 22px 20px; position: relative;"><a href="case-help.dc.html" aria-label="Открыть кейс" style="position: absolute; inset: 0; z-index: 2; border-radius: inherit;"></a>
+        <span style="display: flex; align-items: center; gap: 10px;"><img src="logos/yookassa.svg" alt="ЮKassa" style="height: 16px; width: auto; display: block;"><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73;">2025–2026</span></span>
+        <span class="altarw" style="position: absolute; top: 22px; right: 22px; width: 34px; height: 34px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" style="display: block;"><path d="M4.4 11.6 11.6 4.4" fill="none" stroke-width="1.6" stroke-linecap="round"></path><path d="M6.4 4.4H11.6V9.6" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <div class="alttags" style="display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 2px; font-family: 'Gilroy', sans-serif; font-size: 12px;"><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">B2B</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">Redesign</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">Content</span></div>
+        <h3 style="margin: 20px 0 0; font-family: 'Gilroy', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em;">Редизайн главной страницы помощи</h3>
+        <p style="margin: 12px 0 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">3-я по&nbsp;посещаемости страница сервиса: новая структура, поиск и&nbsp;продуктовые карточки</p><div style="margin-top: 40px; display: flex; flex-direction: column; gap: 12px;"><p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: 15px; line-height: 1.45; font-weight: 700; letter-spacing: -0.01em;">3–4% CTR по&nbsp;продуктовым карточкам</p><p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: 15px; line-height: 1.45; font-weight: 700; letter-spacing: -0.01em;">+1–2 п.п. конверсия среди новых пользователей</p></div>
+      </div>
+
+      <div class="alt" style="display: flex; flex-direction: column; background: #F5F8FA; border-radius: 28px; padding: 22px 22px 20px; position: relative;"><a href="case-contactme.dc.html" aria-label="Открыть кейс" style="position: absolute; inset: 0; z-index: 2; border-radius: inherit;"></a>
+        <span style="display: flex; align-items: center; gap: 10px;"><img src="logos/wazzup.svg" alt="Wazzup" style="height: 12px; width: auto; display: block;"><span style="font-family: 'Gilroy', sans-serif; font-size: 13px; color: #6e6e73;">2021–2022</span></span>
+        <span class="altarw" style="position: absolute; top: 22px; right: 22px; width: 34px; height: 34px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" style="display: block;"><path d="M4.4 11.6 11.6 4.4" fill="none" stroke-width="1.6" stroke-linecap="round"></path><path d="M6.4 4.4H11.6V9.6" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <div class="alttags" style="display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 2px; font-family: 'Gilroy', sans-serif; font-size: 12px;"><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">B2C</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">Growth</span><span style="padding: 5px 11px; background: #E8EDF2; border-radius: 100px;">New product</span></div>
+        <h3 style="margin: 20px 0 0; font-family: 'Gilroy', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em;">Конструктор мини-сайтов</h3>
+        <p style="margin: 12px 0 0; font-size: 14px; line-height: 1.5; color: #6e6e73;">Внутренний стартап: кастомизация, витрина и&nbsp;корзина для малого бизнеса без сайта</p><div style="margin-top: 40px; display: flex; flex-direction: column; gap: 12px;"><p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: 15px; line-height: 1.45; font-weight: 700; letter-spacing: -0.01em;">Топ-3 сервис вошёл в&nbsp;тройку сегмента за&nbsp;5 месяцев</p></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about" style="padding: 0 0 clamp(48px, 7vw, 80px);">
+    <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(28px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Обо мне</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: clamp(20px, 3vw, 36px); margin-top: clamp(16px, 2.5vw, 24px); align-items: stretch;">
+      
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.5vw, 26px); justify-content: center;">
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px; line-height: 1.6; color: #6e6e73;">
+          <p style="margin: 0; font-size: 18px"><span style="color: rgb(17, 18, 20); font-weight: 600; font-size: 18px">Продуктовый дизайнер с 5+ годами в B2B/B2C</span> — финтех, SaaS, инструменты для бизнеса (web, mobile).</p>
+          <p style="margin: 0; font-size: 18px">Веду полный цикл: от исследования и проверки гипотез до спецификаций и авторского надзора. <br>Опираюсь на пользовательские исследования и продуктовые метрики, а не только на вкус.</p>
+          <p style="margin: 0; font-size: 18px">Использую AI-инструменты для ускорения ресёрча и рутинных задач.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="https://t.me/Acdvlr" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; background: #F5F8FA; color: #111214; border-radius: 12px; text-decoration: none; font-size: clamp(15px, 1.7vw, 17px); font-weight: 600;" style-hover="background: #111214; color: #ffffff;"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" style="flex: none;"><path d="M21.94 4.6 18.9 19.2c-.23 1.02-.84 1.27-1.7.79l-4.7-3.47-2.27 2.19c-.25.25-.46.46-.95.46l.34-4.8 8.73-7.9c.38-.34-.08-.53-.59-.19L6.98 13.1 2.34 11.6c-1.01-.31-1.03-1 .21-1.49l18.14-7c.84-.31 1.58.19 1.25 1.49z"></path></svg>@Acdvlr</a>
+          <a href="mailto:amiranpolyanskiy@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; background: #F5F8FA; color: #111214; border-radius: 12px; text-decoration: none; font-size: clamp(15px, 1.7vw, 17px); font-weight: 600;" style-hover="background: #111214; color: #ffffff;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect><path d="m3.2 6.5 8.8 6.2 8.8-6.2"></path></svg>amiranpolyanskiy@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" style="padding: clamp(32px, 5vw, 48px) 0 clamp(48px, 7vw, 72px);">
+    <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(28px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Карьерный трек</h2>
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: clamp(16px, 2.5vw, 24px);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 8px 24px; align-items: center; padding: clamp(18px, 2.4vw, 26px); background: #F5F8FA; border-radius: 14px">
+        <a href="https://yookassa.ru/" target="_blank" rel="noopener" class="lnk" style="display: flex; align-items: center; gap: 12px; width: fit-content"><img src="logos/yoomoney.svg" alt="ЮMoney" style="height: 28px; width: auto; display: block; flex: none;"><span style="display: inline-flex; align-items: center; gap: 7px; font-family: 'Gilroy', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; line-height: 1">ЮMoney<span class="arw"><svg viewBox="0 0 16 16" width="0.7em" height="0.7em" aria-hidden="true"><path d="M3.6 12.4 12.4 3.6"></path><path d="M6.1 3.6H12.4V9.9"></path></svg></span></span></a>
+        <div style="display: flex; align-items: flex-end; font-size: 15px">Senior Product Designer</div>
+        <div style="display: flex; align-items: flex-end; font-family: 'Gilroy', sans-serif; font-size: 14px; line-height: 1.5; color: #6e6e73">апр 2025 — н.в. · 1 год 5 мес</div>
+        <div style="font-size: 14px; line-height: 1.5; color: #6e6e73;">Личный кабинет, эквайринг, чеки, кассовая платформа, внутренние инструменты</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 8px 24px; align-items: center; padding: clamp(18px, 2.4vw, 26px); background: #F5F8FA; border-radius: 14px">
+        <a href="https://www.hostmeapp.ru/" target="_blank" rel="noopener" class="lnk" style="display: flex; align-items: center; gap: 12px; width: fit-content"><img src="logos/hostme-icon.svg" alt="Hostme" style="height: 28px; width: auto; display: block; flex: none;"><span style="display: inline-flex; align-items: center; gap: 7px; font-family: 'Gilroy', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; line-height: 1">Hostme<span class="arw"><svg viewBox="0 0 16 16" width="0.7em" height="0.7em" aria-hidden="true"><path d="M3.6 12.4 12.4 3.6"></path><path d="M6.1 3.6H12.4V9.9"></path></svg></span></span></a>
+        
+        <div style="display: flex; align-items: flex-end; font-size: 15px">Product Designer</div>
+        <div style="display: flex; align-items: flex-end; font-family: 'Gilroy', sans-serif; font-size: 14px; line-height: 1.5; color: #6e6e73">янв 2022 — апр 2025 · 3 года 4 мес</div>
+        <div style="font-size: 14px; line-height: 1.5; color: #6e6e73;">Полный редизайн и дизайн-система</div>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 8px 24px; align-items: center; padding: clamp(18px, 2.4vw, 26px); background: #F5F8FA; border-radius: 14px">
+        <a href="https://wazzup24.ru/" target="_blank" rel="noopener" class="lnk" style="display: flex; align-items: center; gap: 12px; width: fit-content"><img src="logos/wazzup-icon.svg" alt="Wazzup" style="height: 28px; width: auto; display: block; flex: none;"><span style="display: inline-flex; align-items: center; gap: 7px; font-family: 'Gilroy', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; line-height: 1">Wazzup<span class="arw"><svg viewBox="0 0 16 16" width="0.7em" height="0.7em" aria-hidden="true"><path d="M3.6 12.4 12.4 3.6"></path><path d="M6.1 3.6H12.4V9.9"></path></svg></span></span></a>
+        <div style="display: flex; align-items: flex-end; font-size: 15px">Product Designer</div>
+        <div style="display: flex; align-items: flex-end; font-family: 'Gilroy', sans-serif; font-size: 14px; line-height: 1.5; color: #6e6e73; flex-wrap: nowrap">июл 2021 — янв 2022 · 7 мес</div>
+        <div style="font-size: 14px; line-height: 1.5; color: #6e6e73;">Конструктор мини-сайтов Contact me</div>
+      </div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 8px 24px; align-items: center; padding: clamp(18px, 2.4vw, 26px); background: #F5F8FA; border-radius: 14px">
+        <a href="https://napoleonit.ru/" target="_blank" rel="noopener" class="lnk" style="display: flex; align-items: center; gap: 12px; width: fit-content"><img src="logos/napoleon-icon.svg" alt="Napoleon IT" style="height: 28px; width: auto; display: block; flex: none;"><span style="display: inline-flex; align-items: center; gap: 7px; font-family: 'Gilroy', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; line-height: 1">Napoleon IT<span class="arw"><svg viewBox="0 0 16 16" width="0.7em" height="0.7em" aria-hidden="true"><path d="M3.6 12.4 12.4 3.6"></path><path d="M6.1 3.6H12.4V9.9"></path></svg></span></span></a>
+        <div style="display: flex; align-items: flex-end; font-size: 15px">Designer</div>
+        <div style="display: flex; align-items: flex-end; font-family: 'Gilroy', sans-serif; font-size: 14px; line-height: 1.5; color: #6e6e73">мар 2021 — июл 2021 · 5 мес</div>
+        <div style="font-size: 14px; line-height: 1.5; color: #6e6e73;">Лендинги, графика, презентации</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: none; padding: clamp(24px, 4vw, 40px) 0 clamp(48px, 7vw, 72px);">
+    <blockquote style="margin: 0; padding: 0">
+      <p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(20px, 2.9vw, 34px); line-height: 1.28; font-weight: 600; letter-spacing: -0.02em; color: #111214; width: 100%">Самые дорогие проблемы в продукте — те, которые никто не замечает. Люди адаптируются к неудобной системе и перестают видеть, что она неудобна. Моя работа — заметить это раньше, чем пользователь смирится.</p>
+    </blockquote>
+  </section>
+
+  <section id="skills" style="padding: 0 0 clamp(48px, 7vw, 72px);">
+    <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(28px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Навыки</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: clamp(12px, 2vw, 20px); margin-top: clamp(16px, 2.5vw, 24px);">
+      <div style="background: #F5F8FA; border-radius: 14px; padding: 16px;">
+        <div style="font-family: 'Gilroy', sans-serif; font-size: 12px; color: #6e6e73; margin-bottom: 10px;">01</div>
+        <h3 style="margin: 0 0 12px; font-family: 'Gilroy', sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.015em; color: #111214">Исследования</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6e6e73;">Глубинные интервью, юзабилити-тесты, немодерируемое тестирование, выездные исследования, аудит обращений в поддержку и NPS, JTBD, конкурентный анализ</p>
+      </div>
+      <div style="background: #F5F8FA; border-radius: 14px; padding: 16px;">
+        <div style="font-family: 'Gilroy', sans-serif; font-size: 12px; color: #6e6e73; margin-bottom: 10px;">02</div>
+        <h3 style="margin: 0 0 12px; font-family: 'Gilroy', sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.015em;">Дизайн-системы</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6e6e73;">Построение с нуля, токены (Figma Tokens), атомарная структура, тёмная тема, документация, синхронизация с фронтендом</p>
+      </div>
+      <div style="background: #F5F8FA; border-radius: 14px; padding: 16px;">
+        <div style="font-family: 'Gilroy', sans-serif; font-size: 12px; color: #6e6e73; margin-bottom: 10px;">03</div>
+        <h3 style="margin: 0 0 12px; font-family: 'Gilroy', sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.015em;">Проектирование</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6e6e73;">Сквозные пользовательские сценарии, edge cases, интерактивные прототипы, спецификации для разработки, работа с легаси-ограничениями</p>
+      </div>
+      <div style="background: #F5F8FA; border-radius: 14px; padding: 16px;">
+        <div style="font-family: 'Gilroy', sans-serif; font-size: 12px; color: #6e6e73; margin-bottom: 10px;">04</div>
+        <h3 style="margin: 0 0 12px; font-family: 'Gilroy', sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.015em;">Работа с данными</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6e6e73;">Постановка метрик успеха, A/B-тесты, фичефлаги и поэтапная раскатка, интерпретация NPS</p>
+      </div>
+      <div style="background: #F5F8FA; border-radius: 14px; padding: 16px;">
+        <div style="font-family: 'Gilroy', sans-serif; font-size: 12px; color: #6e6e73; margin-bottom: 10px;">05</div>
+        <h3 style="margin: 0 0 12px; font-family: 'Gilroy', sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.015em;">Работа с командами</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6e6e73;">Кросс-командные проекты, защита решений, спеки и синхронизация с разработкой, работа с редакторами и исследователями, сбор инсайтов через поддержку</p>
+      </div>
+      <div style="background: #F5F8FA; border-radius: 14px; padding: 16px;">
+        <div style="font-family: 'Gilroy', sans-serif; font-size: 12px; color: #6e6e73; margin-bottom: 10px;">06</div>
+        <h3 style="margin: 0 0 12px; font-family: 'Gilroy', sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.015em;">Инструменты</h3>
+        <p style="margin: 0 0 8px; font-size: 14px; line-height: 1.6; color: #6e6e73;">Figma (Components, Variables, Auto-layout, Variants), Jira, Confluence, Notion, FigJam</p>
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6e6e73;">AI: Claude и ChatGPT для ресёрча, структурирования и автоматизации рутинных задач<br></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" style="padding: 0 0 clamp(56px, 8vw, 96px);">
+    <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(28px, 5vw, 64px);">
+      <h2 style="margin: 0 0 clamp(24px, 4vw, 36px); font-family: 'Gilroy', sans-serif; font-size: clamp(28px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Открыт к новым продуктовым задачам</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="https://t.me/Acdvlr" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; background: #F5F8FA; color: #111214; border-radius: 12px; text-decoration: none; font-size: clamp(15px, 1.7vw, 17px); font-weight: 600;" style-hover="background: #111214; color: #ffffff;"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" style="flex: none;"><path d="M21.94 4.6 18.9 19.2c-.23 1.02-.84 1.27-1.7.79l-4.7-3.47-2.27 2.19c-.25.25-.46.46-.95.46l.34-4.8 8.73-7.9c.38-.34-.08-.53-.59-.19L6.98 13.1 2.34 11.6c-1.01-.31-1.03-1 .21-1.49l18.14-7c.84-.31 1.58.19 1.25 1.49z"></path></svg>@Acdvlr</a>
+        <a href="mailto:amiranpolyanskiy@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; background: #F5F8FA; color: #111214; border-radius: 12px; text-decoration: none; font-size: clamp(15px, 1.7vw, 17px); font-weight: 600;" style-hover="background: #111214; color: #ffffff;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect><path d="m3.2 6.5 8.8 6.2 8.8-6.2"></path></svg>amiranpolyanskiy@gmail.com</a>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 24px;">
+      <p style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: 12px; color: #8A8D93;">Амиран Полянский · Product / UI дизайнер · Санкт-Петербург</p>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;glassAlpha&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:100,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:2,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Стекло карточек&quot;},&quot;glassBlur&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0,&quot;min&quot;:0,&quot;max&quot;:40,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Стекло карточек&quot;},&quot;glassSaturate&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:100,&quot;min&quot;:100,&quot;max&quot;:220,&quot;step&quot;:5,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Стекло карточек&quot;},&quot;glassBorder&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0,&quot;min&quot;:0,&quot;max&quot;:20,&quot;step&quot;:0.2,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Стекло карточек&quot;},&quot;glassTint&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#F5F8FA&quot;,&quot;options&quot;:[&quot;#F5F8FA&quot;,&quot;#F0F1F3&quot;,&quot;#EEF1F6&quot;,&quot;#FFFFFF&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Стекло карточек&quot;},&quot;glassShadow&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Стекло карточек&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.sync = () => {
+      const ids = ['cases', 'experience', 'skills', 'contacts'];
+      const y = window.scrollY + 160;
+      let active = '';
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top + window.scrollY <= y) active = id;
+      }
+      document.querySelectorAll('[data-nav]').forEach(a => {
+        const on = a.getAttribute('data-nav') === active;
+        a.style.color = on ? (document.body.getAttribute('data-theme') === 'dark' ? '#f2f3f5' : '#111214') : '#8A8D93';
+      });
+    };
+    window.addEventListener('scroll', this.sync, { passive: true });
+    window.addEventListener('resize', this.sync);
+    this.sync();
+    let lastY = -1;
+    this.loop = () => {
+      const y = window.scrollY;
+      if (y !== lastY) {
+        lastY = y;
+        this.sync();
+      }
+      this.loopRaf = requestAnimationFrame(this.loop);
+    };
+    this.loop();
+    this.applyGlass();
+    this.initReveal();
+    this.initTheme();
+    this.jumpToHash();
+  }
+  componentDidUpdate() { this.applyGlass(); }
+  initReveal() {
+    const sel = '#cases > h2, #cases .alt, #about > h2, #about > p, #about > div > *, #experience > h2, #experience > div > *, #skills > h2, #skills > div > *, #contacts > div, #contacts > p, #top > *';
+    const nodes = Array.from(document.querySelectorAll(sel));
+    if (!nodes.length) { setTimeout(() => this.initReveal(), 150); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const peers = Array.from(el.parentElement.children).filter(n => n.classList.contains('rv'));
+        el.style.transitionDelay = Math.min(peers.indexOf(el), 6) * 70 + 'ms';
+        el.classList.add('in');
+        io.unobserve(el);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 22% 0px' });
+    nodes.forEach(n => {
+      if (n.classList.contains('rv')) return;
+      const r = n.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.1) { n.classList.add('rv', 'in'); return; }
+      n.classList.add('rv');
+      io.observe(n);
+    });
+    this.revealIO = io;
+  }
+  initTheme() {
+    document.body.setAttribute('data-theme', 'dark');
+    document.querySelectorAll('#cases img[src*="logos/"]').forEach(img => {
+      const base = img.getAttribute('src').replace('-dark.svg', '.svg');
+      if (base.includes('wazzup')) return;
+      img.setAttribute('src', base.replace('.svg', '-dark.svg'));
+    });
+  }
+  applyGlass() {
+    const p = this.props || {};
+    const hex = String(p.glassTint || '#F5F8FA').replace('#', '');
+    const h = hex.length === 3 ? hex.split('').map(c => c + c).join('') : hex;
+    const rgb = [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16) || 0).join(',');
+    const r = document.documentElement.style;
+    r.setProperty('--glass-rgb', rgb);
+    r.setProperty('--glass-a', String((p.glassAlpha ?? 100) / 100));
+    r.setProperty('--glass-blur', (p.glassBlur ?? 0) + 'px');
+    r.setProperty('--glass-sat', (p.glassSaturate ?? 100) + '%');
+    r.setProperty('--glass-border', String((p.glassBorder ?? 0) / 100));
+    r.setProperty('--glass-shadow', (p.glassShadow ?? false) ? '0 1px 2px rgba(16,20,40,0.03), 0 18px 44px -28px rgba(16,20,40,0.16)' : 'none');
+  }
+  jumpToHash() {
+    const id = (location.hash || '').slice(1);
+    if (!id) return;
+    let tries = 0;
+    const go = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior: 'auto' });
+        this.sync();
+      }
+      if (++tries < 12) this.raf = requestAnimationFrame(go);
+    };
+    go();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.sync);
+    window.removeEventListener('resize', this.sync);
+    if (this.onMove) window.removeEventListener('pointermove', this.onMove);
+    if (this.raf) cancelAnimationFrame(this.raf);
+    if (this.loopRaf) cancelAnimationFrame(this.loopRaf);
+    if (this.revealIO) this.revealIO.disconnect();
+  }
+}
+</script>
+</body>
+</html>

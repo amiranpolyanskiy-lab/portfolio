@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- seo:start -->
+<title>Продукт «Подписки» · Амиран Полянский</title>
+<meta name="description" content="Рекуррентные платежи с триальным периодом: оформление, управление и отмена подписки.">
+<link rel="canonical" href="https://amiranpolyanskiu-ux-ui.ru/case-subscriptions.dc.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Амиран Полянский">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Продукт «Подписки» · Амиран Полянский">
+<meta property="og:description" content="Рекуррентные платежи с триальным периодом: оформление, управление и отмена подписки.">
+<meta property="og:url" content="https://amiranpolyanskiu-ux-ui.ru/case-subscriptions.dc.html">
+<meta property="og:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Продукт «Подписки» · Амиран Полянский">
+<meta name="twitter:description" content="Рекуррентные платежи с триальным периодом: оформление, управление и отмена подписки.">
+<meta name="twitter:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<!-- seo:end -->
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Semibold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Extrabold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Heavy.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+  * { box-sizing: border-box; text-wrap: pretty; }
+  summary::-webkit-details-marker { display: none; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAFAF8; color: #111214; font-family: 'Gilroy', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #2c5cf0; }
+  nav a { transition: color 0.15s ease, border-color 0.15s ease; }
+  nav a:hover { color: #2c5cf0; border-bottom-color: #2c5cf0; }
+  .lnk .arw { display: inline-block; transition: transform 0.18s ease; }
+  .lnk:hover .arw { transform: translate(3px, -3px); }
+  .lnk:hover { color: #2c5cf0; }
+  .rv { opacity: 0; transform: translateY(26px); will-change: opacity, transform; transition: opacity 1.4s cubic-bezier(0.16,0.68,0.24,1), transform 1.4s cubic-bezier(0.16,0.68,0.24,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1 !important; transform: none !important; transition: none !important; } }
+  .alt { transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1); }
+  .alt:hover { transform: translateY(-4px); }
+  .altarw { transition: background-color 0.22s ease; }
+  .altarw svg path { fill: none; stroke: #111214; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.22s ease; }
+  .alt:hover .altarw { background: #111214 !important; }
+  .alt:hover .altarw svg path { stroke: #ffffff !important; }
+  .navbtn { transition: background-color 0.2s ease, color 0.2s ease; }
+  .navbtn:hover { background: #111214 !important; color: #ffffff !important; }
+  .backbtn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px 8px 12px; border-radius: 100px; background: #efefef; color: #111214; font-size: 14px; font-weight: 600; transition: background-color 0.2s ease, color 0.2s ease; }
+  .backbtn svg { display: block; }
+  .backbtn svg path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .backbtn:hover { background: #111214 !important; color: #ffffff !important; }
+  body[data-theme="dark"] { background: #0d0e10; color: #f2f3f5; }
+  [data-theme="dark"] header::before { background: rgba(13,14,16,0.55) !important; }
+  [data-theme="dark"] [style*="rgb(110, 110, 115)"] { color: #9ba0a8 !important; }
+  [data-theme="dark"] [style*="color: rgb(17, 18, 20)"] { color: #f2f3f5 !important; }
+  [data-theme="dark"] [style*="rgb(138, 141, 147)"] { color: #8b9099 !important; }
+  [data-theme="dark"] [style*="rgb(61, 61, 61)"] { color: #b6bac1 !important; }
+  [data-theme="dark"] [style*="rgb(245, 248, 250)"] { background: #17181b !important; }
+  [data-theme="dark"] [style*="rgb(232, 237, 242)"] { background: #26282d !important; }
+  [data-theme="dark"] [style*="rgb(230, 235, 255)"] { background: #26282d !important; color: #b6bac1 !important; }
+  [data-theme="dark"] [style*="repeating-linear-gradient"] { background: repeating-linear-gradient(135deg, #1d1e21 0 8px, #232428 8px 16px) !important; }
+  [data-theme="dark"] [style*="rgb(250, 250, 248)"] { background: #26282d !important; color: #b6bac1 !important; }
+  [data-theme="dark"] .altarw { background: #26282d !important; }
+  [data-theme="dark"] .altarw svg path { stroke: #f2f3f5; }
+  [data-theme="dark"] .alt:hover .altarw { background: #f2f3f5 !important; }
+  [data-theme="dark"] .alt:hover .altarw svg path { stroke: #111214 !important; }
+  [data-theme="dark"] .navbtn, [data-theme="dark"] .backbtn { background: rgba(255,255,255,0.1) !important; color: #f2f3f5 !important; }
+  [data-theme="dark"] .navbtn:hover, [data-theme="dark"] .backbtn:hover { background: #f2f3f5 !important; color: #111214 !important; }
+  [data-theme="dark"] nav a:hover { color: #f2f3f5 !important; }
+</style>
+</helmet>
+
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px);">
+
+  <header style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 0;" style-before="content: ''; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 100vw; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); z-index: 0;">
+    <a href="index.html#cases" class="backbtn" style="position: relative; z-index: 1;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M12.4 8H3.6"></path><path d="M7.4 3.6 3 8l4.4 4.4"></path></svg>Все кейсы</a>
+    <nav style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(16px, 2.4vw, 26px); font-size: 15px;">
+      <a href="index.html#cases" style="color: #8A8D93;">Кейсы</a>
+      <a href="index.html#experience" style="color: #8A8D93;">Опыт</a>
+      <a href="index.html#skills" style="color: #8A8D93;">Навыки</a>
+      <a href="index.html#contacts" class="navbtn" style="display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 100px; background: #efefef; color: #111214;">Контакты</a>
+    </nav>
+  </header>
+
+  <section style="padding: clamp(40px, 7vw, 80px) 0 clamp(28px, 4vw, 44px);">
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; font-size: 12px; font-weight: 500;">
+      <span style="padding: 5px 11px; background: #E6EBFF; color: #2c5cf0; border-radius: 100px;">B2B</span>
+      <span style="padding: 5px 11px; background: #E6EBFF; color: #2c5cf0; border-radius: 100px;">Fintech</span>
+      <span style="padding: 5px 11px; background: #E6EBFF; color: #2c5cf0; border-radius: 100px;">New product</span>
+      <span style="padding: 5px 3px; color: #8A8D93;">2025–2026</span>
+    </div>
+    <h1 style="margin: 0 0 clamp(20px, 3vw, 28px); font-size: clamp(34px, 6.4vw, 76px); line-height: 0.98; font-weight: 800; letter-spacing: -0.04em;">Продукт «Подписки»</h1>
+    <p style="margin: 0; font-size: clamp(17px, 2vw, 21px); line-height: 1.4; color: #8A8D93;">Рекуррентные платежи с триальным периодом</p>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">В чём суть</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">ЮKassa принимает платежи для бизнеса. До этого мерчант мог брать с покупателя разовые платежи, а регулярные списания приходилось собирать самому через API — писать логику расписаний, повторных попыток и отмен. «Подписки» — готовый продукт, который закрывает это без разработки на стороне мерчанта.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(16px, 2.5vw, 24px);">
+      <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h2 style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Задача</h2>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5;">
+          <li>Еженедельные, ежемесячные и годовые подписки</li>
+          <li>Триальный период</li>
+          <li>Сквозной сценарий покупателя: оформление → активный период → выход</li>
+          <li>Запуск на API с последующей передачей в ЛК</li>
+        </ul>
+      </div>
+      <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h2 style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Моя роль</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55;">Проектировал сценарии. Сбор требований и интервью — вместе с исследователем.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Контекст</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">Мерчанту нужно было запускать подписочные продукты, не разрабатывая платёжную логику с нуля. Выделил ключевые сегменты для подписочной модели в России: НКО и благотворительность (крупнейший по доле), EdTech, телеком и интернет-провайдеры, фитнес, медиа и СМИ, МФО.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Механика</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">Мерчант настраивает подписку: периодичность, цена, длительность триала, повторные попытки при неудачном списании. Дальше платформа списывает деньги по расписанию сама: покупатель заранее получает уведомление о предстоящем списании, чек — после каждого платежа, и может отменить подписку в любой момент.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Что сделал</h2>
+      <ul style="margin: 0; padding-left: 20px; grid-column: span 2; display: flex; flex-direction: column; gap: 12px; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">
+        <li>Собрал требования: интервью с мерчантами и разбор 6 конкурентов</li>
+        <li>Приоритизировал функциональность — что в первый релиз, что позже</li>
+        <li>Спроектировал сквозной сценарий покупателя от оформления до отмены</li>
+        <li>Прописал JTBD отдельно для мерчанта и для покупателя</li>
+        <li>Разобрал сбойные сценарии: неудачное списание, исчерпание попыток, замена карты</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding: clamp(28px, 5vw, 56px) 0; container-type: inline-size;">
+    <div style="background: #F5F8FA; color: #f2f3f5; border-radius: clamp(16px, 2.1818cqw, 24px); padding: clamp(18px, 3.6364cqw, 40px); min-height: clamp(150px, 17.2727cqw, 190px); display: flex; align-items: center; flex-wrap: wrap; gap: clamp(20px, 2.9091cqw, 32px);">
+      <div style="flex: 1 1 320px; display: flex; align-items: center; gap: clamp(14px, 2.1818cqw, 24px);">
+        <div style="min-height: clamp(56px, 10cqw, 110px); display: flex; align-items: flex-end; flex-shrink: 0;"><span style="font-size: clamp(40px, 8.1818cqw, 90px); font-weight: 800; line-height: 1; white-space: nowrap;">17</span><div style="width: clamp(15px, 2.9091cqw, 32px); height: clamp(29px, 5.6364cqw, 62px); display: flex; align-items: center; justify-content: center; padding-bottom: clamp(6px, 1.1818cqw, 13px); flex-shrink: 0;"><span style="font-size: clamp(20px, 3.6364cqw, 40px); font-weight: 800; line-height: 1;">%</span></div></div>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; flex: 1 1 auto;">пользователей API, выставляющих счета, использовали подписочную модель за первый месяц</p>
+      </div>
+      <div style="flex: 1 1 300px; display: flex; align-items: center; gap: clamp(14px, 2.1818cqw, 24px);">
+        <div style="min-height: clamp(56px, 10cqw, 110px); display: flex; align-items: flex-end; flex-shrink: 0;"><span style="font-size: clamp(40px, 8.1818cqw, 90px); font-weight: 800; line-height: 1; white-space: nowrap;">60</span><div style="width: clamp(15px, 2.9091cqw, 32px); height: clamp(29px, 5.6364cqw, 62px); display: flex; align-items: center; justify-content: center; padding-bottom: clamp(6px, 1.1818cqw, 13px); flex-shrink: 0;"><span style="font-size: clamp(20px, 3.6364cqw, 40px); font-weight: 800; line-height: 1;">%</span></div></div>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; flex: 0 1 auto; width: max(140px, 18.8182cqw);">из них повторили операцию</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Подход</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: clamp(12px, 2vw, 18px); margin-top: clamp(16px, 2.5vw, 24px);">
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <div style="flex: 0 1 auto; max-width: 22em;">
+          <div style="font-size: 13px; font-weight: 500; color: #8A8D93; margin-bottom: 8px;">Шаг 1</div>
+          <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Исследования</h3>
+        </div>
+        <div style="grid-column: span 2;">
+          <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Глубинные интервью с 10 мерчантами (6 Small, 4 Middle), у всех рекурренты уже настроены через API. Ключевые наблюдения:</p>
+          <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.6; color: #3d3d3d;">
+            <li>Внутри масс-сегмента обнаружились две подгруппы по техническим компетенциям: разработчики сайтов и ботов с опытом интеграций и владельцы микро-бизнеса, привлекающие специалистов. Ручная настройка привлекательна для обеих, но по разным причинам: первым — консолидация настроек в одном месте, вторым — контроль за платежами и экономия на подрядчике</li>
+            <li>Middle-сегмент уже использует несколько платёжных шлюзов — для них гибкость API приоритетнее готовых настроек в ЛК</li>
+            <li>Попытки списания после неудачного платежа настроены у всех мерчантов, хотя у конкурентов это не базовая функция</li>
+            <li>Название подписки формально не базовая настройка, но мерчанты с несколькими тарифами активно его используют</li>
+            <li>Уведомления о предстоящем платеже нужны не всем: там, где есть эмоциональные или социальные драйверы (доступ к экспертному каналу, благотворительность), мерчанты предпочитают оповещать; в сугубо функциональных продуктах наоборот, считая, что это снижает конверсию</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Гипотезы по итогам интервью</h3>
+        <ul style="margin: 0; padding-left: 20px; grid-column: span 2; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.6; color: #3d3d3d;">
+          <li>Масс-сегмент мотивирован перейти на ручную настройку сильнее, чем Middle: для Middle это означает пересмотр бизнес-процессов</li>
+          <li>Для новых мерчантов, только подключающих ЮKassa, ручная настройка — потенциальное УТП</li>
+          <li>Для Middle гибкое API важнее ручной настройки рекуррентов</li>
+          <li>Настройка повторной попытки списания должна быть базовой, а не продвинутой</li>
+          <li>Уведомления нужны не всем типам бизнеса — делать опциональными</li>
+        </ul>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Приоритеты из интервью</h3>
+        <div style="grid-column: span 2;">
+          <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Ранжировал функциональность по тому, насколько часто и остро её называли мерчанты.</p>
+          <ol style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.6; color: #3d3d3d;">
+            <li>Разовый и рекуррентный платёж, пробный период, выбор или ввод суммы, комментарий</li>
+            <li>Контактные данные для отправки чека и возможность пропустить ввод почты — для самозанятых</li>
+            <li>Уведомление о предстоящем платеже</li>
+            <li>Выбор тарифа, пакета, вида платежа и срока подписки; уведомление о неудачном платеже</li>
+            <li>Выбор способа оплаты, повторное списание, отключение доступа после неудачной попытки, отписка руками пользователя (требование регулятора)</li>
+          </ol>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <div style="flex: 0 1 auto; max-width: 22em;">
+          <div style="font-size: 13px; font-weight: 500; color: #8A8D93; margin-bottom: 8px;">Шаг 2</div>
+          <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Бенчмарки</h3>
+        </div>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Проанализировал 6 сервисов с ручной настройкой регулярных платежей из ЛК — CloudPayments, RoboKassa, Stripe, Loop, Продамус, Аинокс. У самих платёжных провайдеров функционал представлен слабо, но рынок насыщен вспомогательными сервисами под конкретные ниши (благотворительность, телеграм-каналы, обучающие курсы).</p>
+        <div style="grid-column: span 2;">
+          <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Классифицировал весь функционал по четырём уровням:</p>
+          <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.6; color: #3d3d3d;">
+            <li><strong style="font-weight: 600;">База</strong> (есть у 4–6 из 6): даты начала и окончания, периодичность, количество списаний, название и цена товара, количество единиц, управление подпиской из ЛК</li>
+            <li><strong style="font-weight: 600;">База+</strong>: покупатель — поиск или создание, НДС, способ расчёта, настройка уведомлений</li>
+            <li><strong style="font-weight: 600;">Продвинутые</strong>: купоны и скидки, шаблоны и методы уведомлений, отмена подписки со стороны плательщика, скидки в зависимости от поведения</li>
+            <li><strong style="font-weight: 600;">Уникальные</strong>: выбор магазина, загрузка подписчиков списком из файла, время списания, пробный период, счёт-фактура для постоплаты вручную</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <div style="flex: 0 1 auto; max-width: 22em;">
+          <div style="font-size: 13px; font-weight: 500; color: #8A8D93; margin-bottom: 8px;">Шаг 3</div>
+          <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Приоритизация</h3>
+        </div>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Итоговый список фич собрал из трёх источников: база и база+ по конкурентам; то, что не базовое у конкурентов, но настроено у всех мерчантов (попытка списания после неудачного платежа); то, что не базовое, но есть у коннекторов и полезно для разных тарифов (название подписки).</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <div style="flex: 0 1 auto; max-width: 22em;">
+          <div style="font-size: 13px; font-weight: 500; color: #8A8D93; margin-bottom: 8px;">Шаг 4</div>
+          <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Проектирование</h3>
+        </div>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">JTBD-сценарии отдельно для мерчанта (запуск, управление, доверие) и покупателя (оформление, активный период, контроль/выход). Сквозной сценарий покупателя: оформление (прозрачные условия списания, триал, привычный способ оплаты) → активный период (напоминания перед крупным списанием, чек после каждого платежа) → контроль и выход (быстрая отмена без препятствий, обновление платёжных данных без потери подписки, обзор всех подписок разом).</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Метрики</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Фин-модель строилась не на дополнительной комиссии, а на приросте числа мерчантов — тарификация осталась транзакционной. Поэтому ключевая метрика — доля мерчантов, начавших использовать подписочную модель, и повторное использование как индикатор того, что механика прижилась.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Сбойные сценарии</h3>
+        <div style="grid-column: span 2; display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <div style="font-size: 15px; font-weight: 600; margin-bottom: 8px;">Неудачное списание</div>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">самый частый: карта заблокирована, перевыпущена или без средств. Настройку повторных попыток заложил в базовый уровень, а не в продвинутый, опираясь на данные интервью.</p>
+          </div>
+          <div>
+            <div style="font-size: 15px; font-weight: 600; margin-bottom: 8px;">Поведение после исчерпания попыток</div>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">на API-этапе управление отдали мерчанту: платформа отправляет webhook о событии, решение об отключении доступа принимает система мерчанта. С реализацией кассовой части планируется перенести логику статусов на сторону платформы.</p>
+          </div>
+          <div>
+            <div style="font-size: 15px; font-weight: 600; margin-bottom: 8px;">Отписка руками пользователя</div>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">требование регулятора: покупатель должен иметь возможность отменить подписку самостоятельно, без звонков и удерживающих экранов. Заложил как обязательный элемент.</p>
+          </div>
+          <div>
+            <div style="font-size: 15px; font-weight: 600; margin-bottom: 8px;">Обновление платёжных данных без потери подписки</div>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">перевыпущенная карта не должна означать отмену подписки.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 clamp(32px, 5vw, 56px);">
+    <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Сценарий подписки</h2>
+    <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px); margin-top: clamp(16px, 2.5vw, 24px);">
+      <details data-research="">
+        <summary style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(18px, 3vw, 32px); align-items: center; list-style: none; cursor: pointer;">
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: clamp(18px, 2.5vw, 24px); height: 100%">
+            <p style="margin: 0; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55; color: #111214; height: 100%">Финальное решение — сквозной сценарий покупателя: оформление подписки с триалом, подтверждение и управление из письма. Сейчас реализована только часть с подключением через API — решение для личного кабинета в проработке.</p>
+            <span class="navbtn" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 100px; background: #FAFAF8; color: #111214; font-size: 14px; font-weight: 600;">
+              <span data-lbl="">Смотреть полностью</span>
+              <svg data-ic="" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" style="display: block; transition: transform 0.2s ease;"><path d="M3.6 6 8 10.4 12.4 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
+          </div>
+          <div style="border-radius: 12px; overflow: hidden; background: #E6EBFF;">
+            <img src="photo/subs-cover.png" alt="Подписка: календарь с отметкой и переключателем" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover;">
+          </div>
+        </summary>
+
+        <div style="display: flex; flex-direction: column; gap: clamp(12px, 2vw, 16px); padding-top: clamp(22px, 3vw, 30px);">
+
+          <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 28px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+            <div style="max-width: 720px;">
+              <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #6d86ea;">ШАГ 01</div>
+              <h3 style="margin: 10px 0 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Оформление</h3>
+              <p style="margin: 12px 0 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">Условия списаний собраны на одном экране до оплаты: срок триала, периодичность, срок действия подписки и магазин. Кнопка показывает сумму к оплате сейчас — на триале это 0 ₽, чтобы покупатель не ждал списания. Почта нужна для чека и управления подпиской.</p>
+            </div>
+            <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+              <img src="photo/subs-flow-1.png" alt="Экран оформления подписки: детали списаний, почта и согласия" style="display: block; width: 100%; height: auto;">
+            </figure>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 28px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+            <div style="max-width: 720px;">
+              <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #6d86ea;">ШАГ 02</div>
+              <h3 style="margin: 10px 0 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Подтверждение</h3>
+              <p style="margin: 12px 0 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">На экране&nbsp;<span style="white-space: normal;">успеха&nbsp;</span>главное — дата следующего списания: она отвечает на основной страх покупателя. Вход в управление подпиской доступен сразу, без поиска в письме.</p>
+            </div>
+            <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+              <img src="photo/subs-flow-2.png" alt="Экран «Подписка оформлена» с деталями и датой следующего списания" style="display: block; width: 100%; height: auto;">
+            </figure>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 28px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+            <div style="max-width: 720px;">
+              <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #6d86ea;">ШАГ 03</div>
+              <h3 style="margin: 10px 0 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Управление подпиской</h3>
+              <p style="margin: 12px 0 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">Страница управления — единая точка контроля: статус, цена, периодичность, срок и почта, на которую уходят чеки и напоминания. Здесь сценарий расходится на две ветки: отмена подписки и смена почты.</p>
+            </div>
+            <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+              <img src="photo/subs-flow-3.png" alt="Страница управления подпиской: детали и два действия" style="display: block; width: 100%; height: auto;">
+            </figure>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #E6EBFF; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+            <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Развилка</div>
+            <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.5; color: #111214;">Дальше — две ветки из одной точки. Обе построены одинаково: подтверждающая модалка поверх страницы управления, затем финальный экран с однозначной формулировкой результата и одним выходом в магазин.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(12px, 2vw, 16px); align-items: start;">
+
+            <div style="display: flex; flex-direction: column; gap: clamp(16px, 2.2vw, 22px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+              <div>
+                <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #6d86ea;">ВЕТКА А — ШАГ 04</div>
+                <h3 style="margin: 10px 0 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Отмена подписки</h3>
+                <p style="margin: 12px 0 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">Одно подтверждение без удерживающих экранов, скидок и вопросов «почему уходите» — так честнее и не раздражает пользователя.</p>
+              </div>
+              <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+                <img src="photo/subs-flow-cancel-1.png" alt="Модальное окно подтверждения отмены подписки" style="display: block; width: 100%; height: auto;">
+              </figure>
+              <p style="margin: 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">Итог фиксируем прямым текстом: подписка отменена, списаний больше не будет. Дальше — только возврат в магазин.</p>
+              <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+                <img src="photo/subs-flow-cancel-2.png" alt="Экран «Вы отменили подписку»" style="display: block; width: 100%; height: auto;">
+              </figure>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: clamp(16px, 2.2vw, 22px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+              <div>
+                <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #6d86ea;">ВЕТКА Б — ШАГ 04</div>
+                <h3 style="margin: 10px 0 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Смена почты</h3>
+                <p style="margin: 12px 0 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">Смена контакта не должна ставить подписку под угрозу, поэтому это отдельное короткое действие. Подписка остаётся активной.</p>
+              </div>
+              <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+                <img src="photo/subs-flow-email-1.png" alt="Модальное окно смены почты" style="display: block; width: 100%; height: auto;">
+              </figure>
+              <p style="margin: 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">В финале объясняем последствие, а не просто факт: новый адрес сохранён, и все важные уведомления пойдут на него.</p>
+              <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+                <img src="photo/subs-flow-email-2.png" alt="Экран «Почта изменена»" style="display: block; width: 100%; height: auto;">
+              </figure>
+            </div>
+
+          </div>
+
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 clamp(32px, 5vw, 56px);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Ограничения</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">Запуск начали с API-части — решение продуктовое/техническое, для быстрой поставки и тестирования в одной команде с последующей передачей в команду личного кабинета.</p>
+    </div>
+  </section>
+
+  <section style="padding: 0 0 clamp(56px, 8vw, 96px);">
+    <div class="alt" style="position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; background: #F5F8FA; border-radius: 28px; padding: clamp(24px, 4vw, 44px);">
+      <a href="case-help.dc.html" aria-label="Редизайн главной страницы помощи" style="position: absolute; inset: 0; border-radius: 28px; z-index: 2;"></a>
+      <span class="altarw" style="position: absolute; top: 22px; right: 22px; width: 38px; height: 38px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.6 12.4 12.4 3.6"></path><path d="M6.1 3.6H12.4V9.9"></path></svg></span>
+      <div>
+        <div style="font-size: 13px; font-weight: 500; color: #8A8D93; margin-bottom: 8px;">Следующий кейс</div>
+        <div style="font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.025em;">Редизайн главной страницы помощи</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>class Component extends DCLogic {
+  componentDidMount() {
+    document.body.setAttribute('data-theme', 'dark');
+    this.initReveal();
+    this.initResearchToggle();
+  }
+  initResearchToggle() {
+    const list = document.querySelectorAll('[data-research]');
+    if (!list.length) { this.rtTimer = setTimeout(() => this.initResearchToggle(), 150); return; }
+    list.forEach(d => {
+      if (d.dataset.bound) return;
+      d.dataset.bound = '1';
+      d.addEventListener('toggle', () => {
+        const l = d.querySelector('[data-lbl]');
+        const ic = d.querySelector('[data-ic]');
+        if (l) l.textContent = d.open ? 'Свернуть' : 'Смотреть полностью';
+        if (ic) ic.style.transform = d.open ? 'rotate(180deg)' : 'none';
+      });
+    });
+  }
+  initReveal() {
+    const nodes = Array.from(document.querySelectorAll('section > h2, section > p, section > div, section > div > *'));
+    if (!nodes.length) { this.revealTimer = setTimeout(() => this.initReveal(), 150); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const peers = Array.from(el.parentElement.children).filter(n => n.classList.contains('rv'));
+        el.style.transitionDelay = Math.min(peers.indexOf(el), 6) * 70 + 'ms';
+        el.classList.add('in');
+        io.unobserve(el);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 22% 0px' });
+    nodes.forEach(n => {
+      if (n.classList.contains('rv') || n.closest('.rv')) return;
+      const r = n.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.1) { n.classList.add('rv', 'in'); return; }
+      n.classList.add('rv');
+      io.observe(n);
+    });
+    this.revealIO = io;
+  }
+  componentWillUnmount() {
+    if (this.revealIO) this.revealIO.disconnect();
+    clearTimeout(this.revealTimer);
+  }
+}</script>
+</body>
+</html>

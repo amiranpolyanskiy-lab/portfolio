@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- seo:start -->
+<title>Дизайн-система Hostme · Амиран Полянский</title>
+<meta name="description" content="Единая библиотека компонентов с нуля для системы управления рестораном.">
+<link rel="canonical" href="https://amiranpolyanskiu-ux-ui.ru/case-design-system.dc.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Амиран Полянский">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Дизайн-система Hostme · Амиран Полянский">
+<meta property="og:description" content="Единая библиотека компонентов с нуля для системы управления рестораном.">
+<meta property="og:url" content="https://amiranpolyanskiu-ux-ui.ru/case-design-system.dc.html">
+<meta property="og:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Дизайн-система Hostme · Амиран Полянский">
+<meta name="twitter:description" content="Единая библиотека компонентов с нуля для системы управления рестораном.">
+<meta name="twitter:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<!-- seo:end -->
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Semibold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Extrabold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Heavy.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+  * { box-sizing: border-box; text-wrap: pretty; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAFAF8; color: #111214; font-family: 'Gilroy', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #2c5cf0; }
+  nav a { transition: color 0.15s ease, border-color 0.15s ease; }
+  nav a:hover { color: #2c5cf0; border-bottom-color: #2c5cf0; }
+  .lnk .arw { display: inline-block; transition: transform 0.18s ease; }
+  .lnk:hover .arw { transform: translate(3px, -3px); }
+  .lnk:hover { color: #2c5cf0; }
+  .rv { opacity: 0; transform: translateY(26px); will-change: opacity, transform; transition: opacity 1.4s cubic-bezier(0.16,0.68,0.24,1), transform 1.4s cubic-bezier(0.16,0.68,0.24,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1 !important; transform: none !important; transition: none !important; } }
+  .alt { transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1); }
+  .alt:hover { transform: translateY(-4px); }
+  .altarw { transition: background-color 0.22s ease; }
+  .altarw svg path { fill: none; stroke: #111214; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.22s ease; }
+  .alt:hover .altarw { background: #111214 !important; }
+  .alt:hover .altarw svg path { stroke: #ffffff !important; }
+  .navbtn { transition: background-color 0.2s ease, color 0.2s ease; }
+  .navbtn:hover { background: #111214 !important; color: #ffffff !important; }
+  .backbtn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px 8px 12px; border-radius: 100px; background: #efefef; color: #111214; font-size: 14px; font-weight: 600; transition: background-color 0.2s ease, color 0.2s ease; }
+  .backbtn svg { display: block; }
+  .backbtn svg path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .backbtn:hover { background: #111214 !important; color: #ffffff !important; }
+  body[data-theme="dark"] { background: #0d0e10; color: #f2f3f5; }
+  [data-theme="dark"] header::before { background: rgba(13,14,16,0.55) !important; }
+  [data-theme="dark"] [style*="rgb(110, 110, 115)"] { color: #9ba0a8 !important; }
+  [data-theme="dark"] [style*="color: rgb(17, 18, 20)"] { color: #f2f3f5 !important; }
+  [data-theme="dark"] [style*="rgb(138, 141, 147)"] { color: #8b9099 !important; }
+  [data-theme="dark"] [style*="rgb(61, 61, 61)"] { color: #b6bac1 !important; }
+  [data-theme="dark"] [style*="rgb(245, 248, 250)"] { background: #17181b !important; }
+  [data-theme="dark"] [style*="rgb(232, 237, 242)"] { background: #26282d !important; }
+  [data-theme="dark"] [style*="rgb(230, 235, 255)"] { background: #26282d !important; color: #b6bac1 !important; }
+  [data-theme="dark"] [style*="repeating-linear-gradient"] { background: repeating-linear-gradient(135deg, #1d1e21 0 8px, #232428 8px 16px) !important; }
+  [data-theme="dark"] [style*="rgb(250, 250, 248)"] { background: #26282d !important; color: #b6bac1 !important; }
+  [data-theme="dark"] .altarw { background: #26282d !important; }
+  [data-theme="dark"] .altarw svg path { stroke: #f2f3f5; }
+  [data-theme="dark"] .alt:hover .altarw { background: #f2f3f5 !important; }
+  [data-theme="dark"] .alt:hover .altarw svg path { stroke: #111214 !important; }
+  [data-theme="dark"] .navbtn, [data-theme="dark"] .backbtn { background: rgba(255,255,255,0.1) !important; color: #f2f3f5 !important; }
+  [data-theme="dark"] .navbtn:hover, [data-theme="dark"] .backbtn:hover { background: #f2f3f5 !important; color: #111214 !important; }
+  [data-theme="dark"] nav a:hover { color: #f2f3f5 !important; }
+</style>
+</helmet>
+
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px);">
+
+  <header style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 0;" style-before="content: ''; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 100vw; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); z-index: 0;">
+    <a href="index.html#cases" class="backbtn" style="position: relative; z-index: 1;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M12.4 8H3.6"></path><path d="M7.4 3.6 3 8l4.4 4.4"></path></svg>Все кейсы</a>
+    <nav style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(16px, 2.4vw, 26px); font-size: 15px;">
+      <a href="index.html#cases" style="color: #8A8D93;">Кейсы</a>
+      <a href="index.html#experience" style="color: #8A8D93;">Опыт</a>
+      <a href="index.html#skills" style="color: #8A8D93;">Навыки</a>
+      <a href="index.html#contacts" class="navbtn" style="display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 100px; background: #efefef; color: #111214;">Контакты</a>
+    </nav>
+  </header>
+
+  <section style="padding: clamp(40px, 7vw, 80px) 0 clamp(28px, 4vw, 44px);">
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; font-size: 12px; font-weight: 500;">
+      <span style="padding: 5px 11px; background: #E6EBFF; color: #2c5cf0; border-radius: 100px;">B2B</span>
+      <span style="padding: 5px 11px; background: #E6EBFF; color: #2c5cf0; border-radius: 100px;">Design System</span>
+      <span style="padding: 5px 3px; color: #8A8D93;">2022–2025</span>
+    </div>
+    <h1 style="margin: 0 0 clamp(20px, 3vw, 28px); font-size: clamp(34px, 6.4vw, 76px); line-height: 0.98; font-weight: 800; letter-spacing: -0.04em;">Дизайн-система с нуля</h1>
+    <p style="margin: 0; font-size: clamp(17px, 2vw, 21px); line-height: 1.4; color: #8A8D93;">Hostme · библиотека компонентов для системы управления рестораном</p>
+    <div style="margin-top: clamp(28px, 4vw, 40px); border-radius: 14px; overflow: hidden; background: #17181B;">
+      <img src="photo/ds-cover.png" alt="Дизайн-система Hostme" style="display: block; width: 100%; height: auto;">
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(16px, 2.5vw, 24px);">
+      <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h2 style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Задача</h2>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5;">
+          <li>Единая библиотека компонентов с нуля</li>
+          <li>Токены (цвет, типографика, отступы)</li>
+          <li>Тёмная тема, которой не было вообще</li>
+          <li>Документация для команды</li>
+        </ul>
+      </div>
+      <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h2 style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Моя роль</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55;">Строил в одиночку, параллельно с редизайном.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Контекст</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">Макетов в Figma не было — работа велась в Sketch и Photoshop, без единой дизайн-системы или брендбука. Компоненты дублировались с расхождениями (цвета, отступы, скругления), каждый новый экран собирался почти с нуля. Ситуация стала критичной с началом полного редизайна.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(28px, 5vw, 56px) 0; container-type: inline-size;">
+    <div style="background: #F5F8FA; color: #f2f3f5; border-radius: clamp(16px, 2.1818cqw, 24px); padding: clamp(18px, 3.6364cqw, 40px); min-height: clamp(150px, 19.4545cqw, 214px); display: flex; align-items: flex-start; flex-wrap: wrap; justify-content: space-between; gap: clamp(20px, 6.3636cqw, 70px);">
+      <div style="flex: 0 1 auto; width: max(160px, 27.7273cqw); display: flex; flex-direction: column; align-items: center;">
+        <div style="min-height: clamp(56px, 10cqw, 110px); display: flex; align-items: center; flex-shrink: 0;"><span style="font-size: clamp(40px, 8.1818cqw, 90px); font-weight: 800; line-height: 1; white-space: nowrap;">50</span><div style="width: clamp(15px, 2.9091cqw, 32px); height: clamp(29px, 5.6364cqw, 62px); display: flex; align-items: center; justify-content: center; padding-bottom: clamp(6px, 1.1818cqw, 13px); flex-shrink: 0;"><span style="font-size: clamp(20px, 3.6364cqw, 40px); font-weight: 800; line-height: 1;">+</span></div></div>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; align-self: stretch;">Унифицированных компонентов</p>
+      </div>
+      <div style="flex: 0 1 auto; width: max(160px, 27.7273cqw); display: flex; flex-direction: column; align-items: center;">
+        <div style="min-height: clamp(56px, 10cqw, 110px); display: flex; align-items: flex-end; flex-shrink: 0;"><span style="font-size: clamp(40px, 8.1818cqw, 90px); font-weight: 800; line-height: 1; white-space: nowrap;">−25</span><div style="width: clamp(15px, 2.9091cqw, 32px); height: clamp(29px, 5.6364cqw, 62px); display: flex; align-items: center; justify-content: center; padding-bottom: clamp(6px, 1.1818cqw, 13px); flex-shrink: 0;"><span style="font-size: clamp(20px, 3.6364cqw, 40px); font-weight: 800; line-height: 1;">%</span></div></div>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; align-self: stretch;">времени разработки новых фич</p>
+      </div>
+      <div style="flex: 0 1 auto; width: max(160px, 24.5455cqw); display: flex; flex-direction: column; align-items: center;">
+        <div style="min-height: clamp(56px, 10cqw, 110px); display: flex; align-items: center; flex-shrink: 0;"><svg viewBox="0 0 112 110" fill="none" aria-hidden="true" style="display: block; flex-shrink: 0; width: clamp(53px, 10.1818cqw, 112px); height: clamp(52px, 10cqw, 110px); color: #ffffff;"><path transform="matrix(-0.707 0.707 -0.707 -0.707 100.375 26.875)" d="M 103.945 22.274 L 107.48 25.809 L 111.016 22.274 L 107.48 18.738 L 103.945 22.274 Z M 62.933 21.92 L 57.933 21.92 L 57.933 26.877 L 62.889 26.92 L 62.933 21.92 Z M 62.933 0 L 67.933 0 L 67.933 -5 L 62.933 -5 L 62.933 0 Z M 88.212 38.007 L 91.747 41.543 L 107.48 25.809 L 103.945 22.274 L 100.409 18.738 L 84.676 34.472 L 88.212 38.007 Z M 103.945 22.274 L 107.48 18.738 L 91.924 3.182 L 88.388 6.718 L 84.853 10.253 L 100.409 25.809 L 103.945 22.274 Z M 103.945 22.274 L 103.988 17.274 L 62.976 16.92 L 62.933 21.92 L 62.889 26.92 L 103.902 27.274 L 103.945 22.274 Z M 62.933 21.92 L 67.933 21.92 L 67.933 0 L 62.933 0 L 57.933 0 L 57.933 21.92 L 62.933 21.92 Z M 62.933 0 L 62.933 -5 L 0 -5 L 0 0 L 0 5 L 62.933 5 L 62.933 0 Z" fill="currentColor" fill-rule="nonzero"></path></svg></div>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; align-self: stretch;">Снижение количества багов</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Подход</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: clamp(12px, 2vw, 18px); margin-top: clamp(16px, 2.5vw, 24px);">
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Бенчмарки</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Изучил более 20 доступных дизайн-систем — Yandex, Alfa-Bank, Avito, Ozon, Material, Ant Design, Carbon, Glow UI, Bunin UI и другие. Ключевое открытие — насколько много может быть вариаций и надстроек у одного компонента и насколько гибко система может подстраиваться под уникальные запросы бизнеса. Поскольку дефолтные решения не подходили, сразу перенял этот подход: закладывал в компоненты нетривиальные варианты надстроек с расчётом на специфику продукта.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Метрики</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Сокращение времени разработки новых фич (−25%) и снижение количества UI-багов. Второй показатель — скорее следствие появления единой базы компонентов, чем прямая заслуга дизайна: разработка перестала собирать интерфейсы заново каждый раз.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Варианты решений</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Атомарная структура была единственным рассматриваемым вариантом — только она даёт реальную масштабируемость. Развилка возникла в нейминге цветов: между семантическим и буквальным подходом выбрал буквальный, дополнительно разбив все оттенки на группы с описанием ситуаций применения — так система остаётся понятной без необходимости держать семантику в голове.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Процесс</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Декомпозируя интерфейс по модулям, параллельно проводил аудит компонентов: где переиспользуются, с какими пропсами, что можно унифицировать вместо дублирования. Токены реализовал на базе плагина Figma Tokens.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 clamp(32px, 5vw, 56px);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Ограничения</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">Значительная часть компонентов требовала специфических состояний, поэтому готовые библиотеки эти кейсы не закрывали — переехать на готовое решение было невозможно. Токены на тот момент не поддерживались Figma нативно.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 clamp(32px, 5vw, 56px);">
+    <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Пример компонента</h2>
+    <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px); margin-top: clamp(16px, 2.5vw, 24px); display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 26px);">
+      <p style="margin: 0; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55; color: #111214;">Получилось собрать гибкую систему и заодно реализовать свою мечту — компоненты, которые не требуют постоянных прокликиваний для кастомизации. Текстовое поле: состояние, размер, стиль, лейбл, хинт, левый и правый аддоны — всё собирается пропсами в одной панели, без отсоединения инстанса и без ручной сборки из вложенных слоёв.</p>
+      <figure style="margin: 0; border-radius: 12px; overflow: hidden; background: #1d1e21;">
+        <img src="photo/ds-component-input.png" alt="Компонент текстового поля с панелью свойств: состояние, размер, стиль, лейбл, хинт и аддоны" style="display: block; width: 100%; height: auto;">
+      </figure>
+    </div>
+  </section>
+
+  <section style="padding: 0 0 clamp(56px, 8vw, 96px);">
+    <div class="alt" style="position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; background: #F5F8FA; border-radius: 28px; padding: clamp(24px, 4vw, 44px);">
+      <a href="case-receipts.dc.html" aria-label="Автоотправка чеков для самозанятых" style="position: absolute; inset: 0; border-radius: 28px; z-index: 2;"></a>
+      <span class="altarw" style="position: absolute; top: 22px; right: 22px; width: 38px; height: 38px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.6 12.4 12.4 3.6"></path><path d="M6.1 3.6H12.4V9.9"></path></svg></span>
+      <div>
+        <div style="font-size: 13px; font-weight: 500; color: #8A8D93; margin-bottom: 8px;">Следующий кейс</div>
+        <div style="font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.025em;">Автоотправка чеков для самозанятых</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>class Component extends DCLogic {
+  componentDidMount() {
+    document.body.setAttribute('data-theme', 'dark');
+    this.initReveal();
+  }
+  initReveal() {
+    const nodes = Array.from(document.querySelectorAll('section > h2, section > p, section > div, section > div > *'));
+    if (!nodes.length) { this.revealTimer = setTimeout(() => this.initReveal(), 150); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const peers = Array.from(el.parentElement.children).filter(n => n.classList.contains('rv'));
+        el.style.transitionDelay = Math.min(peers.indexOf(el), 6) * 70 + 'ms';
+        el.classList.add('in');
+        io.unobserve(el);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 22% 0px' });
+    nodes.forEach(n => {
+      if (n.classList.contains('rv') || n.closest('.rv')) return;
+      const r = n.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.1) { n.classList.add('rv', 'in'); return; }
+      n.classList.add('rv');
+      io.observe(n);
+    });
+    this.revealIO = io;
+  }
+  componentWillUnmount() {
+    if (this.revealIO) this.revealIO.disconnect();
+    clearTimeout(this.revealTimer);
+  }
+}</script>
+</body>
+</html>

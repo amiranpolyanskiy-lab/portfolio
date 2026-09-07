@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- seo:start -->
+<title>Редизайн Hostme · Амиран Полянский</title>
+<meta name="description" content="Редизайн системы управления рестораном: 5000+ ресторанов, 27 стран. 86% перешли на новый интерфейс без принуждения, −30% обращений в поддержку.">
+<link rel="canonical" href="https://amiranpolyanskiu-ux-ui.ru/case-hostme.dc.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Амиран Полянский">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Редизайн Hostme · Амиран Полянский">
+<meta property="og:description" content="Редизайн системы управления рестораном: 5000+ ресторанов, 27 стран. 86% перешли на новый интерфейс без принуждения, −30% обращений в поддержку.">
+<meta property="og:url" content="https://amiranpolyanskiu-ux-ui.ru/case-hostme.dc.html">
+<meta property="og:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Редизайн Hostme · Амиран Полянский">
+<meta name="twitter:description" content="Редизайн системы управления рестораном: 5000+ ресторанов, 27 стран. 86% перешли на новый интерфейс без принуждения, −30% обращений в поддержку.">
+<meta name="twitter:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<!-- seo:end -->
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Semibold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Extrabold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Heavy.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+  * { box-sizing: border-box; text-wrap: pretty; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAFAF8; color: #111214; font-family: 'Gilroy', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #2c5cf0; }
+  nav a { transition: color 0.15s ease, border-color 0.15s ease; }
+  nav a:hover { color: #2c5cf0; border-bottom-color: #2c5cf0; }
+  .lnk .arw { display: inline-block; transition: transform 0.18s ease; }
+  .lnk:hover .arw { transform: translate(3px, -3px); }
+  .lnk:hover { color: #2c5cf0; }
+  .rv { opacity: 0; transform: translateY(26px); will-change: opacity, transform; transition: opacity 1.4s cubic-bezier(0.16,0.68,0.24,1), transform 1.4s cubic-bezier(0.16,0.68,0.24,1); }
+  .rv.in { opacity: 1; transform: none; will-change: auto; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1 !important; transform: none !important; transition: none !important; } }
+  .alt { transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1); }
+  .alt:hover { transform: translateY(-4px); }
+  .altarw { transition: background-color 0.22s ease; }
+  .altarw svg path { fill: none; stroke: #111214; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.22s ease; }
+  .alt:hover .altarw { background: #111214 !important; }
+  .alt:hover .altarw svg path { stroke: #ffffff !important; }
+  @keyframes tlgUp { 0%, 20% { transform: translateY(11.06%); animation-timing-function: cubic-bezier(.18,.8,.2,1); } 34%, 74% { transform: translateY(0); animation-timing-function: cubic-bezier(.55,0,.75,.25); } 88%, 100% { transform: translateY(11.06%); } }
+  @keyframes tlgOpen { 0%, 19% { opacity: 0; } 23%, 84% { opacity: 1; } 88%, 100% { opacity: 0; } }
+  @keyframes tlgClosed { 0%, 19% { opacity: 1; } 23%, 84% { opacity: 0; } 88%, 100% { opacity: 1; } }
+  @keyframes tlgCur { 0% { left: 74%; top: 99.4%; animation-timing-function: cubic-bezier(.3,.02,.2,1); } 17%, 30% { left: 65.7%; top: 95.3%; } 44%, 62% { left: 74%; top: 99.4%; } 72%, 82% { left: 65.7%; top: 84.4%; } 96%, 100% { left: 74%; top: 99.4%; } }
+  @keyframes tlgCurOp { 0% { opacity: 0; } 8%, 32% { opacity: 1; } 40%, 62% { opacity: 0; } 70%, 84% { opacity: 1; } 92%, 100% { opacity: 0; } }
+  @keyframes tlgRip { 0%, 17.5% { top: 94.75%; opacity: 0; transform: scale(.45); } 20% { top: 94.75%; opacity: 1; transform: scale(1); } 27% { top: 94.75%; opacity: 0; transform: scale(1.5); } 27.1%, 70.5% { top: 83.69%; opacity: 0; transform: scale(1.5); } 71% { top: 83.69%; opacity: 0; transform: scale(.45); } 73% { top: 83.69%; opacity: 1; transform: scale(1); } 80% { top: 83.69%; opacity: 0; transform: scale(1.5); } 80.1%, 100% { top: 94.75%; opacity: 0; transform: scale(1.5); } }
+  @keyframes tlA { 0%, 33% { opacity: 1; } 36%, 70% { opacity: 0; } 75%, 100% { opacity: 1; } }
+  @keyframes tlB { 0%, 32% { opacity: 0; } 35%, 40% { opacity: 1; } 44%, 100% { opacity: 0; } }
+  @keyframes tlC { 0%, 39% { opacity: 0; } 43%, 70% { opacity: 1; } 75%, 100% { opacity: 0; } }
+  @keyframes tlCur { 0% { left: 93.21%; top: 31.5%; animation-timing-function: cubic-bezier(.34,.02,.2,1); } 30%, 42% { left: 39.7%; top: 63.1%; animation-timing-function: cubic-bezier(.5,0,.3,1); } 62%, 100% { left: 93.21%; top: 31.5%; } }
+  @keyframes tlCurOp { 0%, 32% { opacity: 1; } 36%, 78% { opacity: 0; } 90%, 100% { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .tlfilm > * { animation: none !important; } .tlfilm .tlf2, .tlfilm .tlf3, .tlfilm .tlcur { opacity: 0 !important; } }
+  .modnav { position: sticky; top: 58px; z-index: 15; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 0 14px; margin-top: 8px; background: #FDFDFB; }
+  .modnav-t { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93; margin-right: 4px; }
+  .modnav a { display: block; padding: 6px 13px; border: 1px solid rgba(17,18,20,0.1); border-radius: 100px; font-size: 13px; font-weight: 500; line-height: 1.3; color: #6b7075; transition: color 0.18s ease, border-color 0.18s ease; }
+  .modnav a:hover { color: #111214; }
+  .modnav a[data-on="1"] { color: #F26522; border-color: #F26522; font-weight: 600; }
+  [data-theme="dark"] .modnav { background: #0d0e10; }
+  [data-theme="dark"] .modnav a { color: rgba(242,243,245,0.58) !important; border-color: rgba(255,255,255,0.14) !important; }
+  [data-theme="dark"] .modnav a:hover { color: #f2f3f5 !important; }
+  [data-theme="dark"] .modnav a[data-on="1"] { color: #FF7A3D !important; border-color: #FF7A3D !important; }
+  @media (min-width: 1600px) {
+    .modnav { position: fixed; top: 88px; right: max(20px, calc((100vw - 1180px) / 2 - 214px)); width: 194px; flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 6px; margin: 0; padding: 0; background: transparent; }
+    [data-theme="dark"] .modnav { background: transparent; }
+    .modnav-t { margin: 0 0 10px; }
+    .modnav a { padding: 5px 0 5px 14px; border: 0; border-left: 2px solid rgba(17,18,20,0.1); border-radius: 0; font-size: 14px; }
+    .modnav a[data-on="1"] { border-left-color: #F26522; }
+    [data-theme="dark"] .modnav a { border: 0 !important; border-left: 2px solid rgba(255,255,255,0.14) !important; }
+    [data-theme="dark"] .modnav a[data-on="1"] { border-left-color: #FF7A3D !important; }
+  }
+  .tsw { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 100px; border: 1px solid rgba(17,18,20,0.1); background: transparent; color: inherit; font: inherit; font-size: 13px; cursor: pointer; transition: background-color 0.2s ease, border-color 0.2s ease; }
+  .tsw:hover { background: rgba(17,18,20,0.05); }
+  .backbtn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px 8px 12px; border-radius: 100px; background: #efefef; color: #111214; font-size: 14px; font-weight: 600; transition: background-color 0.2s ease, color 0.2s ease; }
+  .backbtn svg { display: block; }
+  .backbtn svg path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .backbtn:hover { background: #111214 !important; color: #ffffff !important; }
+  [data-theme="dark"] .backbtn { background: rgba(255,255,255,0.1) !important; color: #f2f3f5 !important; }
+  [data-theme="dark"] .backbtn:hover { background: #f2f3f5 !important; color: #111214 !important; }
+  .pill { background: #efefef; color: #111214; transition: background-color 0.2s ease, color 0.2s ease; }
+  .pill[data-on="true"] { background: #111214; color: #ffffff; }
+  [data-theme="dark"] .pill { background: rgba(255,255,255,0.1) !important; color: #f2f3f5 !important; }
+  [data-theme="dark"] .pill[data-on="true"] { background: #f2f3f5 !important; color: #111214 !important; }
+  .navbtn { transition: background-color 0.2s ease, color 0.2s ease; }
+  .navbtn:hover { background: #111214 !important; color: #ffffff !important; }
+  body[data-theme="dark"] { background: #0d0e10; color: #f2f3f5; }
+  [data-theme="dark"] header::before { background: rgba(13,14,16,0.55) !important; }
+  [data-theme="dark"] [style*="rgb(110, 110, 115)"] { color: #9ba0a8 !important; }
+  [data-theme="dark"] [style*="color: rgb(17, 18, 20)"] { color: #f2f3f5 !important; }
+  [data-theme="dark"] [style*="rgb(138, 141, 147)"] { color: #8b9099 !important; }
+  [data-theme="dark"] [style*="rgb(61, 61, 61)"] { color: #b6bac1 !important; }
+  [data-theme="dark"] [style*="rgb(245, 248, 250)"] { background: #17181b !important; }
+  [data-theme="dark"] [style*="rgb(232, 237, 242)"] { background: #26282d !important; }
+  [data-theme="dark"] [style*="rgb(230, 235, 255)"] { background: #26282d !important; color: #b6bac1 !important; }
+  [data-theme="dark"] [style*="repeating-linear-gradient"] { background: repeating-linear-gradient(135deg, #1d1e21 0 8px, #232428 8px 16px) !important; }
+  [data-theme="dark"] [style*="rgb(250, 250, 248)"] { background: #26282d !important; color: #b6bac1 !important; }
+  [data-theme="dark"] .altarw { background: #26282d !important; }
+  [data-theme="dark"] .altarw svg path { stroke: #f2f3f5; }
+  [data-theme="dark"] .alt:hover .altarw { background: #f2f3f5 !important; }
+  [data-theme="dark"] .alt:hover .altarw svg path { stroke: #111214 !important; }
+  [data-theme="dark"] .tsw { border-color: rgba(255,255,255,0.16); }
+  [data-theme="dark"] .tsw:hover { background: rgba(255,255,255,0.08); }
+  [data-theme="dark"] .navbtn { background: rgba(255,255,255,0.1) !important; color: #f2f3f5 !important; }
+  [data-theme="dark"] .navbtn:hover { background: #f2f3f5 !important; color: #111214 !important; }
+  [data-theme="dark"] nav a:hover { color: #f2f3f5 !important; }
+</style>
+</helmet>
+
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px);">
+
+  <header style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 0;" style-before="content: ''; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 100vw; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); z-index: 0;">
+    <a href="index.html#cases" class="backbtn" style="position: relative; z-index: 1;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M12.4 8H3.6"></path><path d="M7.4 3.6 3 8l4.4 4.4"></path></svg>Все кейсы</a>
+    <nav style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(16px, 2.4vw, 26px); font-size: 15px;">
+      <a href="index.html#cases" style="color: #8A8D93;">Кейсы</a>
+      <a href="index.html#experience" style="color: #8A8D93;">Опыт</a>
+      <a href="index.html#skills" style="color: #8A8D93;">Навыки</a>
+      <a href="index.html#contacts" class="navbtn" style="display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 100px; background: #efefef; color: #111214;">Контакты</a>
+    </nav>
+  </header>
+
+  <section style="padding: clamp(40px, 7vw, 80px) 0 clamp(28px, 4vw, 44px);">
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; font-size: 12px; font-weight: 500;">
+      <span style="padding: 5px 11px; background: {{ accentBg }}; color: {{ accentColor }}; border-radius: 100px;">B2B</span>
+      <span style="padding: 5px 11px; background: {{ accentBg }}; color: {{ accentColor }}; border-radius: 100px;">Redesign</span>
+      <span style="padding: 5px 11px; background: {{ accentBg }}; color: {{ accentColor }}; border-radius: 100px;">Research</span>
+      <span style="padding: 5px 3px; color: #8A8D93;">2022–2025</span>
+    </div>
+    <h1 style="margin: 0 0 clamp(20px, 3vw, 28px); font-size: clamp(34px, 6.4vw, 76px); line-height: 0.98; font-weight: 800; letter-spacing: -0.04em;">Редизайн Hostme — 8 лет legacy с нуля</h1>
+    <p style="margin: 0 0 6px; font-size: clamp(17px, 2vw, 21px); line-height: 1.4; color: #8A8D93;">Система для работы зала: бронирования, посадка гостей, лист ожидания, карта столов. Ей пользуются хостес, менеджеры и официанты прямо во время смены</p>
+    <p style="margin: clamp(14px, 2vw, 20px) 0 0; font-size: clamp(14px, 1.6vw, 16px); font-weight: 600; color: #111214;">5000+ ресторанов · 27 стран · 1M+ резерваций в месяц</p>
+    <div style="margin-top: clamp(28px, 4vw, 40px); display: flex; flex-direction: column; gap: 10px;">
+      <div ref="{{ cmpRef }}" onPointerDown="{{ onDown }}" onPointerMove="{{ onMove }}" onPointerUp="{{ onUp }}" style="position: relative; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; background: #0d0e10; touch-action: none; user-select: none; cursor: ew-resize;">
+        <img src="photo/hostme-after.png" alt="Hostme после редизайна" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div ref="{{ clipRef }}" style="position: absolute; inset: 0; clip-path: inset(0 50% 0 0);">
+          <img src="photo/hostme-before.png" alt="Hostme до редизайна" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <span style="position: absolute; left: 14px; top: 14px; padding: 6px 12px; border-radius: 100px; background: rgba(13,14,16,0.62); color: #ffffff; font-family: 'Gilroy', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; pointer-events: none;">Было</span>
+        <span style="position: absolute; right: 14px; top: 14px; padding: 6px 12px; border-radius: 100px; background: rgba(13,14,16,0.62); color: #ffffff; font-family: 'Gilroy', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; pointer-events: none;">Стало</span>
+        <div ref="{{ handleRef }}" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; background: rgba(255,255,255,0.9); box-shadow: 0 0 0 1px rgba(0,0,0,0.14); pointer-events: none;">
+          <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; border-radius: 100px; background: #ffffff; box-shadow: 0 4px 14px rgba(0,0,0,0.28); display: flex; align-items: center; justify-content: center; gap: 3px; color: #111214;">
+            <svg viewBox="0 0 10 10" width="9" height="9" fill="currentColor" aria-hidden="true"><path d="M7 1 3 5l4 4z"></path></svg>
+            <svg viewBox="0 0 10 10" width="9" height="9" fill="currentColor" aria-hidden="true"><path d="M3 1l4 4-4 4z"></path></svg>
+          </span>
+        </div>
+      </div>
+      <p style="margin: 0; font-size: 13px; color: #8A8D93;">Потяните ползунок, чтобы сравнить старый и новый интерфейс</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(16px, 2.5vw, 24px);">
+      <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h2 style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Задача</h2>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5;">
+          <li>Мини и детальные карточки событий (резервации, очередь, официанты)</li>
+          <li>Очередь ожидания с типизацией заявок</li>
+          <li>Таймлайн загрузки зала</li>
+          <li>Интеграция чата с гостем в карточку резерва</li>
+        </ul>
+      </div>
+      <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h2 style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Моя роль</h2>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5;">
+          <li>Единственный дизайнер на проекте: весь ресёрч и дизайн от начала до конца</li>
+          <li>Выездные исследования в ресторанах — от небольших заведений до сетей</li>
+          <li>Разбор NPS, копившегося 8 лет</li>
+          <li>Команда реализации: 3 фронтенд- и 3 бэкенд-разработчика, графический дизайнер, арт-директор, 20 сотрудников поддержки в разных странах</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Контекст</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">Продукт жил 8 лет без дизайн-системы и брендбука. За это время накопился пласт проблем, невидимых изнутри — пользователи адаптировались к системе, а не наоборот.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(28px, 5vw, 56px) 0; container-type: inline-size;">
+    <div style="background: #F5F8FA; color: #f2f3f5; border-radius: clamp(16px, 2.1818cqw, 24px); padding: clamp(18px, 3.6364cqw, 40px); min-height: clamp(160px, 21.6364cqw, 238px); display: flex; align-items: flex-start; flex-wrap: wrap; justify-content: space-between; gap: clamp(20px, 4.7727cqw, 52px);">
+      <div style="flex: 0 1 auto; width: max(150px, 27.7273cqw); display: flex; flex-direction: column; align-items: center;">
+        <div style="min-height: clamp(56px, 10cqw, 110px); display: flex; align-items: flex-end; flex-shrink: 0;"><span style="font-size: clamp(40px, 8.1818cqw, 90px); font-weight: 800; line-height: 1; white-space: nowrap;">86</span><div style="width: clamp(15px, 2.9091cqw, 32px); height: clamp(29px, 5.6364cqw, 62px); display: flex; align-items: center; justify-content: center; padding-bottom: clamp(6px, 1.1818cqw, 13px); flex-shrink: 0;"><span style="font-size: clamp(20px, 3.6364cqw, 40px); font-weight: 800; line-height: 1;">%</span></div></div>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; align-self: stretch; text-align: center;">Добровольный переход на новый дизайн</p>
+      </div>
+      <div style="flex: 0 1 auto; width: max(150px, 27.7273cqw); display: flex; flex-direction: column; align-items: center;">
+        <div style="min-height: clamp(56px, 10cqw, 110px); display: flex; align-items: flex-end; flex-shrink: 0;"><span style="font-size: clamp(40px, 8.1818cqw, 90px); font-weight: 800; line-height: 1; white-space: nowrap;">100</span><div style="width: clamp(15px, 2.9091cqw, 32px); height: clamp(29px, 5.6364cqw, 62px); display: flex; align-items: center; justify-content: center; padding-bottom: clamp(6px, 1.1818cqw, 13px); flex-shrink: 0;"><span style="font-size: clamp(20px, 3.6364cqw, 40px); font-weight: 800; line-height: 1;">%</span></div></div>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; align-self: stretch; text-align: center;">положительный фидбэк</p>
+      </div>
+      <div style="flex: 0 1 auto; width: max(150px, 27.7273cqw); display: flex; flex-direction: column; align-items: center;">
+        <div style="min-height: clamp(56px, 10cqw, 110px); display: flex; align-items: flex-end; flex-shrink: 0;"><span style="font-size: clamp(40px, 8.1818cqw, 90px); font-weight: 800; line-height: 1; white-space: nowrap;">−30</span><div style="width: clamp(15px, 2.9091cqw, 32px); height: clamp(29px, 5.6364cqw, 62px); display: flex; align-items: center; justify-content: center; padding-bottom: clamp(6px, 1.1818cqw, 13px); flex-shrink: 0;"><span style="font-size: clamp(20px, 3.6364cqw, 40px); font-weight: 800; line-height: 1;">%</span></div></div>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; align-self: stretch; text-align: center;">обращений в поддержку</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Подход</h2>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: clamp(12px, 2vw, 18px); margin-top: clamp(16px, 2.5vw, 24px);">
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Бенчмарки</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Разобрал OpenTable, Resy, SevenRooms, Tock и российские сервисы. Составлял карту недостающих фич, выносил на команду: применимо к нашей специфике или нет, работает механика на деле или только выглядит хорошо.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Метрики</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Доля пользователей, перешедших на новый интерфейс добровольно, и количество обращений в поддержку. Дополнительно через команду саппорта собирал обратную связь напрямую.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Исследования</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Интервью, коридорные тесты, A/B, выезды в заведения — от небольших ресторанов до сетей. Отдельно разобрал NPS, копившийся восемь лет.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Подход к декомпозиции</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Разбил интерфейс на модули по значимости и сквозным элементам, которые переиспользуются от раздела к разделу. Начал с самых частотных сценариев.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Ограничения</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">Нельзя было сломать процессы 5000+ действующих ресторанов во время перехода. Решение: декомпозиция интерфейса по частотности сценариев и переиспользуемым сквозным элементам + временно сохранённая возможность отката на старый интерфейс после перевода всех пользователей — это позволило честно замерить отток и NPS вместо форсированного перехода без права на ошибку</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(32px, 5vw, 56px) 0 clamp(48px, 7vw, 88px);">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Модули</h2>
+    </div>
+
+    <nav class="modnav">
+      <div class="modnav-t">Модули</div>
+      <a href="#mod-mini" data-modnav="mod-mini">Миникарточки резервации</a>
+      <a href="#mod-detail" data-modnav="mod-detail">Детальные карточки резервации</a>
+      <a href="#mod-waitlist" data-modnav="mod-waitlist">Очередь ожидания</a>
+      <a href="#mod-timeline" data-modnav="mod-timeline">Таймлайн загрузки зала</a>
+    </nav>
+
+    <div style="display: flex; flex-direction: column; gap: clamp(16px, 2.5vw, 24px); margin-top: clamp(12px, 2vw, 20px);">
+
+      <div id="mod-mini" style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px); scroll-margin-top: 88px;">
+        <div style="margin-bottom: 20px;">
+          <h3 style="margin: 0; font-size: clamp(22px, 2.8vw, 30px); font-weight: 700; letter-spacing: -0.025em;">Миникарточки резервации</h3>
+        </div>
+        <div style="background: #D1D1D1; border-radius: 12px; padding: clamp(20px, 3vw, 36px); margin-bottom: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(18px, 3vw, 36px); align-items: center;">
+          <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; align-items: center;">
+            <img src="photo/minicard-before.png" alt="Миникарточка резервации до редизайна" style="display: block; width: 100%; max-width: 420px; height: auto;">
+            <figcaption style="font-family: 'Gilroy', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5c5c5c;">Было</figcaption>
+          </figure>
+          <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; align-items: center;">
+            <img src="photo/minicard-after.png" alt="Миникарточка резервации после редизайна" style="display: block; width: 100%; max-width: 420px; height: auto; border-radius: 8px;">
+            <figcaption style="font-family: 'Gilroy', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5c5c5c;">Стало</figcaption>
+          </figure>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Каждое событие или сущность — бронь, гость в очереди, официант — показано в списке миниатюрой с главным: время, стол, количество гостей, статус. По клику открывается детальная карточка. Миниатюра (мини-карточка) — то, что сотрудник видит постоянно</p>
+        <div style="margin: 24px 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93;">Проблемы</div>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.55; color: #3d3d3d;">
+          <li>Границы карточки размыты — резерв тяжело считать с одного взгляда</li>
+          <li>На длинном контенте вёрстка разваливалась</li>
+          <li>Пиктограммы лежали в куче без ограничения по количеству: что не влезло — не показывалось, хотя могло нести ключевое, и сотрудник об этом не знал</li>
+          <li>Статусы менялись строго по порядку, в миниатюре показывался не текущий статус, а следующий. Промах требовал закрыть и открыть резерв заново, а неверный статус успевал сработать: кухня начинала готовить предзаказ раньше времени, стол уходил в онлайн-бронирование под сидящими гостями</li>
+          <li>Запросы в NPS по виду карточки оказались зеркальными — удобное одним мешало другим</li>
+          <li>Тегов гостя и заметок не было, хотя это топ-запрос пользователей</li>
+        </ul>
+        <div style="margin: 24px 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93;">Решения</div>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.55; color: #3d3d3d;">
+          <li>Собрал элементы резерва в тело карточки, развёл отступами: гости, статус, время</li>
+          <li>Задал лимиты блокам внутри — компромисс, места мало, информации много</li>
+          <li>Разделил пиктограммы: иконки гостя ушли к его имени, иконки резерва сократил до шести. Добавил статус оплаты и запись на мероприятие</li>
+          <li>Кнопка смены статуса с модальным окном, где виден весь список. Менять можно прямо из миниатюры, не открывая детальную</li>
+          <li>Вместо компромисса — переключатель вида карточек, настройка в пару кликов</li>
+          <li>Добавил с возможностью отключить, если не нужны</li>
+        </ul>
+        <div style="margin: 26px 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93;">Состав карточки</div>
+        <div style="border-radius: 12px; padding: clamp(24px, 4vw, 48px); display: flex; align-items: center; justify-content: center; background: {{ cardBg }};">
+          <div style="position: relative; width: 100%; max-width: 920px; aspect-ratio: 1300 / 470;">
+            <img src="{{ cardSrc }}" alt="Миникарточка резервации: {{ cardAlt }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;">
+          </div>
+        </div>
+        <div style="margin-top: 12px; display: flex; align-items: flex-end; justify-content: flex-start; gap: 8px; font-size: 14px; color: #8A8D93;">
+          <span>Попробуйте попереключать вид карточек</span>
+          <svg viewBox="0 0 40 28" width="34" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-bottom: -8px;"><path d="M2 4c10 0 20 4 24 18"></path><path d="M21 20l5 3 3-5"></path></svg>
+        </div>
+        <div style="margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">
+          <span class="pill" data-on="true" style="display: inline-flex; align-items: center; gap: 7px; padding: 8px 15px; border-radius: 100px; font-size: 13px; font-weight: 600; cursor: default;"><svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6.4 4.6 9 10 3.4"></path></svg>Default</span>
+          <button type="button" class="pill" data-on="{{ addOn }}" onClick="{{ toggleAdd }}" style="display: inline-flex; align-items: center; gap: 7px; padding: 8px 15px; border: 0; border-radius: 100px; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer;"><sc-if value="{{ addOn }}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6.4 4.6 9 10 3.4"></path></svg></sc-if>Additionals</button>
+          <button type="button" class="pill" data-on="{{ noteOn }}" onClick="{{ toggleNote }}" style="display: inline-flex; align-items: center; gap: 7px; padding: 8px 15px; border: 0; border-radius: 100px; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer;"><sc-if value="{{ noteOn }}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6.4 4.6 9 10 3.4"></path></svg></sc-if>Note</button>
+          <button type="button" class="pill" data-on="{{ tagsOn }}" onClick="{{ toggleTags }}" style="display: inline-flex; align-items: center; gap: 7px; padding: 8px 15px; border: 0; border-radius: 100px; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer;"><sc-if value="{{ tagsOn }}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6.4 4.6 9 10 3.4"></path></svg></sc-if>Tags</button>
+          <span style="flex: 1 1 0; min-width: 0;"></span>
+          <div style="display: inline-flex; gap: 6px;">
+            <button type="button" class="pill" data-on="{{ lightOn }}" onClick="{{ setLight }}" style="padding: 8px 15px; border: 0; border-radius: 100px; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer;">Light</button>
+            <button type="button" class="pill" data-on="{{ darkOn }}" onClick="{{ setDark }}" style="padding: 8px 15px; border: 0; border-radius: 100px; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer;">Dark</button>
+          </div>
+        </div>
+        <p style="margin: 16px 0 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Базовая карточка всегда содержит время, стол, гостей и статус. Дополнительные блоки — пиктограммы, заметка и теги гостя — включаются в настройках, поэтому каждый ресторан собирает миниатюру под свой процесс</p>
+      </div>
+
+
+      <div id="mod-detail" style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px); scroll-margin-top: 88px;">
+        <div style="margin-bottom: 20px;">
+          <h3 style="margin: 0; font-size: clamp(22px, 2.8vw, 30px); font-weight: 700; letter-spacing: -0.025em;">Детальные карточки резервации</h3>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+          <div ref="{{ cmp2Ref }}" onPointerDown="{{ onDown2 }}" onPointerMove="{{ onMove2 }}" onPointerUp="{{ onUp2 }}" style="position: relative; aspect-ratio: 2388 / 1668; border-radius: 12px; overflow: hidden; background: #0d0e10; touch-action: none; user-select: none; cursor: ew-resize;">
+            <img src="photo/detail-after.png" alt="Детальная карточка резервации после редизайна" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <div ref="{{ clip2Ref }}" style="position: absolute; inset: 0; clip-path: inset(0 50% 0 0);">
+              <img src="photo/detail-before.png" alt="Детальная карточка резервации до редизайна" draggable="false" style="position: absolute; inset: -1px; width: calc(100% + 2px); height: calc(100% + 2px); object-fit: cover;">
+            </div>
+            <span style="position: absolute; left: 14px; top: 14px; padding: 6px 12px; border-radius: 100px; background: rgba(13,14,16,0.62); color: #ffffff; font-family: 'Gilroy', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; pointer-events: none;">Было</span>
+            <span style="position: absolute; right: 14px; top: 14px; padding: 6px 12px; border-radius: 100px; background: rgba(13,14,16,0.62); color: #ffffff; font-family: 'Gilroy', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; pointer-events: none;">Стало</span>
+            <div ref="{{ handle2Ref }}" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; background: rgba(255,255,255,0.9); box-shadow: 0 0 0 1px rgba(0,0,0,0.14); pointer-events: none;">
+              <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; border-radius: 100px; background: #ffffff; box-shadow: 0 4px 14px rgba(0,0,0,0.28); display: flex; align-items: center; justify-content: center; gap: 3px; color: #111214;">
+                <svg viewBox="0 0 10 10" width="9" height="9" fill="currentColor" aria-hidden="true"><path d="M7 1 3 5l4 4z"></path></svg>
+                <svg viewBox="0 0 10 10" width="9" height="9" fill="currentColor" aria-hidden="true"><path d="M3 1l4 4-4 4z"></path></svg>
+              </span>
+            </div>
+          </div>
+          <p style="margin: 0; font-size: 13px; color: #8A8D93;">Потяните ползунок, чтобы сравнить старую и новую детальную карточку</p>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Открывается по клику на миниатюру. Здесь вся информация о брони и о госте — то, с чем работают, когда нужно что-то уточнить или изменить</p>
+        <div style="margin: 24px 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93;">Проблемы</div>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.55; color: #3d3d3d;">
+          <li>Перегруженный визуал из-за объёма функционала, ненативное расположение функций, лишние действия до нужной кнопки</li>
+          <li>Чтобы поправить данные гостя, нужно было выйти из карточки и уйти в другой раздел</li>
+          <li>Поля вроде дня рождения в гостевой книге годами оставались пустыми</li>
+          <li>Теги были одним общим набором</li>
+          <li>Сообщения в чате приходили без привязки к брони: сотрудник не понимал, о каком резерве речь, рисковал перепутать однофамильцев или звонил уточнять</li>
+          <li>Не хватало функционала, который запрашивали пользователи</li>
+        </ul>
+        <div style="margin: 24px 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93;">Решения</div>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.55; color: #3d3d3d;">
+          <li>Пересобрал структуру: данные события правятся в один клик</li>
+          <li>Данные гостя редактируются прямо в карточке резерва</li>
+          <li>Заполненное здесь автоматически уходит в гостевую книгу — то же с тегами гостя</li>
+          <li>Разделил на теги гостя и теги события. Позже это позволило реализовать маркетинговые рассылки по тегам, а не только по датам</li>
+          <li>В месседж-центре закрепил данные резерва с переходом в карточку. А для основного сценария — когда ты уже в карточке — добавил чат прямо в неё: написать, подтвердить, скорректировать, не уходя с экрана</li>
+          <li>Добавил вкладки с дополнительной информацией, историю посещений и управление платежами</li>
+        </ul>
+        <div style="margin: 28px 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93;">Варианты отображения обновлённых детальных карточек</div>
+        <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Сценарии работы в зале разные, поэтому вид карточки выбирает сам пользователь: боковая панель рядом с картой зала — когда важно держать зал перед глазами, полноэкранный режим — когда нужно спокойно разобраться с данными брони и гостя</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 14px;">
+          <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+            <button type="button" onClick="{{ zoomSide }}" style="display: block; padding: 0; border: 0; background: #0d0e10; border-radius: 12px; overflow: hidden; cursor: zoom-in; position: relative; line-height: 0;">
+              <img src="photo/detail-view-side.png" alt="Детальная карточка в виде боковой панели" style="display: block; width: 100%; height: auto;">
+              <span style="position: absolute; right: 10px; bottom: 10px; width: 30px; height: 30px; border-radius: 100px; background: rgba(13,14,16,0.62); display: flex; align-items: center; justify-content: center; color: #ffffff;"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6.5 2.5H2.5v4"></path><path d="M9.5 13.5h4v-4"></path><path d="M13.5 6.5v-4h-4"></path><path d="M2.5 9.5v4h4"></path></svg></span>
+            </button>
+            <figcaption style="font-family: 'Gilroy', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8A8D93;">Боковая панель</figcaption>
+          </figure>
+          <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+            <button type="button" onClick="{{ zoomFull }}" style="display: block; padding: 0; border: 0; background: #0d0e10; border-radius: 12px; overflow: hidden; cursor: zoom-in; position: relative; line-height: 0;">
+              <img src="photo/detail-view-full.png" alt="Детальная карточка в полноэкранном режиме" style="display: block; width: 100%; height: auto;">
+              <span style="position: absolute; right: 10px; bottom: 10px; width: 30px; height: 30px; border-radius: 100px; background: rgba(13,14,16,0.62); display: flex; align-items: center; justify-content: center; color: #ffffff;"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6.5 2.5H2.5v4"></path><path d="M9.5 13.5h4v-4"></path><path d="M13.5 6.5v-4h-4"></path><path d="M2.5 9.5v4h4"></path></svg></span>
+            </button>
+            <figcaption style="font-family: 'Gilroy', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8A8D93;">Полный экран</figcaption>
+          </figure>
+        </div>
+        <div style="margin: 28px 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93;">Новые разделы карточки</div>
+        <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Разделы внутри карточки позволяют работать с резервом целиком, не покидая его: данные гостя, чат, история посещений и платежи открываются здесь же. В старых карточках такие переходы уводили в другой раздел системы — без пути назад к резерву</p>
+        <video ref="{{ vidRef }}" src="video/detail-card-sections.webm" controls="true" muted="true" loop="true" playsInline="true" preload="metadata" style="display: block; width: 100%; height: auto; border-radius: 12px; background: #0d0e10;"></video>
+        <sc-if value="{{ zoomOn }}" hint-placeholder-val="{{ false }}">
+          <div onClick="{{ closeZoom }}" style="position: fixed; inset: 0; z-index: 60; background: rgba(8,9,11,0.88); display: flex; align-items: center; justify-content: center; padding: clamp(16px, 4vw, 48px); cursor: zoom-out;">
+            <img src="{{ zoomSrc }}" alt="Увеличенный вид карточки" style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 10px; box-shadow: 0 24px 70px rgba(0,0,0,0.5);">
+            <button type="button" onClick="{{ closeZoom }}" aria-label="Закрыть" style="position: absolute; top: 20px; right: 20px; width: 42px; height: 42px; border: 0; border-radius: 100px; background: rgba(255,255,255,0.14); color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l8 8"></path><path d="M12 4l-8 8"></path></svg></button>
+          </div>
+        </sc-if>
+      </div>
+
+      <div id="mod-waitlist" style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px); scroll-margin-top: 88px;">
+        <div style="margin-bottom: 20px;">
+          <h3 style="margin: 0; font-size: clamp(22px, 2.8vw, 30px); font-weight: 700; letter-spacing: -0.025em;">Очередь ожидания</h3>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+          <div ref="{{ cmp3Ref }}" onPointerDown="{{ onDown3 }}" onPointerMove="{{ onMove3 }}" onPointerUp="{{ onUp3 }}" style="position: relative; aspect-ratio: 2388 / 1790; border-radius: 12px; overflow: hidden; background: #0d0e10; touch-action: none; user-select: none; cursor: ew-resize;">
+            <img src="photo/waitlist-after.png" alt="Очередь ожидания после редизайна" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <div ref="{{ clip3Ref }}" style="position: absolute; inset: 0; clip-path: inset(0 50% 0 0);">
+              <img src="photo/waitlist-before.png" alt="Очередь ожидания до редизайна" draggable="false" style="position: absolute; inset: -1px; width: calc(100% + 2px); height: calc(100% + 2px); object-fit: cover;">
+            </div>
+            <span style="position: absolute; left: 14px; top: 14px; padding: 6px 12px; border-radius: 100px; background: rgba(13,14,16,0.62); color: #ffffff; font-family: 'Gilroy', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; pointer-events: none;">Было</span>
+            <span style="position: absolute; right: 14px; top: 14px; padding: 6px 12px; border-radius: 100px; background: rgba(13,14,16,0.62); color: #ffffff; font-family: 'Gilroy', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; pointer-events: none;">Стало</span>
+            <div ref="{{ handle3Ref }}" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; background: rgba(255,255,255,0.9); box-shadow: 0 0 0 1px rgba(0,0,0,0.14); pointer-events: none;">
+              <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; border-radius: 100px; background: #ffffff; box-shadow: 0 4px 14px rgba(0,0,0,0.28); display: flex; align-items: center; justify-content: center; gap: 3px; color: #111214;">
+                <svg viewBox="0 0 10 10" width="9" height="9" fill="currentColor" aria-hidden="true"><path d="M7 1 3 5l4 4z"></path></svg>
+                <svg viewBox="0 0 10 10" width="9" height="9" fill="currentColor" aria-hidden="true"><path d="M3 1l4 4-4 4z"></path></svg>
+              </span>
+            </div>
+          </div>
+          <p style="margin: 0; font-size: 13px; color: #8A8D93;">Потяните ползунок, чтобы сравнить старую и новую очередь ожидания</p>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Если свободных столов нет, гостя ставят в лист ожидания: пришёл с улицы, оставил онлайн-заявку или у планового резерва нет стола. Раздел построен на тех же мини и детальных карточках, только со своими статусами — и наследует все их решения</p>
+        <div style="margin: 24px 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93;">Проблема</div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Все заявки выводились одним общим списком: считывать его неудобно, пользователи часто путались и теряли важную информацию. Ещё одной большой проблемой было то, что онлайн-резервы, которые требовали действий, падали в этот же общий список</p>
+        <div style="margin: 24px 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93;">Решение</div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Стало понятно, что заявки делятся на группы в зависимости от их статуса. Развёл их по табам — у новых заявок появился свой раздел, а все разделы, где требуется внимание пользователя, подсвечиваются: изменения заметны сразу и не тонут в общем списке</p>
+      </div>
+
+      <div id="mod-timeline" style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px); scroll-margin-top: 88px;">
+        <div style="margin-bottom: 20px;">
+          <h3 style="margin: 0; font-size: clamp(22px, 2.8vw, 30px); font-weight: 700; letter-spacing: -0.025em;">Таймлайн загрузки зала</h3>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Чтобы посадить гостя, нужно понимать, что происходит в зале в конкретный час: какие столы заняты, какие освободятся</p>
+        <div style="margin: 24px 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93;">Проблема</div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Гость спрашивает: «Столик на 16:00?» — и сотрудник выходит из сценария создания брони, чтобы найти ответ. Дальше два пути: сверять список карточек с картой зала вручную — легко ошибиться, или выставить время в системе и смотреть свободные столы — много кликов. Гость всё это время ждёт на линии</p>
+        <div style="margin: 24px 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8D93;">Решение</div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Слайдер, закреплённый на экране: по часам видно загруженность, свайпом переходишь к нужному времени и сразу видишь картину по столам. Ответить можно, не выходя из брони, с минимальным шансом на ошибку</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 28px;">
+          <div class="tlscreen" style="position: relative; aspect-ratio: 2388 / 1790; border-radius: 12px; overflow: hidden; background: #ffffff;">
+            <img src="photo/tl-plate.png" alt="Карта зала" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <img class="tlgclosed" src="photo/tl-btns-closed.png" alt="" style="position: absolute; left: 5.025%; top: 93.41%; width: 69.1%; height: auto; animation: tlgClosed 7.4s linear infinite;">
+            <div class="tlgroup" style="position: absolute; inset: 0; animation: tlgUp 7.4s linear infinite, tlgOpen 7.4s linear infinite;">
+              <img src="photo/tl-btns-open.png" alt="" style="position: absolute; left: 5.025%; top: 82.35%; width: 69.1%; height: auto;">
+              <img src="photo/tl-strip.png" alt="Таймлайн загрузки зала" style="position: absolute; left: 5.695%; top: 89.27%; width: 66.5%; height: auto;">
+            </div>
+            <img class="tlgrip" src="photo/tl-ripple.png" alt="" style="position: absolute; left: 64.7%; top: 94.75%; width: 2.345%; height: auto; transform-origin: 50% 50%; opacity: 0; animation: tlgRip 7.4s linear infinite;">
+            <img class="tlgcur" src="photo/tl-cursor.png" alt="" style="position: absolute; left: 74%; top: 99.4%; width: 1.55%; height: auto; opacity: 0; animation: tlgCur 7.4s linear infinite, tlgCurOp 7.4s linear infinite;">
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+          <div class="tlfilm" style="position: relative; aspect-ratio: 1680 / 168; border-radius: 12px; overflow: hidden; background: #ffffff; box-shadow: 0 1px 0 rgba(17,18,20,0.06) inset;">
+            <img class="tlf1" src="photo/tl-f1.png" alt="Таймлайн: выбран 10:15" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: tlA 7.4s linear infinite;">
+            <img class="tlf2" src="photo/tl-f2.png" alt="Клик по 10:00" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: tlB 7.4s linear infinite;">
+            <img class="tlf3" src="photo/tl-f3.png" alt="Выбран 10:00, возврат в реальное время" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: tlC 7.4s linear infinite;">
+            <img class="tlcur" src="photo/tl-cursor.png" alt="" style="position: absolute; left: 93.21%; top: 31.5%; width: 1.905%; height: auto; animation: tlCur 7.4s linear infinite, tlCurOp 7.4s linear infinite;">
+          </div>
+          <p style="margin: 0; font-size: 13px; color: #8A8D93;">Перемотка таймлайна на 10:00 и возврат в реальное время. Карта столов и список резервов перестраиваются под выбранное время и рассчитанную на него загрузку</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section style="padding: 0 0 clamp(56px, 8vw, 96px);">
+    <div class="alt" style="position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; background: #F5F8FA; border-radius: 28px; padding: clamp(24px, 4vw, 44px);">
+      <a href="case-design-system.dc.html" aria-label="Дизайн-система с нуля" style="position: absolute; inset: 0; border-radius: 28px; z-index: 2;"></a>
+      <span class="altarw" style="position: absolute; top: 22px; right: 22px; width: 38px; height: 38px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.6 12.4 12.4 3.6"></path><path d="M6.1 3.6H12.4V9.9"></path></svg></span>
+      <div>
+        <div style="font-size: 13px; font-weight: 500; color: #8A8D93; margin-bottom: 8px;">Следующий кейс</div>
+        <div style="font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.025em;">Дизайн-система с нуля</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2c5cf0&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#2c5cf0&quot;,&quot;#0f7a5a&quot;,&quot;#b4441f&quot;,&quot;#5b3ec8&quot;],&quot;section&quot;:&quot;Акцент&quot;},&quot;accentBg&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#E6EBFF&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#E6EBFF&quot;,&quot;#E2F2EC&quot;,&quot;#FBEAE3&quot;,&quot;#EDE8FB&quot;],&quot;section&quot;:&quot;Акцент&quot;}}">class Component extends DCLogic {
+  state = { add: false, note: false, tags: false, cardTheme: 'light', zoom: null };
+  componentDidMount() {
+    document.body.setAttribute('data-theme', 'dark');
+    this.initReveal();
+    this.onKey = e => { if (e.key === 'Escape') this.setState({ zoom: null }); };
+    document.addEventListener('keydown', this.onKey);
+  }
+  initReveal() {
+    const nodes = Array.from(document.querySelectorAll('section > h2, section > p, section > div, section > div > *'));
+    if (!nodes.length) { this.revealTimer = setTimeout(() => this.initReveal(), 150); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const peers = Array.from(el.parentElement.children).filter(n => n.classList.contains('rv'));
+        el.style.transitionDelay = Math.min(peers.indexOf(el), 6) * 70 + 'ms';
+        el.classList.add('in');
+        io.unobserve(el);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 22% 0px' });
+    nodes.forEach(n => {
+      if (n.classList.contains('rv') || n.closest('.rv')) return;
+      const r = n.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.1) { n.classList.add('rv', 'in'); return; }
+      n.classList.add('rv');
+      io.observe(n);
+    });
+    this.revealIO = io;
+    this.onScrollSpy = () => this.spy();
+    window.addEventListener('scroll', this.onScrollSpy, { passive: true });
+    this.spy();
+  }
+  spy() {
+    const links = Array.from(document.querySelectorAll('[data-modnav]'));
+    if (!links.length) return;
+    let cur = links[0];
+    links.forEach(a => {
+      const el = document.getElementById(a.getAttribute('data-modnav'));
+      if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.35) cur = a;
+    });
+    links.forEach(a => a.setAttribute('data-on', a === cur ? '1' : '0'));
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScrollSpy);
+    document.removeEventListener('keydown', this.onKey);
+    if (this.revealIO) this.revealIO.disconnect();
+    clearTimeout(this.revealTimer);
+  }
+  setSplit(clientX, k) {
+    const sfx = k ? String(k + 1) : '';
+    const box = this['cmp' + sfx];
+    if (!box) return;
+    const r = box.getBoundingClientRect();
+    const pct = Math.max(0, Math.min(100, ((clientX - r.left) / r.width) * 100));
+    const clip = this['clip' + sfx];
+    const handle = this['handle' + sfx];
+    if (clip) clip.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+    if (handle) handle.style.left = pct + '%';
+  }
+  renderVals() {
+    const accentColor = this.props.accentColor ?? '#2c5cf0';
+    const accentBg = this.props.accentBg ?? '#E6EBFF';
+    const { add, note, tags, cardTheme } = this.state;
+    const parts = ['default'];
+    if (add) parts.push('add');
+    if (add && note) parts.push('note');
+    if (add && tags) parts.push('tags');
+    const slug = parts.length === 1 ? 'default' : parts.slice(1).join('-');
+    return {
+      cardSrc: `photo/card/${slug}-${cardTheme}.png`,
+      cardAlt: parts.join(' + '),
+      cardBg: cardTheme === 'dark' ? '#000000' : '#D1D1D1',
+      addOn: add, noteOn: add && note, tagsOn: add && tags,
+      lightOn: cardTheme === 'light', darkOn: cardTheme === 'dark',
+      toggleAdd: () => this.setState(s => s.add ? { add: false, note: false, tags: false } : { add: true }),
+      toggleNote: () => this.setState(s => ({ note: !s.note, add: s.note ? s.add : true })),
+      toggleTags: () => this.setState(s => ({ tags: !s.tags, add: s.tags ? s.add : true })),
+      setLight: () => this.setState({ cardTheme: 'light' }),
+      setDark: () => this.setState({ cardTheme: 'dark' }),
+      cmpRef: el => { this.cmp = el; },
+      clipRef: el => { this.clip = el; },
+      handleRef: el => { this.handle = el; },
+      stop: e => e.stopPropagation(),
+      onDown: e => {
+        this.dragging = true;
+        if (e.currentTarget.setPointerCapture) e.currentTarget.setPointerCapture(e.pointerId);
+        this.setSplit(e.clientX);
+      },
+      onMove: e => { if (this.dragging) this.setSplit(e.clientX); },
+      onUp: () => { this.dragging = false; },
+      cmp2Ref: el => { this.cmp2 = el; },
+      clip2Ref: el => { this.clip2 = el; },
+      handle2Ref: el => { this.handle2 = el; },
+      onDown2: e => {
+        this.dragging2 = true;
+        if (e.currentTarget.setPointerCapture) e.currentTarget.setPointerCapture(e.pointerId);
+        this.setSplit(e.clientX, 1);
+      },
+      onMove2: e => { if (this.dragging2) this.setSplit(e.clientX, 1); },
+      onUp2: () => { this.dragging2 = false; },
+      cmp3Ref: el => { this.cmp3 = el; },
+      clip3Ref: el => { this.clip3 = el; },
+      handle3Ref: el => { this.handle3 = el; },
+      onDown3: e => {
+        this.dragging3 = true;
+        if (e.currentTarget.setPointerCapture) e.currentTarget.setPointerCapture(e.pointerId);
+        this.setSplit(e.clientX, 2);
+      },
+      onMove3: e => { if (this.dragging3) this.setSplit(e.clientX, 2); },
+      onUp3: () => { this.dragging3 = false; },
+      zoomOn: !!this.state.zoom,
+      zoomSrc: this.state.zoom || '',
+      zoomSide: () => this.setState({ zoom: 'photo/detail-view-side.png' }),
+      zoomFull: () => this.setState({ zoom: 'photo/detail-view-full.png' }),
+      closeZoom: () => this.setState({ zoom: null }),
+      vidRef: el => {
+        if (!el || this.vid === el) return;
+        this.vid = el;
+        const key = 'hostme-detail-video-pos';
+        el.playbackRate = 1.25;
+        el.addEventListener('loadedmetadata', () => { el.playbackRate = 1.25; });
+        const saved = parseFloat(localStorage.getItem(key) || '0');
+        if (saved > 0) el.currentTime = saved;
+        el.addEventListener('timeupdate', () => localStorage.setItem(key, String(el.currentTime)));
+      },
+      accentColor,
+      accentBg,
+      accentMuted: `color-mix(in oklab, ${accentColor} 72%, #ffffff)`
+    };
+  }
+}</script>
+</body>
+</html>

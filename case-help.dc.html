@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- seo:start -->
+<title>Редизайн страницы помощи · Амиран Полянский</title>
+<meta name="description" content="3-я по посещаемости страница сервиса ЮKassa: как перестроил главную страницу помощи.">
+<link rel="canonical" href="https://amiranpolyanskiu-ux-ui.ru/case-help.dc.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Амиран Полянский">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Редизайн страницы помощи · Амиран Полянский">
+<meta property="og:description" content="3-я по посещаемости страница сервиса ЮKassa: как перестроил главную страницу помощи.">
+<meta property="og:url" content="https://amiranpolyanskiu-ux-ui.ru/case-help.dc.html">
+<meta property="og:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Редизайн страницы помощи · Амиран Полянский">
+<meta name="twitter:description" content="3-я по посещаемости страница сервиса ЮKassa: как перестроил главную страницу помощи.">
+<meta name="twitter:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<!-- seo:end -->
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Semibold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Extrabold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Heavy.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+  * { box-sizing: border-box; text-wrap: pretty; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAFAF8; color: #111214; font-family: 'Gilroy', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #2c5cf0; }
+  nav a { transition: color 0.15s ease, border-color 0.15s ease; }
+  nav a:hover { color: #2c5cf0; border-bottom-color: #2c5cf0; }
+  .lnk .arw { display: inline-block; transition: transform 0.18s ease; }
+  .lnk:hover .arw { transform: translate(3px, -3px); }
+  .lnk:hover { color: #2c5cf0; }
+  .rv { opacity: 0; transform: translateY(26px); will-change: opacity, transform; transition: opacity 1.4s cubic-bezier(0.16,0.68,0.24,1), transform 1.4s cubic-bezier(0.16,0.68,0.24,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1 !important; transform: none !important; transition: none !important; } }
+  .alt { transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1); }
+  .alt:hover { transform: translateY(-4px); }
+  .altarw { transition: background-color 0.22s ease; }
+  .altarw svg path { fill: none; stroke: #111214; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.22s ease; }
+  .alt:hover .altarw { background: #111214 !important; }
+  .alt:hover .altarw svg path { stroke: #ffffff !important; }
+  .navbtn { transition: background-color 0.2s ease, color 0.2s ease; }
+  .zoomwrap { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: clamp(16px, 3vw, 28px); background: rgba(10,10,12,0.82); backdrop-filter: blur(4px); cursor: zoom-out; }
+  .zoombox { position: relative; max-width: 100%; max-height: 100%; overflow: hidden; border-radius: 12px; background: #F5F8FA; }
+  .zoombox img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; }
+  .zoomopen { transition: background-color 0.2s ease, color 0.2s ease; }
+  .zoomopen:hover { background: #FAFAF8 !important; color: #111214 !important; }
+  .navbtn:hover { background: #111214 !important; color: #ffffff !important; }
+  .backbtn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px 8px 12px; border-radius: 100px; background: #efefef; color: #111214; font-size: 14px; font-weight: 600; transition: background-color 0.2s ease, color 0.2s ease; }
+  .backbtn svg { display: block; }
+  .backbtn svg path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .backbtn:hover { background: #111214 !important; color: #ffffff !important; }
+  body[data-theme="dark"] { background: #0d0e10; color: #f2f3f5; }
+  [data-theme="dark"] header::before { background: rgba(13,14,16,0.55) !important; }
+  [data-theme="dark"] [style*="rgb(110, 110, 115)"] { color: #9ba0a8 !important; }
+  [data-theme="dark"] [style*="color: rgb(17, 18, 20)"] { color: #f2f3f5 !important; }
+  [data-theme="dark"] [style*="rgb(138, 141, 147)"] { color: #8b9099 !important; }
+  [data-theme="dark"] [style*="rgb(61, 61, 61)"] { color: #b6bac1 !important; }
+  [data-theme="dark"] [style*="rgb(245, 248, 250)"] { background: #17181b !important; }
+  [data-theme="dark"] [style*="rgb(232, 237, 242)"] { background: #26282d !important; }
+  [data-theme="dark"] [style*="rgb(230, 235, 255)"] { background: #26282d !important; color: #b6bac1 !important; }
+  [data-theme="dark"] [style*="repeating-linear-gradient"] { background: repeating-linear-gradient(135deg, #1d1e21 0 8px, #232428 8px 16px) !important; }
+  [data-theme="dark"] [style*="rgb(250, 250, 248)"] { background: #26282d !important; color: #b6bac1 !important; }
+  [data-theme="dark"] .altarw { background: #26282d !important; }
+  [data-theme="dark"] .altarw svg path { stroke: #f2f3f5; }
+  [data-theme="dark"] .alt:hover .altarw { background: #f2f3f5 !important; }
+  [data-theme="dark"] .alt:hover .altarw svg path { stroke: #111214 !important; }
+  [data-theme="dark"] .navbtn, [data-theme="dark"] .backbtn { background: rgba(255,255,255,0.1) !important; color: #f2f3f5 !important; }
+  [data-theme="dark"] .navbtn:hover, [data-theme="dark"] .backbtn:hover { background: #f2f3f5 !important; color: #111214 !important; }
+  [data-theme="dark"] nav a:hover { color: #f2f3f5 !important; }
+</style>
+</helmet>
+
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px);">
+
+  <header style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 0;" style-before="content: ''; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 100vw; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); z-index: 0;">
+    <a href="index.html#cases" class="backbtn" style="position: relative; z-index: 1;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M12.4 8H3.6"></path><path d="M7.4 3.6 3 8l4.4 4.4"></path></svg>Все кейсы</a>
+    <nav style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(16px, 2.4vw, 26px); font-size: 15px;">
+      <a href="index.html#cases" style="color: #8A8D93;">Кейсы</a>
+      <a href="index.html#experience" style="color: #8A8D93;">Опыт</a>
+      <a href="index.html#skills" style="color: #8A8D93;">Навыки</a>
+      <a href="index.html#contacts" class="navbtn" style="display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 100px; background: #efefef; color: #111214;">Контакты</a>
+    </nav>
+  </header>
+
+  <section style="padding: clamp(40px, 7vw, 80px) 0 clamp(28px, 4vw, 44px);">
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; font-size: 12px; font-weight: 500;">
+      <span style="padding: 5px 11px; background: #E6EBFF; color: #2c5cf0; border-radius: 100px;">B2B</span>
+      <span style="padding: 5px 11px; background: #E6EBFF; color: #2c5cf0; border-radius: 100px;">Redesign</span>
+      <span style="padding: 5px 11px; background: #E6EBFF; color: #2c5cf0; border-radius: 100px;">Content</span>
+      <span style="padding: 5px 3px; color: #8A8D93;">2025–2026</span>
+    </div>
+    <h1 style="margin: 0 0 clamp(20px, 3vw, 28px); font-size: clamp(34px, 6.4vw, 76px); line-height: 0.98; font-weight: 800; letter-spacing: -0.04em;">Редизайн главной страницы помощи</h1>
+    <p style="margin: 0; font-size: clamp(17px, 2vw, 21px); line-height: 1.4; color: #8A8D93;">3-я по посещаемости страница сервиса</p>
+    <div style="margin-top: clamp(28px, 4vw, 40px); border-radius: 14px; overflow: hidden; background: #F5F8FA;">
+      <img src="photo/help-hero.png" alt="Главная страница помощи ЮKassa после редизайна" style="display: block; width: 100%; height: auto;">
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Что это за страница</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">Главная страница помощи ЮKassa — точка входа в базу знаний для мерчантов. Большинство попадает сюда не из личного кабинета, а прямо из поисковой выдачи: гуглят конкретный вопрос и оказываются в справке. Отсюда третье место по посещаемости среди всех страниц сервиса.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(16px, 2.5vw, 24px);">
+      <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h2 style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Задача</h2>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5;">
+          <li>Новая навигация и группировка разделов</li>
+          <li>Аудит актуальности базы статей</li>
+          <li>Точки входа в продукты, которых не было вообще</li>
+        </ul>
+      </div>
+      <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h2 style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Моя роль</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55;">Проектировал страницу. Аудит и перегруппировку статей — вместе с редактором.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Контекст</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">Страница оставалась в легаси-дизайне: неудобная навигация, неверная группировка разделов, часть статей устарела. При этом весь этот трафик никак не работал на бизнес — на странице не было ни одной точки входа в продукты.</p>
+    </div>
+    <figure style="margin: clamp(20px, 3vw, 28px) 0 0; display: flex; flex-direction: column; gap: 12px;">
+      <div style="border-radius: 14px; overflow: hidden; background: #F5F8FA;">
+        <img src="photo/help-legacy.png" alt="Страница помощи ЮKassa: боковая навигация и секции со ссылками" style="display: block; width: 100%; height: auto;">
+      </div>
+    </figure>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Что сделал</h2>
+      <ul style="margin: 0; padding-left: 20px; grid-column: span 2; display: flex; flex-direction: column; gap: 12px; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">
+        <li>Разобрал справку семи конкурентов: принципы сортировки и способы размещать промо</li>
+        <li>Перегруппировал разделы, сохранив привычные названия</li>
+        <li>Спроектировал страницу как набор тематических разводящих карточек</li>
+        <li>Встроил продуктовые предложения между карточками и внутри разделов — по боли, с которой пришёл пользователь</li>
+        <li>Отказался от тёмных паттернов, которые нашёл у конкурентов</li>
+      </ul>
+    </div>
+    <div style="margin: clamp(20px, 3vw, 28px) 0 0; border-radius: 14px; overflow: hidden; background: #F5F8FA;">
+      <div style="aspect-ratio: 2880 / 1782; overflow-y: auto; overflow-x: hidden;">
+        <img src="photo/help-after-full.png" alt="Главная страница помощи целиком: разводящие карточки по темам и продуктовые блоки" style="display: block; width: 100%; height: auto;">
+      </div>
+    </div>
+    <figure style="margin: clamp(16px, 2.5vw, 20px) 0 0; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 2vw, 16px);">
+        <div style="position: relative; border-radius: 12px; overflow: hidden; background: #F5F8FA;">
+          <img src="photo/help-inner-1.png" alt="Внутренняя разводящая страница «Решения для 54-ФЗ» с тематическим блоком про онлайн-кассы" style="display: block; width: 100%; height: auto;">
+          <button type="button" class="zoomopen" data-zoom="photo/help-inner-1.png" aria-label="Смотреть полностью" style="position: absolute; right: 10px; bottom: 10px; width: 30px; height: 30px; padding: 0; border: 0; border-radius: 100px; background: rgba(13,14,16,0.62); color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6.5 2.5H2.5v4"></path><path d="M9.5 13.5h4v-4"></path><path d="M13.5 6.5v-4h-4"></path><path d="M2.5 9.5v4h4"></path></svg></button>
+        </div>
+        <div style="position: relative; border-radius: 12px; overflow: hidden; background: #F5F8FA;">
+          <img src="photo/help-inner-2.png" alt="Внутренняя разводящая страница «Приём платежей» со списком разделов" style="display: block; width: 100%; height: auto;">
+          <button type="button" class="zoomopen" data-zoom="photo/help-inner-2.png" aria-label="Смотреть полностью" style="position: absolute; right: 10px; bottom: 10px; width: 30px; height: 30px; padding: 0; border: 0; border-radius: 100px; background: rgba(13,14,16,0.62); color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6.5 2.5H2.5v4"></path><path d="M9.5 13.5h4v-4"></path><path d="M13.5 6.5v-4h-4"></path><path d="M2.5 9.5v4h4"></path></svg></button>
+        </div>
+      </div>
+      <figcaption style="font-size: 13px; line-height: 1.45; color: #8A8D93;">На внутренних разводящих страницах заложил место под тематические продуктовые блоки.</figcaption>
+    </figure>
+  </section>
+
+  <section style="padding: clamp(28px, 5vw, 56px) 0; container-type: inline-size;">
+    <div style="background: #F5F8FA; color: #f2f3f5; border-radius: clamp(16px, 2.1818cqw, 24px); padding: clamp(18px, 3.6364cqw, 40px); display: flex; align-items: flex-start; flex-wrap: wrap; justify-content: center; gap: clamp(20px, 2.9091cqw, 32px);">
+      <div style="flex: 0 1 auto; width: max(260px, 37.0909cqw); display: flex; align-items: center; justify-content: center; gap: clamp(14px, 2.1818cqw, 24px)">
+        <div style="display: flex; align-items: baseline; flex-shrink: 0;"><span style="font-size: clamp(40px, 8.1818cqw, 90px); font-weight: 800; line-height: 1; white-space: nowrap;">3-4</span><div style="width: clamp(15px, 2.9091cqw, 32px); display: flex; justify-content: center; flex-shrink: 0;"><span style="font-size: clamp(20px, 3.6364cqw, 40px); font-weight: 800; line-height: 1;">%</span></div></div>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; flex: 0 1 auto; width: max(140px, 18.6364cqw);">CTR по продуктовым карточкам</p>
+      </div>
+      <div style="flex: 1 1 300px; display: flex; align-items: center; gap: clamp(14px, 2.1818cqw, 24px)">
+        <div style="display: flex; align-items: baseline; flex-shrink: 0;"><span style="font-size: clamp(20px, 3.6364cqw, 40px); font-weight: 800; line-height: 1;">+</span><div style="display: flex; align-items: baseline;"><span style="font-size: clamp(40px, 8.1818cqw, 90px); font-weight: 800; line-height: 1; white-space: nowrap;">1-2</span><div style="width: clamp(32px, 6.2727cqw, 69px); display: flex; justify-content: center; flex-shrink: 0;"><span style="font-size: clamp(20px, 3.6364cqw, 40px); font-weight: 800; line-height: 1;">п.п.</span></div></div></div>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; flex: 1 1 auto;">конверсия среди новых пользователей относительно контрольной группы</p>
+      </div>
+    </div>
+    <p style="margin: clamp(10px, 1.4vw, 14px) 0 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Результаты · на тестовой группе (10% посетителей)</p>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 clamp(32px, 5vw, 56px);">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Подход</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: clamp(12px, 2vw, 18px); margin-top: clamp(16px, 2.5vw, 24px);">
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Бенчмарки</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Проанализировал страницы помощи платёжных сервисов и банков: Тинькофф, Сбер, Альфа-Банк, Точка, CloudPayments, Робокасса, Stripe. Вынес принципы сортировки разделов и варианты размещения маркетинговых материалов внутри справочного контента.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Варианты решений</h3>
+        <div style="grid-column: span 2;">
+          <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Часть чужих подходов отверг сознательно — как тёмные паттерны:</p>
+          <div style="display: flex; flex-direction: column; gap: 18px; margin-bottom: 20px;">
+            <div>
+              <div style="font-size: 15px; font-weight: 600; margin-bottom: 8px;">Баннеры, визуально неотличимые от разводящих карточек.</div>
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Мерчант ищет ответ, находит что-то похожее на нужный раздел, кликает — и оказывается в сценарии подключения дополнительных услуг вместо статьи. Такое раздражает пользователя, который пришёл решать проблему, а не покупать.</p>
+            </div>
+            <div>
+              <div style="font-size: 15px; font-weight: 600; margin-bottom: 8px;">Промо-вставки в теле статьи,</div>
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">часто не связанные по смыслу с её содержанием.</p>
+            </div>
+          </div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d;">На первом этапе решил сфокусироваться на пользе: продуктовые предложения лаконично размещены между тематическими карточками, а внутри раздела пользователь видит предложение, закрывающее именно ту боль, с которой он сюда пришёл. Сравнивать пока не с чем — это первая версия страницы с точками входа вообще. Дальше планирую провести исследование и сопоставить, как более агрессивные форматы влияют на бизнес-метрики и на пользователя, и уже на данных решать, стоит ли менять подход.</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Решение</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Перегруппировал разделы, сохранив привычные названия — чтобы не путать постоянных пользователей. Страница стала набором тематических разводящих карточек с лаконично встроенным продуктовым контентом.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Исследования</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Отдельных тестов навигации до запуска не проводили — решение сразу пошло в A/B на 10% посетителей. Валидация на реальном трафике оправдана при таком объёме поискового трафика и низкой цене ошибки: страница информационная, критичных для бизнеса действий на ней нет.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Работа с контентом</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Вместе с редактором прошли всю базу статей: проверили актуальность, отсеяли устаревшее, пересобрали группировку разделов по смыслу вместо накопившейся исторической логики.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Метрики</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Смотрели на CTR по продуктовым карточкам и на конверсию отдельно для новых пользователей — иначе эффект дизайна смешался бы с теми, кто и так был клиентом и подключил бы продукт без всякой страницы помощи. Плюс контролировали NPS, чтобы убедиться, что продуктовые блоки не раздражают.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 clamp(32px, 5vw, 56px);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Ограничения</h2>
+      <ul style="margin: 0; padding-left: 20px; grid-column: span 2; display: flex; flex-direction: column; gap: 12px; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">
+        <li>Привычные названия разделов трогать нельзя. Часть мерчантов ходит в справку годами и ориентируется по памяти. Группировку пересобрал, названия сохранил.</li>
+        <li>Адреса статей остались прежними. Страница живёт на поисковом трафике: смена URL обнулила бы накопленные позиции в выдаче, и человек, загуглив свой вопрос, попал бы в никуда.</li>
+        <li>Справка не должна превращаться в витрину. Пользователь приходит решать проблему — продуктовые блоки не могут мешать ему найти ответ.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding: 0 0 clamp(56px, 8vw, 96px);">
+    <div class="alt" style="position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; background: #F5F8FA; border-radius: 28px; padding: clamp(24px, 4vw, 44px);">
+      <a href="case-contactme.dc.html" aria-label="Contact me — конструктор мини-сайтов" style="position: absolute; inset: 0; border-radius: 28px; z-index: 2;"></a>
+      <span class="altarw" style="position: absolute; top: 22px; right: 22px; width: 38px; height: 38px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.6 12.4 12.4 3.6"></path><path d="M6.1 3.6H12.4V9.9"></path></svg></span>
+      <div>
+        <div style="font-size: 13px; font-weight: 500; color: #8A8D93; margin-bottom: 8px;">Следующий кейс</div>
+        <div style="font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.025em;">Contact me — конструктор мини-сайтов</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>class Component extends DCLogic {
+  componentDidMount() {
+    document.body.setAttribute('data-theme', 'dark');
+    this.initReveal();
+    this.initShots();
+  }
+  initShots() {
+    if (this.zoomWired) return;
+    this.zoomWired = true;
+    this.onZoom = e => {
+      const btn = e.target.closest('[data-zoom]');
+      if (!btn) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'zoomwrap';
+      const box = document.createElement('div');
+      box.className = 'zoombox';
+      const img = document.createElement('img');
+      img.src = btn.getAttribute('data-zoom');
+      img.alt = btn.previousElementSibling ? btn.previousElementSibling.alt : '';
+      box.appendChild(img);
+      wrap.appendChild(box);
+      function close() { wrap.remove(); document.removeEventListener('keydown', esc); }
+      function esc(ev) { if (ev.key === 'Escape') close(); }
+      wrap.addEventListener('click', close);
+      document.addEventListener('keydown', esc);
+      document.body.appendChild(wrap);
+    };
+    document.addEventListener('click', this.onZoom);
+  }
+  initReveal() {
+    const nodes = Array.from(document.querySelectorAll('section > h2, section > p, section > div, section > div > *'));
+    if (!nodes.length) { this.revealTimer = setTimeout(() => this.initReveal(), 150); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const peers = Array.from(el.parentElement.children).filter(n => n.classList.contains('rv'));
+        el.style.transitionDelay = Math.min(peers.indexOf(el), 6) * 70 + 'ms';
+        el.classList.add('in');
+        io.unobserve(el);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 22% 0px' });
+    nodes.forEach(n => {
+      if (n.classList.contains('rv') || n.closest('.rv')) return;
+      const r = n.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.1) { n.classList.add('rv', 'in'); return; }
+      n.classList.add('rv');
+      io.observe(n);
+    });
+    this.revealIO = io;
+  }
+  componentWillUnmount() {
+    if (this.onZoom) document.removeEventListener('click', this.onZoom);
+    if (this.revealIO) this.revealIO.disconnect();
+    clearTimeout(this.revealTimer);
+  }
+}</script>
+</body>
+</html>

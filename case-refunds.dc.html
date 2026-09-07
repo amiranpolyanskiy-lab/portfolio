@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- seo:start -->
+<title>Отложенные возвраты платежей · Амиран Полянский</title>
+<meta name="description" content="Как вернуть деньги покупателю, не замораживая средства мерчанта. ~12 тыс. обращений в поддержку по возвратам — и что с этим сделал дизайн.">
+<link rel="canonical" href="https://amiranpolyanskiu-ux-ui.ru/case-refunds.dc.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Амиран Полянский">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Отложенные возвраты платежей · Амиран Полянский">
+<meta property="og:description" content="Как вернуть деньги покупателю, не замораживая средства мерчанта. ~12 тыс. обращений в поддержку по возвратам — и что с этим сделал дизайн.">
+<meta property="og:url" content="https://amiranpolyanskiu-ux-ui.ru/case-refunds.dc.html">
+<meta property="og:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Отложенные возвраты платежей · Амиран Полянский">
+<meta name="twitter:description" content="Как вернуть деньги покупателю, не замораживая средства мерчанта. ~12 тыс. обращений в поддержку по возвратам — и что с этим сделал дизайн.">
+<meta name="twitter:image" content="https://amiranpolyanskiu-ux-ui.ru/photo/og.png">
+<!-- seo:end -->
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Semibold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Extrabold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Heavy.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+  * { box-sizing: border-box; text-wrap: pretty; }
+  summary::-webkit-details-marker { display: none; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAFAF8; color: #111214; font-family: 'Gilroy', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #2c5cf0; }
+  nav a { transition: color 0.15s ease, border-color 0.15s ease; }
+  nav a:hover { color: #2c5cf0; border-bottom-color: #2c5cf0; }
+  .lnk .arw { display: inline-block; transition: transform 0.18s ease; }
+  .lnk:hover .arw { transform: translate(3px, -3px); }
+  .lnk:hover { color: #2c5cf0; }
+  .rv { opacity: 0; transform: translateY(26px); will-change: opacity, transform; transition: opacity 1.4s cubic-bezier(0.16,0.68,0.24,1), transform 1.4s cubic-bezier(0.16,0.68,0.24,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1 !important; transform: none !important; transition: none !important; } }
+  .alt { transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1); }
+  .alt:hover { transform: translateY(-4px); }
+  .altarw { transition: background-color 0.22s ease; }
+  .altarw svg path { fill: none; stroke: #111214; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.22s ease; }
+  .alt:hover .altarw { background: #111214 !important; }
+  .alt:hover .altarw svg path { stroke: #ffffff !important; }
+  .htag, [data-theme="dark"] span.htag[style] { color: #16171a !important; background: #F0F2F5 !important; }
+  .navbtn { transition: background-color 0.2s ease, color 0.2s ease; }
+  .navbtn:hover { background: #111214 !important; color: #ffffff !important; }
+  .backbtn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px 8px 12px; border-radius: 100px; background: #efefef; color: #111214; font-size: 14px; font-weight: 600; transition: background-color 0.2s ease, color 0.2s ease; }
+  .backbtn svg { display: block; }
+  .backbtn svg path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .backbtn:hover { background: #111214 !important; color: #ffffff !important; }
+  body[data-theme="dark"] { background: #0d0e10; color: #f2f3f5; }
+  [data-theme="dark"] header::before { background: rgba(13,14,16,0.55) !important; }
+  [data-theme="dark"] [style*="rgb(110, 110, 115)"] { color: #9ba0a8 !important; }
+  [data-theme="dark"] [style*="color: rgb(17, 18, 20)"] { color: #f2f3f5 !important; }
+  [data-theme="dark"] [style*="rgb(138, 141, 147)"] { color: #8b9099 !important; }
+  [data-theme="dark"] [style*="rgb(61, 61, 61)"] { color: #b6bac1 !important; }
+  [data-theme="dark"] [style*="rgb(245, 248, 250)"] { background: #17181b !important; }
+  [data-theme="dark"] [style*="rgb(232, 237, 242)"] { background: #26282d !important; }
+  [data-theme="dark"] [style*="rgb(230, 235, 255)"] { background: #26282d !important; color: #b6bac1 !important; }
+  [data-theme="dark"] [style*="repeating-linear-gradient"] { background: repeating-linear-gradient(135deg, #1d1e21 0 8px, #232428 8px 16px) !important; }
+  [data-theme="dark"] [style*="rgb(250, 250, 248)"] { background: #26282d !important; color: #b6bac1 !important; }
+  [data-theme="dark"] .altarw { background: #26282d !important; }
+  [data-theme="dark"] .altarw svg path { stroke: #f2f3f5; }
+  [data-theme="dark"] .alt:hover .altarw { background: #f2f3f5 !important; }
+  [data-theme="dark"] .alt:hover .altarw svg path { stroke: #111214 !important; }
+  [data-theme="dark"] .navbtn, [data-theme="dark"] .backbtn { background: rgba(255,255,255,0.1) !important; color: #f2f3f5 !important; }
+  [data-theme="dark"] .navbtn:hover, [data-theme="dark"] .backbtn:hover { background: #f2f3f5 !important; color: #111214 !important; }
+  [data-theme="dark"] nav a:hover { color: #f2f3f5 !important; }
+</style>
+</helmet>
+
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px);">
+
+  <header style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 0;" style-before="content: ''; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 100vw; background: rgba(255,255,255,0.32); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); z-index: 0;">
+    <a href="index.html#cases" class="backbtn" style="position: relative; z-index: 1;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M12.4 8H3.6"></path><path d="M7.4 3.6 3 8l4.4 4.4"></path></svg>Все кейсы</a>
+    <nav style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(16px, 2.4vw, 26px); font-size: 15px;">
+      <a href="index.html#cases" style="color: #8A8D93;">Кейсы</a>
+      <a href="index.html#experience" style="color: #8A8D93;">Опыт</a>
+      <a href="index.html#skills" style="color: #8A8D93;">Навыки</a>
+      <a href="index.html#contacts" class="navbtn" style="display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 100px; background: #efefef; color: #111214;">Контакты</a>
+    </nav>
+  </header>
+
+  <section style="padding: clamp(40px, 7vw, 80px) 0 clamp(28px, 4vw, 44px);">
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; font-size: 12px; font-weight: 500;">
+      <span style="padding: 5px 11px; background: #E6EBFF; color: #2c5cf0; border-radius: 100px;">B2B</span>
+      <span style="padding: 5px 11px; background: #E6EBFF; color: #2c5cf0; border-radius: 100px;">Fintech</span>
+      <span style="padding: 5px 3px; color: #8A8D93;">2025–2026</span>
+    </div>
+    <h1 style="margin: 0 0 clamp(20px, 3vw, 28px); font-size: clamp(34px, 6.4vw, 76px); line-height: 0.98; font-weight: 800; letter-spacing: -0.04em;">Отложенные возвраты платежей</h1>
+    <p style="margin: 0; font-size: clamp(17px, 2vw, 21px); line-height: 1.4; color: #8A8D93;">Вернуть деньги покупателю, не замораживая свои</p>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">В чём суть</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">ЮKassa принимает платежи для бизнеса. Когда покупатель просит вернуть деньги, мерчант должен отдать их сам — выручка по этому платежу уже ушла к нему на счёт. Если свободных средств в моменте нет, возврат приходится оплачивать отдельно: пополнять баланс обеспечения, платить с карты или отправлять платёжное поручение. Все три пути долгие или дорогие.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(16px, 2.5vw, 24px);">
+      <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h2 style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Задача</h2>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5;">
+          <li>Очередь возвратов с автопокрытием из будущих поступлений</li>
+          <li>Управление приоритетом очереди в реальном времени</li>
+          <li>Альтернативные пути возврата</li>
+          <li>Сводная страница платежей на уровне организации</li>
+        </ul>
+      </div>
+      <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h2 style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Моя роль</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55;">Проектировал сценарий. Ресёрч и тестирование — вместе с исследователем.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Контекст</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">Возвраты — постоянная тема в жалобах NPS. Про баланс обеспечения мерчанты в основном знают, но не понимают, из каких средств платится возврат и сколько их доступно прямо сейчас. Из-за этого возврат не проходит, причина остаётся неясной — и мерчант идёт в поддержку.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Механика</h2>
+      <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">Мерчант ставит возврат в очередь. Дальше входящие платежи от покупателей автоматически идут на её погашение по мере поступления денег. Порядок в очереди можно менять в реальном времени, если приоритеты изменились.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(16px, 3vw, 40px); align-items: start;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Что сделал</h2>
+      <ul style="margin: 0; padding-left: 20px; grid-column: span 2; display: flex; flex-direction: column; gap: 12px; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55;">
+        <li>Спроектировал очередь возвратов: постановка, отображение статуса, автопогашение из входящих платежей</li>
+        <li>Добавил ручное управление приоритетом — мерчант меняет порядок в реальном времени, если срочность изменилась</li>
+        <li>Сохранил альтернативные пути для случаев, когда очередь не подходит: разовый возврат с карты и пополнение обеспечительного баланса</li>
+        <li>Спроектировал сводную страницу платежей на уровне организации</li>
+        <li>На каждом шаге разбирал, где мерчант может застрять или ошибиться</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding: clamp(28px, 5vw, 56px) 0; container-type: inline-size;">
+    <div style="background: #F5F8FA; color: #f2f3f5; border-radius: clamp(16px, 2.1818cqw, 24px); padding: clamp(18px, 3.6364cqw, 40px); min-height: clamp(150px, 17.2727cqw, 190px); display: flex; align-items: center; flex-wrap: wrap; gap: clamp(20px, 2.9091cqw, 32px);">
+      <div style="flex: 1 1 300px; display: flex; align-items: center; gap: clamp(14px, 2.1818cqw, 24px);">
+        <div style="min-height: clamp(56px, 10cqw, 110px); display: flex; align-items: center; flex-shrink: 0;"><span style="font-size: clamp(20px, 3.6364cqw, 40px); font-weight: 800; line-height: 1;">X</span><span style="font-size: clamp(40px, 8.1818cqw, 90px); font-weight: 800; line-height: 1; white-space: nowrap;">2</span></div>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; flex: 1 1 auto;">во сколько раз больше мерчантов используют этот метод по сравнению с другими</p>
+      </div>
+      <div style="flex: 1 1 300px; display: flex; align-items: center; justify-content: center; gap: clamp(14px, 2.1818cqw, 24px);">
+        <svg viewBox="0 0 112 110" fill="none" aria-hidden="true" style="display: block; flex-shrink: 0; width: clamp(53px, 10.1818cqw, 112px); height: clamp(52px, 10cqw, 110px); color: #ffffff;"><path transform="matrix(-0.707 0.707 -0.707 -0.707 100.375 26.875)" d="M 103.945 22.274 L 107.48 25.809 L 111.016 22.274 L 107.48 18.738 L 103.945 22.274 Z M 62.933 21.92 L 57.933 21.92 L 57.933 26.877 L 62.889 26.92 L 62.933 21.92 Z M 62.933 0 L 67.933 0 L 67.933 -5 L 62.933 -5 L 62.933 0 Z M 88.212 38.007 L 91.747 41.543 L 107.48 25.809 L 103.945 22.274 L 100.409 18.738 L 84.676 34.472 L 88.212 38.007 Z M 103.945 22.274 L 107.48 18.738 L 91.924 3.182 L 88.388 6.718 L 84.853 10.253 L 100.409 25.809 L 103.945 22.274 Z M 103.945 22.274 L 103.988 17.274 L 62.976 16.92 L 62.933 21.92 L 62.889 26.92 L 103.902 27.274 L 103.945 22.274 Z M 62.933 21.92 L 67.933 21.92 L 67.933 0 L 62.933 0 L 57.933 0 L 57.933 21.92 L 62.933 21.92 Z M 62.933 0 L 62.933 -5 L 0 -5 L 0 0 L 0 5 L 62.933 5 L 62.933 0 Z" fill="currentColor" fill-rule="nonzero"></path></svg>
+        <p style="margin: 0; font-size: clamp(14px, 1.8182cqw, 20px); font-weight: 600; line-height: 1.2; flex: 1 1 auto;">кратно меньше обращений в поддержку и негативных оценок в NPS по теме возвратов</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 clamp(32px, 5vw, 56px);">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+      <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Подход</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: clamp(12px, 2vw, 18px); margin-top: clamp(16px, 2.5vw, 24px);">
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Бенчмарки</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Ресёрч рынка и анализ конкурентов, включая Stripe.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Исследования</h3>
+        <ul style="margin: 0; padding-left: 20px; grid-column: span 2; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.55; color: #3d3d3d;">
+          <li>Жалобы на процесс возвратов приходили в NPS регулярно — это и стало поводом взять задачу</li>
+          <li>Количественный опрос 418 мерчантов — проверка 11 гипотез о разрывах в понимании сценария (подробнее ниже)</li>
+          <li>Немодерируемое тестирование на 20 мерчантах для проверки гипотезы о навигации</li>
+          <li>Повторное тестирование после запуска сводной страницы</li>
+        </ul>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Гипотеза о навигации</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">В ЮKassa мерчант работает с двумя сущностями — Организация и Магазин, где магазин привязан к скрытой от большинства сущности Договор (на одном договоре может быть много магазинов, но 92% мерчантов работают с одним). Раздел «Платежи» живёт на уровне магазина, а возврат делается по договору — семантически ближе к организации, в другом блоке меню. Отсюда гипотеза: мерчант просто не поймёт, где искать очередь возвратов. Тестирование на 20 мерчантах её подтвердило.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Варианты решений</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Перерабатывать систему сущностей в рамках задачи было финансово нецелесообразно. Вместо этого сделали сводную страницу платежей на уровне организации — главную, со сводками не по конкретному магазину, а по всей организации сразу. Это решило навигационную проблему и одновременно начало приучать мерчантов к существованию этих сущностей, наглядно показывая разницу. Повторные тесты показали, что пользователи стали находить целевой раздел сразу.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Ограничения</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Возврат может стоять в очереди не больше 25 дней — техническое ограничение. Если поступлений не хватает или сроки поджимают, остаются альтернативные пути: разовый возврат с карты и пополнение обеспечительного баланса.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px);">
+        <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em;">Раскатка</h3>
+        <p style="margin: 0; grid-column: span 2; font-size: 16px; line-height: 1.6; color: #3d3d3d;">Через фичефлаг, старт с 10% масс-сегмента с постепенным расширением на все сегменты и роли пользователей ЛК.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 clamp(32px, 5vw, 56px);">
+    <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Исследование</h2>
+    <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px); margin-top: clamp(16px, 2.5vw, 24px);">
+      <p style="margin: 0; max-width: 760px; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55; color: #111214;">Перед проектированием прогнали количественный опрос мерчантов, которые делают возвраты в ЛК. Задача — понять, из-за чего именно возникают 12 тыс. обращений, и проверить 11 гипотез о том, что мерчант не понимает в текущем сценарии.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: 12px; margin-top: clamp(20px, 3vw, 26px);">
+        <div style="background: #FAFAF8; border-radius: 12px; padding: clamp(18px, 2.4vw, 24px);">
+          <div style="font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #111214;">418</div>
+          <div style="margin-top: 10px; font-size: 13px; font-weight: 500; line-height: 1.4; color: #8A8D93;">участников опроса: 276 через рассылку, 142 через колокольчик в ЛК</div>
+        </div>
+        <div style="background: #FAFAF8; border-radius: 12px; padding: clamp(18px, 2.4vw, 24px);">
+          <div style="font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #111214;">~80%</div>
+          <div style="margin-top: 10px; font-size: 13px; font-weight: 500; line-height: 1.4; color: #8A8D93;">дошли до конца опроса</div>
+        </div>
+        <div style="background: #FAFAF8; border-radius: 12px; padding: clamp(18px, 2.4vw, 24px);">
+          <div style="font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #111214;">61%</div>
+          <div style="margin-top: 10px; font-size: 13px; font-weight: 500; line-height: 1.4; color: #8A8D93;">сталкивались со сложностями при возврате</div>
+        </div>
+        <div style="background: #FAFAF8; border-radius: 12px; padding: clamp(18px, 2.4vw, 24px);">
+          <div style="font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #111214;">~12 тыс.</div>
+          <div style="margin-top: 10px; font-size: 13px; font-weight: 500; line-height: 1.4; color: #8A8D93;">обращений в поддержку по теме возвратов с января 2024</div>
+        </div>
+      </div>
+
+      <details data-research="" style="margin-top: clamp(18px, 2.5vw, 24px);">
+        <summary class="navbtn" data-research-summary="" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 100px; background: #FAFAF8; color: #111214; font-size: 14px; font-weight: 600; cursor: pointer; list-style: none; width: fit-content;">
+          <span data-lbl="">Смотреть полностью</span>
+          <svg data-ic="" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" style="display: block; transition: transform 0.2s ease;"><path d="M3.6 6 8 10.4 12.4 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </summary>
+
+        <div style="display: flex; flex-direction: column; gap: clamp(20px, 3vw, 30px); padding-top: clamp(22px, 3vw, 30px);">
+
+          <div>
+            <h3 style="margin: 0 0 4px; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Что проверяли</h3>
+            <p style="margin: 0 0 22px; font-size: 14px; font-weight: 500; color: #8A8D93;">11 гипотез о разрывах в понимании сценария возврата</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 18px clamp(20px, 3vw, 36px);">
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                  <span class="htag" style="flex-shrink: 0; padding: 4px 10px; border-radius: 100px; background: #F0F2F5; color: #16171a; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;">подтвердилась</span>
+                  <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #111214;">Мерчанты не знают, где посмотреть сумму, доступную для возврата</span>
+                </div>
+                <div style="font-size: 13px; line-height: 1.45; color: #6E6E73;">50% не смотрят вообще — сразу делают возврат; остальные ищут в разных разделах</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                  <span class="htag" style="flex-shrink: 0; padding: 4px 10px; border-radius: 100px; background: #F0F2F5; color: #16171a; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;">подтвердилась</span>
+                  <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #111214;">Мерчанты принимают виджет «сегодня зачислим на счёт» за средства для возврата</span>
+                </div>
+                <div style="font-size: 13px; line-height: 1.45; color: #6E6E73;">50% из тех, кто проверяет баланс перед возвратом</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                  <span class="htag" style="flex-shrink: 0; padding: 4px 10px; border-radius: 100px; background: #F0F2F5; color: #16171a; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;">подтвердилась</span>
+                  <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #111214;">Мерчанты не понимают, как сделать возврат по платёжному поручению</span>
+                </div>
+                <div style="font-size: 13px; line-height: 1.45; color: #6E6E73;">20% сталкивались, половина из них пошла в поддержку</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                  <span class="htag" style="flex-shrink: 0; padding: 4px 10px; border-radius: 100px; background: #F0F2F5; color: #16171a; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;">подтвердилась</span>
+                  <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #111214;">Мерчанты не понимают, как пополнить баланс обеспечения по П/П</span>
+                </div>
+                <div style="font-size: 13px; line-height: 1.45; color: #6E6E73;">более 30% проблем с балансом связаны именно с этим</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                  <span class="htag" style="flex-shrink: 0; padding: 4px 10px; border-radius: 100px; background: #F0F2F5; color: #16171a; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;">частично</span>
+                  <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #111214;">Мерчанты не знают про баланс обеспечения возвратов</span>
+                </div>
+                <div style="font-size: 13px; line-height: 1.45; color: #6E6E73;">не знают 30% — возможно, потому что у них его просто нет</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                  <span class="htag" style="flex-shrink: 0; padding: 4px 10px; border-radius: 100px; background: #F0F2F5; color: #16171a; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;">частично</span>
+                  <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #111214;">Мерчанты не понимают, когда придёт возврат</span>
+                </div>
+                <div style="font-size: 13px; line-height: 1.45; color: #6E6E73;">около 30%; отдельно — не всем понятен статус возврата</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                  <span class="htag" style="flex-shrink: 0; padding: 4px 10px; border-radius: 100px; background: #F0F2F5; color: #16171a; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;">частично</span>
+                  <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #111214;">Мерчанты не понимают, что у них есть долг и откуда он взялся</span>
+                </div>
+                <div style="font-size: 13px; line-height: 1.45; color: #6E6E73;">сценарий у 10% участников, но столкнувшиеся не понимают причину совсем</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                  <span class="htag" style="flex-shrink: 0; padding: 4px 10px; border-radius: 100px; background: #F0F2F5; color: #16171a; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;">частично</span>
+                  <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #111214;">Мерчантам не хватает подтверждающих документов в ЛК</span>
+                </div>
+                <div style="font-size: 13px; line-height: 1.45; color: #6E6E73;">около 15%: редкий сценарий, но он есть</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                  <span style="flex-shrink: 0; padding: 4px 10px; border-radius: 100px; background: #E6EBFF; color: #2c5cf0; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;">не подтвердилась</span>
+                  <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #111214;">Мерчанты не находят виджет с балансом обеспечения</span>
+                </div>
+                <div style="font-size: 13px; line-height: 1.45; color: #6E6E73;">сложностей с поиском не зафиксировано, хотя 50% испытывали сложности с самим балансом</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                  <span style="flex-shrink: 0; padding: 4px 10px; border-radius: 100px; background: #E6EBFF; color: #2c5cf0; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;">не подтвердилась</span>
+                  <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #111214;">Мерчанты не понимают, что возврат не прошёл</span>
+                </div>
+                <div style="font-size: 13px; line-height: 1.45; color: #6E6E73;">большинство узнаёт — чаще всего от самого покупателя</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                  <span style="flex-shrink: 0; padding: 4px 10px; border-radius: 100px; background: #E6EBFF; color: #2c5cf0; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;">не подтвердилась</span>
+                  <span style="font-size: 15px; font-weight: 600; line-height: 1.4; color: #111214;">Мерчанты не понимают, что пополнить баланс может только Владелец</span>
+                </div>
+                <div style="font-size: 13px; line-height: 1.45; color: #6E6E73;">понимают 80%</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="margin: 0 0 22px; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Ключевые ответы</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 12px; align-items: start;">
+
+        <div style="background: #FAFAF8; border-radius: 12px; padding: clamp(18px, 2.4vw, 24px); display: flex; flex-direction: column; gap: 18px;">
+          <div>
+            <div style="font-size: 15px; font-weight: 600; line-height: 1.35; color: #111214;">С какими сложностями с возвратами вы сталкивались?</div>
+            <div style="margin-top: 6px; font-size: 12px; font-weight: 500; color: #8A8D93;">n = 142</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Не хватило денег для возврата</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">73%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 73%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Было непонятно, какая сумма доступна для возврата</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">35%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 35%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Было непонятно, когда возврат дойдёт до получателя</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">27%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 27%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Было непонятно, как сделать возврат по платёжному поручению</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">18%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 18%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Не удалось найти документы для подтверждения возврата</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">10%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 10%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Появился долг, о котором раньше было неизвестно</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">8%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 8%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Не получилось узнать текущий статус возврата</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">8%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 8%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #FAFAF8; border-radius: 12px; padding: clamp(18px, 2.4vw, 24px); display: flex; flex-direction: column; gap: 18px;">
+          <div>
+            <div style="font-size: 15px; font-weight: 600; line-height: 1.35; color: #111214;">Вам было понятно, откуда взялся долг?</div>
+            <div style="margin-top: 6px; font-size: 12px; font-weight: 500; color: #8A8D93;">n = 11, из тех, кто столкнулся с долгом</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Совсем не понятно</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">36%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 36%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Скорее понятно</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">27%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 27%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Отчасти понятно, отчасти нет</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">27%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 27%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Скорее не понятно</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">9%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 9%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Полностью понятно</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">0%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 0%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #FAFAF8; border-radius: 12px; padding: clamp(18px, 2.4vw, 24px); display: flex; flex-direction: column; gap: 18px;">
+          <div>
+            <div style="font-size: 15px; font-weight: 600; line-height: 1.35; color: #111214;">В каком разделе вы бы ожидали увидеть информацию о задолженности?</div>
+            <div style="margin-top: 6px; font-size: 12px; font-weight: 500; color: #8A8D93;">n = 11</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">Во всех сразу</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">73%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 73%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">В разделе «Возвраты»</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">27%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 27%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 13px; line-height: 1.35; color: #3d3d3d;">В разделе «Платежи»</span>
+                <span style="flex-shrink: 0; font-size: 13px; font-weight: 700; color: #111214;">0%</span>
+              </div>
+              <div style="height: 6px; border-radius: 100px; background: #E8EDF2; overflow: hidden;"><div style="width: 0%; height: 100%; border-radius: 100px; background: #2c5cf0;"></div></div>
+            </div>
+          </div>
+        </div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+            <div>
+              <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Что забрали в решение</h3>
+              <p style="margin: 10px 0 0; font-size: 14px; font-weight: 500; line-height: 1.45; color: #8A8D93;">Главный вывод: проблема не в самом механизме, а в том, что мерчант не видит своих денег и не понимает, из чего платится возврат.</p>
+            </div>
+            <ul style="margin: 0; padding-left: 20px; grid-column: span 2; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.55; color: #3d3d3d;">
+              <li>Собрать все источники средств в одном месте — платежи за сегодня, долг за вчера, баланс обеспечения — прямо в форме возврата</li>
+              <li>Явно объяснить назначение баланса обеспечения: «не хочешь ждать платежей — внеси деньги, они спишутся, если платежей сегодня больше не будет»</li>
+              <li>Дать выбор в форме: оплатить возврат из текущих платежей или напрямую со своих средств — картой, а если картой нельзя, помочь сформировать П/П по QR-коду</li>
+              <li>Добавить очередь возвратов как альтернативу пополнению баланса: возврат уйдёт автоматически, когда денег хватит</li>
+              <li>Показывать долг и способ его погашения во всех релевантных разделах сразу, а не только в «Возвратах»</li>
+              <li>Убрать виджет «сегодня зачислим на ваш счёт» из платежей в аналитику, чтобы его не принимали за деньги для возврата</li>
+            </ul>
+          </div>
+
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section style="padding: clamp(24px, 4vw, 40px) 0 clamp(32px, 5vw, 56px);">
+    <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Тестирование прототипа</h2>
+    <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px); margin-top: clamp(16px, 2.5vw, 24px);">
+      <details data-research="">
+        <summary style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(18px, 3vw, 32px); align-items: center; list-style: none; cursor: pointer;">
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: clamp(18px, 2.5vw, 24px); height: 100%">
+            <p style="margin: 0; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55; color: #111214; height: 100%">Второе исследование — немодерируемое тестирование прототипа очереди на 20 мерчантах. Каждый проходил сценарий сам: ставил возврат в очередь, разбирался с обеспечением и пытался понять, что происходит на экране очереди. Реплики респондентов собрали по шагам и сгруппировали по местам, где сценарий ломается.</p>
+            <span class="navbtn" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 100px; background: #FAFAF8; color: #111214; font-size: 14px; font-weight: 600;">
+              <span data-lbl="">Смотреть полностью</span>
+              <svg data-ic="" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" style="display: block; transition: transform 0.2s ease;"><path d="M3.6 6 8 10.4 12.4 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
+          </div>
+          <div style="border-radius: 12px; overflow: hidden; background: #FAFAF8;">
+            <img src="photo/refunds-usability-board.png" alt="Борд с результатами немодерируемого тестирования" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 32% 45%;">
+          </div>
+        </summary>
+
+        <div style="display: flex; flex-direction: column; gap: clamp(12px, 2vw, 16px); padding-top: clamp(22px, 3vw, 30px);">
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #E6EBFF; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+            <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8D93;">Главное</div>
+            <p style="margin: 0; grid-column: span 2; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.5; color: #111214;">Саму возможность поставить возврат в очередь оценивают положительно — и по логике, и по визуальной лаконичности. Ломается всё на деталях: мерчант не понимает, из чего платится возврат и почему очередь стоит.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 12px; align-items: start;">
+            <div style="background: #FAFAF8; border-radius: 12px; padding: clamp(18px, 2.4vw, 24px);">
+              <h3 style="margin: 0 0 4px; font-size: clamp(18px, 2.2vw, 22px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Верхний уровень</h3>
+              <div style="margin-bottom: 18px; font-size: 12px; font-weight: 600; color: #8A8D93;">1 находка</div>
+              <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.5; color: #3d3d3d;">
+                <li>Не понимают саму концепцию обеспечения возвратов — что это за деньги и почему возврат зависит от них</li>
+              </ul>
+            </div>
+            <div style="background: #FAFAF8; border-radius: 12px; padding: clamp(18px, 2.4vw, 24px);">
+              <h3 style="margin: 0 0 4px; font-size: clamp(18px, 2.2vw, 22px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Штора возврата</h3>
+              <div style="margin-bottom: 18px; font-size: 12px; font-weight: 600; color: #8A8D93;">3 находки</div>
+              <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.5; color: #3d3d3d;">
+                <li>Без подсказки не понимают разницу между очередью и обычным возвратом — и почти не задумываются об этом, пока не завершат заявку</li>
+                <li>Обилие разной информации в шторе путает: непонятно, почему нельзя вернуть платёж на сумму меньше обеспечения</li>
+                <li>Не хватает данных о самом платеже, по которому делается возврат</li>
+              </ul>
+            </div>
+            <div style="background: #FAFAF8; border-radius: 12px; padding: clamp(18px, 2.4vw, 24px);">
+              <h3 style="margin: 0 0 4px; font-size: clamp(18px, 2.2vw, 22px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Экран очереди</h3>
+              <div style="margin-bottom: 18px; font-size: 12px; font-weight: 600; color: #8A8D93;">6 находок</div>
+              <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.5; color: #3d3d3d;">
+                <li>Не считывают иконку очереди: воспринимают её как «что-то в процессе», что не требует ни внимания, ни действий</li>
+                <li>Не видят блокирующий возврат — тот, из-за которого стоит вся очередь</li>
+                <li>Не понимают, почему не уходят возвраты на сумму меньше обеспечения</li>
+                <li>Не понимают очерёдность и приоритетность — по привычке ждут логики раздела «Платежи»</li>
+                <li>Узнав о блокирующем возврате, ожидают отправить остальные возвраты вне очереди, поставить проблемный на паузу и менять приоритеты</li>
+                <li>При очистке очереди фрустрируются: не хватает обратной связи от системы. Ожидают «историю» возвратов по аналогии с платежами</li>
+              </ul>
+            </div>
+          </div>
+
+          <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; background: #FAFAF8; border-radius: 12px; padding: clamp(14px, 2vw, 20px);">
+            <img src="photo/refunds-usability-board.png" alt="Борд с результатами немодерируемого тестирования: экраны прототипа и реплики респондентов" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+            <figcaption style="font-size: 13px; line-height: 1.45; color: #8A8D93;">Разбор записей: экраны сценария и реплики респондентов, разложенные по шагам и по типу проблемы.</figcaption>
+          </figure>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: clamp(12px, 3vw, 36px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+            <div>
+              <h3 style="margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Что забрали в доработку</h3>
+              <p style="margin: 10px 0 0; font-size: 14px; font-weight: 500; line-height: 1.45; color: #8A8D93;">Приоритет — снять непонимание там, где мерчант остаётся один на один с очередью.</p>
+            </div>
+            <ul style="margin: 0; padding-left: 20px; grid-column: span 2; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.55; color: #3d3d3d;">
+              <li>Объяснить обеспечение прямо в сценарии, а не отдельным разделом справки</li>
+              <li>Развести очередь и обычный возврат на входе в штору — до того, как мерчант завершит заявку</li>
+              <li>Сделать блокирующий возврат явным: почему очередь стоит и что с этим делать</li>
+              <li>Дать управление очередью — приоритеты, пауза, отправка остальных возвратов вне очереди</li>
+              <li>Добавить историю возвратов и обратную связь после каждого действия с очередью</li>
+              <li>Донести данные о платеже до шторы и до карточки возврата в очереди</li>
+            </ul>
+          </div>
+
+        </div>
+      </details>
+    </div>
+  </section>
+
+<section style="padding: clamp(24px, 4vw, 40px) 0 clamp(32px, 5vw, 56px);">
+    <h2 style="margin: 0; font-family: 'Gilroy', sans-serif; font-size: clamp(24px, 4.6vw, 32px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; color: #8A8D93;">Сценарий возврата</h2>
+    <div style="background: #F5F8FA; border-radius: 14px; padding: clamp(22px, 3vw, 34px); margin-top: clamp(16px, 2.5vw, 24px);">
+      <details data-research="">
+        <summary style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(18px, 3vw, 32px); align-items: center; list-style: none; cursor: pointer;">
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: clamp(18px, 2.5vw, 24px); height: 100%">
+            <p style="margin: 0; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55; color: #111214; height: 100%">Ключевая часть сценария — для общего понимания того, как работает решение: как мерчант ставит возврат в очередь и управляет им, от списка платежей до очереди в «Финансах».&nbsp;</p>
+            <span class="navbtn" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 100px; background: #FAFAF8; color: #111214; font-size: 14px; font-weight: 600;">
+              <span data-lbl="">Смотреть полностью</span>
+              <svg data-ic="" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" style="display: block; transition: transform 0.2s ease;"><path d="M3.6 6 8 10.4 12.4 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
+          </div>
+          <div style="border-radius: 12px; overflow: hidden; background: #FAFAF8;">
+            <img src="photo/refunds-flow-2.png" alt="Штора заявки на возврат с виджетом доступных средств" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 78% 30%;">
+          </div>
+        </summary>
+
+        <div style="display: flex; flex-direction: column; gap: clamp(12px, 2vw, 16px); padding-top: clamp(22px, 3vw, 30px);">
+
+
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 28px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+        <div style="max-width: 720px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #6d86ea;">ШАГ 01</div>
+          <h3 style="margin: 10px 0 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Выбор платежа</h3>
+          <p style="margin: 12px 0 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">Мерчант находит нужный платёж в истории и открывает его детали.</p>
+        </div>
+        <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+          <img src="photo/refunds-flow-1.png" alt="Список платежей: возврат доступен из строки платежа" style="display: block; width: 100%; height: auto;">
+        </figure>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 28px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+        <div style="max-width: 720px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #6d86ea;">ШАГ 02</div>
+          <h3 style="margin: 10px 0 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Штора заявки и виджет обеспечения</h3>
+          <p style="margin: 12px 0 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">В шторе появился виджет с суммой, доступной для возврата: платежи за сегодня и баланс обеспечения за вычетом средств, уже зарезервированных под возвраты в очереди. Если денег не хватает и вернуть нужно немедленно — из виджета можно перейти к пополнению обеспечения. Если мерчант готов вернуть из будущих поступлений — заявка ставится в очередь.</p>
+        </div>
+        <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+          <img src="photo/refunds-flow-2.png" alt="Заявка на возврат с виджетом доступных средств" style="display: block; width: 100%; height: auto;">
+        </figure>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 28px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+        <div style="max-width: 720px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #6d86ea;">ШАГ 03</div>
+          <h3 style="margin: 10px 0 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Статус в истории платежей</h3>
+          <p style="margin: 12px 0 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">После постановки в очередь платёж меняет статус на «В очереди на возврат» — мерчант видит это в общем списке, не заходя в детали.</p>
+        </div>
+        <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+          <img src="photo/refunds-flow-3.png" alt="Платёж со статусом «В очереди на возврат»" style="display: block; width: 100%; height: auto;">
+        </figure>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 28px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+        <div style="max-width: 720px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #6d86ea;">ШАГ 04</div>
+          <h3 style="margin: 10px 0 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Детали платежа в очереди</h3>
+          <p style="margin: 12px 0 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">В деталях явно подсвечиваем, что платёж стоит в очереди, объясняем, когда уйдут деньги, и даём перейти к самой очереди. Отсюда же можно убрать возврат из очереди или вернуть его первым.</p>
+        </div>
+        <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+          <img src="photo/refunds-flow-4.png" alt="Детали платежа: подсветка очереди и управление" style="display: block; width: 100%; height: auto;">
+        </figure>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 28px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+        <div style="max-width: 720px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #6d86ea;">ШАГ 05</div>
+          <h3 style="margin: 10px 0 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Очередь возвратов в «Финансах»</h3>
+          <p style="margin: 12px 0 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">Очередь живёт рядом с обеспечением: видно порядок, суммы и срок. Очередь общая для всех магазинов на договоре — это проговариваем текстом сразу под метриками.</p>
+        </div>
+        <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+          <img src="photo/refunds-flow-5.png" alt="Экран очереди возвратов в разделе «Финансы»" style="display: block; width: 100%; height: auto;">
+        </figure>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 28px); background: #FAFAF8; border-radius: 12px; padding: clamp(20px, 2.6vw, 28px);">
+        <div style="max-width: 720px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #6d86ea;">ШАГ 06</div>
+          <h3 style="margin: 10px 0 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; color: #111214;">Управление порядком</h3>
+          <p style="margin: 12px 0 0; font-size: clamp(15px, 1.75vw, 17px); line-height: 1.55; color: #3d3d3d;">Каждая заявка в очереди открывается в детали: сумма, тип возврата, срок и платёж-источник. Порядок можно изменить или убрать возврат из очереди.</p>
+        </div>
+        <figure style="margin: 0; border-radius: 8px; overflow: hidden; background: #FDFDFB;">
+          <img src="photo/refunds-flow-6.png" alt="Подробности возврата в очереди" style="display: block; width: 100%; height: auto;">
+        </figure>
+      </div>
+
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section style="padding: 0 0 clamp(56px, 8vw, 96px);">    <div class="alt" style="position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; background: #F5F8FA; border-radius: 28px; padding: clamp(24px, 4vw, 44px);">
+      <a href="case-subscriptions.dc.html" aria-label="Продукт «Подписки»" style="position: absolute; inset: 0; border-radius: 28px; z-index: 2;"></a>
+      <span class="altarw" style="position: absolute; top: 22px; right: 22px; width: 38px; height: 38px; border-radius: 50%; background: #FDFDFB; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.6 12.4 12.4 3.6"></path><path d="M6.1 3.6H12.4V9.9"></path></svg></span>
+      <div>
+        <div style="font-size: 13px; font-weight: 500; color: #8A8D93; margin-bottom: 8px;">Следующий кейс</div>
+        <div style="font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.025em;">Продукт «Подписки»</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>class Component extends DCLogic {
+  componentDidMount() {
+    document.body.setAttribute('data-theme', 'dark');
+    this.initReveal();
+    this.initResearchToggle();
+  }
+  initResearchToggle() {
+    const list = document.querySelectorAll('[data-research]');
+    if (!list.length) { this.rtTimer = setTimeout(() => this.initResearchToggle(), 150); return; }
+    list.forEach(d => {
+      if (d.dataset.bound) return;
+      d.dataset.bound = '1';
+      d.addEventListener('toggle', () => {
+        const l = d.querySelector('[data-lbl]');
+        const ic = d.querySelector('[data-ic]');
+        if (l) l.textContent = d.open ? 'Свернуть' : 'Смотреть полностью';
+        if (ic) ic.style.transform = d.open ? 'rotate(180deg)' : 'none';
+      });
+    });
+  }
+  initReveal() {
+    const nodes = Array.from(document.querySelectorAll('section > h2, section > p, section > div, section > div > *'));
+    if (!nodes.length) { this.revealTimer = setTimeout(() => this.initReveal(), 150); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const peers = Array.from(el.parentElement.children).filter(n => n.classList.contains('rv'));
+        el.style.transitionDelay = Math.min(peers.indexOf(el), 6) * 70 + 'ms';
+        el.classList.add('in');
+        io.unobserve(el);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 22% 0px' });
+    nodes.forEach(n => {
+      if (n.classList.contains('rv') || n.closest('.rv')) return;
+      const r = n.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.1) { n.classList.add('rv', 'in'); return; }
+      n.classList.add('rv');
+      io.observe(n);
+    });
+    this.revealIO = io;
+  }
+  componentWillUnmount() {
+    if (this.revealIO) this.revealIO.disconnect();
+    clearTimeout(this.revealTimer);
+    clearTimeout(this.rtTimer);
+  }
+}</script>
+</body>
+</html>
