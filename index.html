@@ -47,7 +47,8 @@
   nav a { transition: color 0.15s ease; }
   nav a:hover { color: #111214 !important; }
   .case { background: rgba(var(--glass-rgb, 245,248,250), var(--glass-a, 1)); backdrop-filter: blur(var(--glass-blur, 0px)) saturate(var(--glass-sat, 100%)); -webkit-backdrop-filter: blur(var(--glass-blur, 0px)) saturate(var(--glass-sat, 100%)); border: 1px solid rgba(16,16,16, var(--glass-border, 0)); box-shadow: var(--glass-shadow, none); }
-  .alt { color: #111214; transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1); -webkit-tap-highlight-color: transparent; }
+  .alt { color: #111214; -webkit-tap-highlight-color: transparent; }
+  #cases .alt { transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1), opacity 1.4s cubic-bezier(0.16,0.68,0.24,1), translate 1.4s cubic-bezier(0.16,0.68,0.24,1); }
   .alt:hover { transform: translateY(-4px); }
   .alt:active, .alt:has(a:active) { transform: translateY(-1px) scale(0.985); transition: transform 0.1s ease-out; }
   .alt:hover .altarw { background: #111214 !important; }
@@ -61,9 +62,9 @@
   .arw svg { display: block; overflow: visible; }
   .arw svg path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
   .lnk:hover .arw { transform: translate(2px, -2px); }
-  .rv { opacity: 0; transform: translateY(26px); will-change: opacity, transform; transition: opacity 1.4s cubic-bezier(0.16,0.68,0.24,1), transform 1.4s cubic-bezier(0.16,0.68,0.24,1); }
-  .rv.in { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1 !important; transform: none !important; transition: none !important; } }
+  .rv { opacity: 0; translate: 0 26px; will-change: opacity, translate; transition: opacity 1.4s cubic-bezier(0.16,0.68,0.24,1), translate 1.4s cubic-bezier(0.16,0.68,0.24,1); }
+  .rv.in { opacity: 1; translate: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1 !important; translate: none !important; transition: none !important; } }
   body[data-theme="dark"] { background: #0d0e10; color: #f2f3f5; }
   [data-theme="dark"] header::before { background: rgba(13,14,16,0.55) !important; }
   [data-theme="dark"] [style*="rgb(110, 110, 115)"] { color: #9ba0a8 !important; }
