@@ -47,8 +47,9 @@
   nav a { transition: color 0.15s ease; }
   nav a:hover { color: #111214 !important; }
   .case { background: rgba(var(--glass-rgb, 245,248,250), var(--glass-a, 1)); backdrop-filter: blur(var(--glass-blur, 0px)) saturate(var(--glass-sat, 100%)); -webkit-backdrop-filter: blur(var(--glass-blur, 0px)) saturate(var(--glass-sat, 100%)); border: 1px solid rgba(16,16,16, var(--glass-border, 0)); box-shadow: var(--glass-shadow, none); }
-  .alt { color: #111214; transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1); }
+  .alt { color: #111214; transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1); -webkit-tap-highlight-color: transparent; }
   .alt:hover { transform: translateY(-4px); }
+  .alt:active, .alt:has(a:active) { transform: translateY(-1px) scale(0.985); transition: transform 0.1s ease-out; }
   .alt:hover .altarw { background: #111214 !important; }
   .altarw svg path { stroke: #111214; }
   .alt:hover .altarw svg path { stroke: #ffffff !important; }
