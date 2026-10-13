@@ -37,10 +37,10 @@
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var points = [], w = 0, h = 0, raf = null, visible = true;
     var pointer = { x: -9999, y: -9999, active: false };
-    var color = CONFIG.colorLight;
+    var color = CONFIG.colorDark;
 
     function readTheme() {
-      color = document.body.getAttribute('data-theme') === 'dark' ? CONFIG.colorDark : CONFIG.colorLight;
+      color = CONFIG.colorDark;
     }
 
     function build() {
