@@ -66,6 +66,7 @@
     }
 
     function frame(time) {
+      if (!host.isConnected) return;
       raf = requestAnimationFrame(frame);
       if (!visible || !points.length) return;
       ctx.clearRect(0, 0, w, h);
@@ -150,4 +151,14 @@
   }
 
   init();
+
+  // Страховка: запустить заново, если блок пересоздан страницей или окно было узким при загрузке.
+  setInterval(function () {
+    var host = document.querySelector(CONFIG.mount);
+    if (!host || host.querySelector('canvas')) return;
+    if (window.innerWidth < CONFIG.disableUnder) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    host.dataset.agReady = '';
+    init();
+  }, 1000);
 })();
